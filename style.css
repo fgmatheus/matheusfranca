@@ -317,3 +317,17 @@ header .flag_es:hover, .flag_pt:hover, .flag_uk:hover{
     line-height: 25px;
     padding: 20px 20px 20px 20px;
 }
+
+@media screen and (max-width: 500px) {
+    
+    header h1{
+        margin-top: 10px;
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    .menu-content{
+        padding-bottom: 140px;
+    }
+    
+}

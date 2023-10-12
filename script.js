@@ -123,3 +123,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+/* celular */
+
+const projectButtons = document.querySelectorAll('.project-button');
+projectButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar que o link seja seguido imediatamente
+
+        const category = button.getAttribute('data-category');
+        const textSection = document.querySelector(`.category-content.${category}`);
+
+        setTimeout(() => {
+            textSection.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // Adicione um pequeno atraso (em milissegundos) aqui
+    });
+});
