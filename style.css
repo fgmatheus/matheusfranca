@@ -140,10 +140,6 @@ div.imagem{
     font-family: var(--font3);
 }
 
-#html{
-    margin-left: -35px;
-}
-
 
             /* card */
 
@@ -329,5 +325,13 @@ header .flag_es:hover, .flag_pt:hover, .flag_uk:hover{
     .menu-content{
         padding-bottom: 140px;
     }
-    
+
+    .primeiro{
+        margin-left: 17px;
+    }
+
+    #html{
+        margin-left: 1px;
+    }
+
 }
