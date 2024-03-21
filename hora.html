@@ -177,7 +177,7 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
         const selectedBarber = document.getElementById('barber').value;
         const barberColorId = mapBarberToColor(selectedBarber);
 
-        const response = await fetch('http://localhost:3000/check-availability', {
+        const response = await fetch('http://127.0.0.1/3000/check-availability', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -240,7 +240,7 @@ document.getElementById('submit-button').onclick = async function() {
     const dateTimeEnd = exitDate.toISOString();
 
     try {
-        const response = await fetch('http://localhost:3000/createAppointment', {
+        const response = await fetch('http://127.0.0.1/3000/createAppointment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
