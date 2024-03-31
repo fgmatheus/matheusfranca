@@ -292,7 +292,7 @@ document.getElementById('date').onclick = function(event) {
     if (event.target.tagName === 'BUTTON') {
         const selectedDate = new Date(event.target.getAttribute('data-date'));
         const startTime = selectedDate.toISOString();
-        const endTime = new Date(selectedDate.getTime() + 24 * 60 * 60 * 1000).toISOString(); // Adiciona um dia
+        const endTime = new Date(selectedDate.getTime()).toISOString(); // Adiciona um dia
         const selectedStyle = document.getElementById('style').value;
         const timeType = selectedStyle === 'barba' ? 'extendedTimes' : 'normalTimes'; // Determina o tipo de horário
 
