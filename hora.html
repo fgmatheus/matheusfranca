@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hora.css">
+    <link rel="stylesheet" href="teste.css">
     <title>Agendamento de Corte</title>
 </head>
 <body>
@@ -128,7 +128,7 @@ function updateTimeButtons(selectedDate) {
 }
 
 function handleTimeButtonClick(event) {
-    const selectedDate = new Date(formatDateToUTC(this.getAttribute('data-date')));
+    const selectedTime = event.target.getAttribute('data-time');
     const timeButtons = document.querySelectorAll('#time button');
     timeButtons.forEach(button => button.classList.remove('selected'));
     event.target.classList.add('selected');
@@ -185,8 +185,8 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
             body: JSON.stringify({
                 calendarId: 'f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com',
                 barberColorId: barberColorId,
-                start: formatDateToUTC(startTime),
-                end: formatDateToUTC(endTime),
+                start: startTime, // Já está em UTC+0
+                end: endTime, // Já está em UTC+0
                 timeType: timeType,
             }),
         });
@@ -194,6 +194,7 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
         if (response.ok) {
             const occupiedTimes = await response.json();
             updateOccupiedTimes(occupiedTimes);
+            console.log(occupiedTimes);
         } else {
             const error = await response.json();
             console.error(error);
@@ -206,6 +207,7 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
 }
 
 
+
 function showLoading() {
     document.getElementById('loading').style.display = 'block';
 }
@@ -214,6 +216,7 @@ function hideLoading() {
     document.getElementById('loading').style.display = 'none';
 }
 
+        /* MARCAÇÃO EM UTC+0 */
 document.getElementById('submit-button').onclick = async function() {
     showLoading(); // Exibe o loader ao clicar no botão
 
@@ -251,8 +254,8 @@ document.getElementById('submit-button').onclick = async function() {
                 clientPhone: phone,
                 calendarId,
                 barberColorId: mapBarberToColor(selectedBarber),
-                dateTimeStart: formatDateToUTC(dateTimeStart), // Converte para UTC+0
-                dateTimeEnd: formatDateToUTC(dateTimeEnd), // Converte para UTC+0
+                dateTimeStart: dateTimeStart, // Já está em UTC+0
+                dateTimeEnd: dateTimeEnd, // Já está em UTC+0
             }),
         });
 
@@ -271,6 +274,7 @@ document.getElementById('submit-button').onclick = async function() {
         hideLoading(); // Oculta o loader após a resposta do servidor
     }
 };
+/*  */
 
 
 document.getElementById('barber').onchange = function() {
@@ -290,9 +294,9 @@ document.getElementById('style').onchange = function() {
 
 document.getElementById('date').onclick = function(event) {
     if (event.target.tagName === 'BUTTON') {
-        const selectedDate = new Date(formatDateToUTC(event.target.getAttribute('data-date')));
+        const selectedDate = new Date(event.target.getAttribute('data-date'));
         const startTime = selectedDate.toISOString();
-        const endTime = new Date(selectedDate.getTime()).toISOString(); // Adiciona um dia
+        const endTime = new Date(selectedDate.getTime() + 24 * 60 * 60 * 1000).toISOString(); // Adiciona um dia
         const selectedStyle = document.getElementById('style').value;
         const timeType = selectedStyle === 'barba' ? 'extendedTimes' : 'normalTimes'; // Determina o tipo de horário
 
