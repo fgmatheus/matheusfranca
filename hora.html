@@ -277,7 +277,7 @@ const selectedDate = new Date(document.querySelector('#date button.selected').ge
 
         if (response.ok) {
             const styleLabel = selectedStyle === 'normal' ? 'Corte Normal (30min)' : 'Corte + Barba (1h)';
-            const formattedDate = formatDateUserFriendly(new Date(selectedDate.getTime()));
+            const formattedDate = formatDateUserFriendly(new Date(exitDate.getTime()));
             const successMessage = `Compromisso criado com sucesso!\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nBarbeiro: ${selectedBarber}\nEstilo: ${styleLabel}\nData: ${formattedDate}\nHorário: ${selectedTimeValue}`;
             openModal(successMessage);
         } else {
