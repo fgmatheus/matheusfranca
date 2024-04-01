@@ -225,7 +225,8 @@ document.getElementById('submit-button').onclick = async function() {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const selectedBarber = document.getElementById('barber').value;
-    const selectedDate = new Date(formatDateToUTC(document.querySelector('#date button.selected').getAttribute('data-date')));
+    /*     const selectedDate = new Date(formatDateToUTC(document.querySelector('#date button.selected').getAttribute('data-date'))); */
+const selectedDate = new Date(document.querySelector('#date button.selected').getAttribute('data-date'));
     const selectedStyle = document.getElementById('style').value;
     const selectedTime = document.querySelector('#time button.selected');
     if (!name || !email || !phone || !selectedBarber || !selectedStyle || !selectedTime) {
