@@ -173,6 +173,13 @@ label[for=time]{
     transform: scale(1.04);
 }
 
+@media screen and (max-width: 700px) {
+    .opcoes button:hover{
+        background-color: #333;
+        transform: none;
+    }
+}
+
 #submit-button{
     background-color: #4caf50;
     transform: none;
