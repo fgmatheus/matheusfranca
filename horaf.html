@@ -412,8 +412,8 @@ button.occupied {
                 <label for="barber">Barbeiro:</label>
                 <select id="barber" required>
                     <option value="">Escolha o Barbeiro</option>
-                    <option value="barbeiro1">Fernando</option>
-                    <option value="barbeiro2">Mateus</option>
+                    <option value="Fernando">Fernando</option>
+                    <option value="Mateus">Mateus</option>
                 </select>
             </div>
 
@@ -483,7 +483,7 @@ function formatDate(date) {
 }
 
 function mapBarberToColor(barber) {
-    return barber === 'barbeiro1' ? '6' : barber === 'barbeiro2' ? '7' : '';
+    return barber === 'Fernando' ? '6' : barber === 'Mateus' ? '7' : '';
 }
 
 function getAvailableTimes(date, style) {
