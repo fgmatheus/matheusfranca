@@ -477,13 +477,10 @@ nav a:hover{
   display: none;
   position: absolute;
   width: 90%;
-  margin: 329px 0 0 0;
+  margin: 320px 0 0 0;
   z-index: 2;
   background-color: var(--color3);
   border-radius: 0 0 20px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.37);
-  border-left: 1px solid rgba(255, 255, 255, 0.37);
-  border-right: 1px solid rgba(255, 255, 255, 0.37);
 }
 
 .menu-hb a{
