@@ -54,3 +54,8 @@ toTop.onclick = function(){
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 /*  */
+document.getElementById('burger').addEventListener('change', function() {
+    var menuHb = document.querySelector('.menu-hb');
+    menuHb.style.display = this.checked ? 'block' : 'none';
+  });
+/*  */
