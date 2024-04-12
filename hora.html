@@ -318,6 +318,18 @@ document.getElementById('date').onclick = function(event) {
         const endTime = new Date(selectedDate.getTime() + 24 * 60 * 60 * 1000).toISOString(); // Adiciona um dia
         const selectedStyle = document.getElementById('style').value;
         let timeType;
+
+        // Verifica se todos os campos obrigatórios estão preenchidos
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const selectedBarber = document.getElementById('barber').value;
+
+        if (!name || !email || !phone || !selectedBarber || !selectedStyle) {
+            displayAlert('danger', 'Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+        /*  */
         
         if(selectedStyle === 'barba') {
             timeType = 'oneTimes';
