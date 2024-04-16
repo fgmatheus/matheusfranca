@@ -239,78 +239,92 @@ nav > a:hover{
 }
 
  .back_to_top:hover{
-  background-color: #fff;
-  color: #996515;
-}
-
-/* (min-width: 768px) */
-@media screen and (min-width: 330px) and (max-width: 1200px){
-  nav{
-    display: none;
-  }
-
-  .nav-fixed{
-    height: 150px;
-  }
-
-  .nav-fixed a{
-    font-size: 35px;
-  }
-
-  .menu h2{
-    font-size: 40px;
+   background-color: #fff;
+   color: #996515;
   }
   
+  @media screen and (min-width: 300px) and (max-width: 1200px) 
+  {
+    nav{
+      display: none;
+    }
+  
+    .nav-fixed{
+      height: 150px;
+    }
+  
+    .nav-fixed a{
+      font-size: 35px;
+    }
+  
+    .menu h2{
+      font-size: 40px;
+    }
+    
+    .cardapio {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .cardapio-item {
+      width: 90%;
+      height: 650px;
+      justify-self: center;
+      text-align: center;
+    }
+  
+    .cardapio-item img {
+      height: 270px;
+    }
+    
+    .cardapio-item h3{
+      font-size: 40px;
+      font-weight: bolder;
+    }
+  
+    .cardapio-item p{
+      font-size: 28px;
+    }
+  
+    .cardapio-item span{
+      font-size: 40px;
+    }
+  
+    .back_to_top{
+      width: 150px;
+      height: 150px;
+      border-radius: 30px;
+      bottom: 1;
+      right: 1;
+    }
+  
+    .back_to_top span{
+      font-size: 50px;
+    }
+  
+    footer{
+      font-size: 40px;
+    }
+  }
+/* @media screen and (min-width:500px) and (max-width: 1200px) {
   .cardapio {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
   }
   
   .cardapio-item {
     width: 90%;
-    height: 650px;
-    justify-self: center;
-    text-align: center;
+    height: 450px;
   }
 
   .cardapio-item img {
-    height: 270px;
+    height: 170px;
   }
-  
-  .cardapio-item h3{
-    font-size: 40px;
-    font-weight: bolder;
-  }
-
-  .cardapio-item p{
-    font-size: 28px;
-  }
-
-  .cardapio-item span{
-    font-size: 40px;
-  }
-
-  .back_to_top{
-    width: 150px;
-    height: 150px;
-    border-radius: 30px;
-    bottom: 1;
-    right: 1;
-  }
-
-  .back_to_top span{
-    font-size: 50px;
-  }
-
-  footer{
-    font-size: 40px;
-  }
-}
+} */
 
 @media screen and (min-width: 1201px) and (max-width: 1599px) {
   .cardapio {

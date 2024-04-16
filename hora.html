@@ -133,6 +133,13 @@ function getAvailableTimes(date, style) {
 function updateTimeButtons(selectedDate) {
     const timeContainer = document.getElementById('time');
     const availableTimes = getAvailableTimes(selectedDate, document.getElementById('style').value);
+    
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (!areFieldsFilled()) {
+        timeContainer.innerHTML = ''; // Limpa os botões de horário
+        return;
+    }
+
     timeContainer.innerHTML = ''; // Limpa os botões de horário
 
     // Adiciona um botão para cada horário disponível
@@ -311,26 +318,32 @@ document.getElementById('style').onchange = function() {
     timeButtons.forEach(button => button.classList.remove('selected'));
 };
 
+// Adicione uma função para verificar se os campos obrigatórios estão preenchidos
+function areFieldsFilled() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const selectedBarber = document.getElementById('barber').value;
+    const selectedStyle = document.getElementById('style').value;
+
+    return name && email && phone && selectedBarber && selectedStyle;
+}
+
+// Modifique a função que lida com o clique nos botões de data
 document.getElementById('date').onclick = function(event) {
     if (event.target.tagName === 'BUTTON') {
+        // Verifica se todos os campos obrigatórios estão preenchidos
+        if (!areFieldsFilled()) {
+            displayAlert('danger', 'Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+        
         const selectedDate = new Date(event.target.getAttribute('data-date'));
         const startTime = selectedDate.toISOString();
         const endTime = new Date(selectedDate.getTime() + 24 * 60 * 60 * 1000).toISOString(); // Adiciona um dia
         const selectedStyle = document.getElementById('style').value;
         let timeType;
 
-        // Verifica se todos os campos obrigatórios estão preenchidos
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const selectedBarber = document.getElementById('barber').value;
-
-        if (!name || !email || !phone || !selectedBarber || !selectedStyle) {
-            displayAlert('danger', 'Por favor, preencha todos os campos obrigatórios.');
-            return;
-        }
-        /*  */
-        
         if(selectedStyle === 'barba') {
             timeType = 'oneTimes';
         } else if(selectedStyle === 'normal') {
