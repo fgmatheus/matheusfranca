@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="theuz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#produto">produtos</a>
+
+        <img src="img/theuz.png" alt="" class="top">
+
+        <a href="#contato">contato</a>
+    </header>
+
+    <main>
+        
+        <section class="inicio">
+            <img src="imgTheuz/theuzBig.png" alt="">
+            <h1>Paginas Web, Land Page e Serviços de Reserva de Horário</h1>
+        </section>
+
+        <article>
+
+            <section class="produtos colorido" id="produto">
+                <div class="info">
+                    <div class="titulo">
+                        <h2>Pagina Web</h2>
+                    </div>
+                    <div class="lista">
+                        <ul>
+                            <li>Design Profissional e Personalizado</li>
+                            <li>Responsividade e Acessibilidade</li>
+                            <li>Funcionalidades Avançadas de Integração</li>
+                            <li>Otimização para Motores de Busca</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="imagem-junta">
+                            <img src="imgTheuz/img-barba.png" alt="" class="imagem-teste">
+                            <img src="imgTheuz/img-dente.png" alt="" class="imagem-teste">
+                            <img src="imgTheuz/img-carro.png" alt="" class="imagem-teste">
+                            <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    </div>
+            </section>
+            
+            <div id="imagem-maximizada"></div>
+            
+
+            <section class="produtos">
+                <div class="info reverse">
+                    <div class="lista">
+                        <ul>
+                            <li>Foco em Conversão</li>
+                            <li>Design Atraente e Impactante</li>
+                            <li>Teste e Otimização Contínua</li>
+                        </ul>
+                    </div>
+                    <div class="titulo">
+                        <h2>Land Page</h2>
+                    </div>
+                </div>
+                <div class="imagem-junta">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                </div>
+            </section>
+
+            <section class="produtos colorido">
+                <div class="info">
+                    <div class="titulo">
+                        <h2>Reserva de Horário</h2>
+                    </div>
+                    <div class="lista">
+                        <ul>
+                            <li>Agendamento Simplificado</li>
+                            <li>Personalização e Flexibilidade</li>
+                            <li>Notificações Automatizadas</li>
+                            <li>Integração com Calendários</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="imagem-junta">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                </div>
+            </section>
+
+            <section class="produtos">
+                <div class="info reverse">
+                    <div class="lista">
+                        <ul>
+                            <li>Análise de Palavras-chave</li>
+                            <li>Otimização On-Page</li>
+                            <li>Link Building Estratégico</li>
+                        </ul>
+                    </div>
+                    <div class="titulo">
+                        <h2>SEO</h2>
+                    </div>
+                </div>
+                <div class="imagem-junta">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                    <img src="imgTheuz/blocked.png" alt="" class="imagem-teste">
+                </div>
+                <div class="block"></div>
+            </section>
+
+        </article>
+
+        <section class="contato" id="contato">
+            
+            <h2>Para mais Informações <strong>Entre em Contato</strong></h2>
+            <div id="alert-message" class="alert" ></div>
+                <div class="formulario">
+                    
+                    <form action="" method="post">
+                        <input type="text" name="" id="name" placeholder="Nome" required>
+                        <input type="email" name="" id="email" placeholder="Email" required>
+                        <select name="" id="service" required>
+                            <option value="">Choose a product</option>
+                            <option value="#">Web Page</option>
+                            <option value="#">Land Page</option>
+                            <option value="#">Reserva de Horário</option>
+                        </select>
+                        <input type="text" name="obs" id="message" placeholder="Observação">
+                    </form>
+                    <button type="submit" onclick="sendEmail()">Enviar</button>
+                </div>
+                
+        </section>
+    
+    </main>
+
+    <footer>
+        <p>direitos reservados</p>
+    </footer>
+
+    <script src="theuz.js"></script>
+</body>
+</html>
