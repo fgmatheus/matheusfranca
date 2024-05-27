@@ -268,18 +268,8 @@ if (!phone || !selectedBarber || !selectedStyle || !selectedTime) {
     const dateTimeStart = entryDate.toISOString();
     const dateTimeEnd = exitDate.toISOString();
 
-    /* console.log('Dados a serem enviados na solicitação DELETE:');
-    console.log({
-        clientPhone: phone,
-        calendarId: 'f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com',
-        barberColorId: barberColorId,
-        dateTimeStart: dateTimeStart,
-        dateTimeEnd: dateTimeEnd,
-    }); */
-    
-
     try {
-        const response = await fetch('http://127.0.0.1:3000/deleteAppointment', {
+        const response = await fetch('https://google-agenda.onrender.com/deleteAppointment', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -459,7 +449,7 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
         const barberColorId = mapBarberToColor(selectedBarber);
         const phone = document.getElementById('phone').value;
 
-        const response = await fetch('http://127.0.0.1:3000/check-availability', {
+        const response = await fetch('https://google-agenda.onrender.com/check-availability', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -527,7 +517,7 @@ const selectedDate = new Date(document.querySelector('#date button.selected').ge
     const dateTimeEnd = exitDate.toISOString();
 
     try {
-        const response = await fetch('http://127.0.0.1:3000/createAppointment', {
+        const response = await fetch('https://google-agenda.onrender.com/createAppointment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
