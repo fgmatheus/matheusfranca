@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hora.css">
+    <link rel="stylesheet" href="teste.css">
     <title>Agendamento de Corte</title>
 </head>
 <body>
     <section class="agendamento">
         <div class="header">
-            <img src="https://img.freepik.com/vetores-premium/modelo-de-logotipo-vintage-de-barbearia_441059-25.jpg" alt="">
+            <img src="https://img.freepik.com/vetores-premium/modelo-de-logotipo-vintage-de-barbearia_441059-25.jpg" alt="">    
+        </div>
+        <div class="abas">
+            <button id="showAppointmentFormBtn" class="button-clicked">Agendar</button>
+            <button id="showDeleteFormBtn">Excluir</button>
         </div>
         <div class="formulario">
 
@@ -77,26 +81,278 @@
             </div>
         </div>
 
+        <form id="deleteAppointmentForm" class="delete-form">
+            <div class="opcoes">
+                <label for="phone">Telefone:</label>
+                <input type="text" id="delete-phone" maxlength="9" oninput="validatePhone()" required>
+            </div>
+    
+            <div class="opcoes">
+                <label for="barber">Barbeiro:</label>
+                <select id="delete-barber" required>
+                    <option value="">Escolha o Barbeiro</option>
+                    <option value="barbeiro1">Barbeiro 1</option>
+                    <option value="barbeiro2">Barbeiro 2</option>
+                    <option value="barbeiro3">Barbeiro 3</option>
+                </select>
+            </div>
+    
+            <div class="opcoes">
+                <label for="style">Estilo de Corte:</label>
+                <select id="delete-style" required>
+                    <option value="">Escolha o Estilo de Corte</option>
+                    <option value="normal">Corte Normal (30min)</option>
+                    <option value="barba">Corte + Barba (1h)</option>
+                    <option value="pintura">Pintura (2h)</option>
+                </select>
+            </div>
+    
+            <div class="opcoes delete-appointment">
+                <label for="date">Dia:</label>
+                <div id="delete-date" class="date-container"></div>
+            </div>
+    
+            <div class="opcoes delete-appointment">
+                <label for="time">Horário:</label>
+                <div id="delete-time" class="time-container"></div>
+            </div>
+            <div class="opcoes">
+                <button type="submit" class="delete-btn">Deletar Agendamento</button>
+                <div class="delete-loading" id="delete-loading">
+                    <div class="loader" id="loader"></div>
+                </div>
+            </div>
 
+            <div id="delete-alert-message" class="alert" style="display: none;"></div>
+    
+            
+            <div id="delete-successModal" class="modal">
+                <div class="modal-content">
+                    <div id="delete-modalMessage" class="modal-message"></div>
+                    <button onclick="deleteCloseModal()">OK</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+    <section class="delete-appointment agendamento">
     </section>
 
     <script>
-async function getCountryCode() {
-    try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        return data.country_code.toUpperCase();
-    } catch (error) {
-        console.error('Erro ao obter localização:', error);
-        return 'Desconhecido';
+
+const showAppointmentFormBtn = document.getElementById('showAppointmentFormBtn');
+const showDeleteFormBtn = document.getElementById('showDeleteFormBtn');
+
+showAppointmentFormBtn.addEventListener('click', function() {
+    document.querySelector('.delete-form').style.display = 'none';
+    document.querySelector('.formulario').style.display = 'grid';
+    this.classList.add('button-clicked');
+    showDeleteFormBtn.classList.remove('button-clicked');
+});
+
+showDeleteFormBtn.addEventListener('click', function() {
+    document.querySelector('.formulario').style.display = 'none';
+    document.querySelector('.delete-form').style.display = 'grid';
+    this.classList.add('button-clicked');
+    showAppointmentFormBtn.classList.remove('button-clicked');
+});
+
+function renderDayButtons(parentElement) {
+    for (let i = 1; i < 14; i++) {
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + i);
+
+        // Verifica se o dia atual não é sábado (6) nem domingo (0)
+        if (currentDate.getDay() !== 0 && currentDate.getDay() !== 6) {
+            const button = document.createElement('button');
+            button.textContent = formatDateUserFriendly(currentDate);
+            button.setAttribute('data-date', formatDate(currentDate));
+
+            // Modifica o evento onClick para impedir a submissão do formulário
+            button.onclick = function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do formulário
+                const buttons = parentElement.getElementsByTagName('button');
+                for (const otherButton of buttons) {
+                    otherButton.classList.remove('selected');
+                }
+                this.classList.add('selected');
+                
+                const selectedDate = new Date(this.getAttribute('data-date'));
+                
+                // Adicione qualquer outra lógica necessária aqui
+            };
+
+            parentElement.appendChild(button);
+        }
     }
 }
 
-getCountryCode().then(countryCode => {
-    console.log(countryCode);
+function getAvailable(style) {
+    const halfTimes = ['08:00-08:30', '08:30-09:00', '09:00-09:30', '09:30-10:00', '10:00-10:30', '10:30-11:00', '11:00-11:30', '11:30-12:00', '12:00-12:30', '12:30-13:00', '15:00-15:30', '15:30-16:00', '16:00-16:30', '16:30-17:00', '17:00-17:30', '17:30-18:00', '18:00-18:30', '18:30-19:00'];
+    const oneTimes = ['08:00-09:00', '09:00-10:00', '10:00-11:00', '11:00-12:00', '12:00-13:00', '15:00-16:00', '16:00-17:00', '17:00-18:00', '18:00-19:00'];
+    const twoTimes = ['08:00-10:00', '10:00-12:00', '14:00-16:00', '16:00-18:00', '18:00-20:00', '20:00-22:00'];
+    return style === 'barba' ? oneTimes : style === 'normal' ? halfTimes : style === 'pintura' ? twoTimes : [];
+}
+
+function renderTimeButtons(parentElement, style) {
+    parentElement.innerHTML = '';
+
+    const availableTimes = getAvailable(style);
+
+    // Adiciona um botão para cada horário disponível
+    availableTimes.forEach(time => {
+        const button = document.createElement('button');
+        button.textContent = time;
+        button.setAttribute('data-time', time);
+        button.onclick = function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do botão
+            const buttons = parentElement.getElementsByTagName('button');
+            for (const otherButton of buttons) {
+                otherButton.classList.remove('selected');
+            }
+            this.classList.add('selected');
+        };
+        button.classList.add('delete-appointment-time'); // Adiciona a classe para diferenciar os botões de horário de exclusão
+        parentElement.appendChild(button);
+    });
+}
+
+window.onload = function() {
+    const deleteFormDateContainer = document.querySelector('.delete-appointment #delete-date');
+    const deleteFormTimeContainer = document.querySelector('.delete-appointment #delete-time');
+
+    renderDayButtons(deleteFormDateContainer);
+
+    // Renderiza os botões de horário ao carregar a página com o estilo 'normal'
+    renderTimeButtons(deleteFormTimeContainer, '');
+};
+
+document.getElementById('delete-style').onchange = function() {
+    const parentElement = document.querySelector('.delete-appointment #delete-time');
+    const style = this.value;
+
+    // Chama a função renderTimeButtons com o elemento pai e o estilo selecionado
+    renderTimeButtons(parentElement, style);
+};
+
+            /* --------- */
+
+document.querySelector('.delete-btn').addEventListener('click', async function(event) {
+    const loader = document.getElementById('delete-loading');
+    loader.style.display = 'block'; // Exibe o loader
+    event.preventDefault();
+
+
+    const calendarId = 'f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com';
+    const phone = document.getElementById('delete-phone').value;
+    const selectedBarber = document.getElementById('delete-barber').value;
+
+    const selectedDate = new Date(document.querySelector('#delete-date button.selected').getAttribute('data-date'));
+    const selectedStyle = document.getElementById('delete-style').value;
+    const selectedTime = document.querySelector('#delete-time button.selected');
+    
+    const barberColorId = mapBarberToColor(selectedBarber);
+
+if (!phone || !selectedBarber || !selectedStyle || !selectedTime) {
+        deleteDisplayAlert('danger', 'Por favor, preencha todos os campos obrigatórios.');
+        const loader = document.getElementById('delete-loading');
+        loader.style.display = 'none';
+        return;
+    }
+    const selectedTimeValue = selectedTime.getAttribute('data-time');
+    const [entry, exit] = selectedTimeValue.split('-');
+    const entryDate = new Date(selectedDate);
+    entryDate.setUTCHours(Number(entry.split(':')[0]), Number(entry.split(':')[1]), 0, 0, 0);
+    const exitDate = new Date(selectedDate);
+    exitDate.setUTCHours(Number(exit.split(':')[0]), Number(exit.split(':')[1]), 0, 0, 0);
+    const dateTimeStart = entryDate.toISOString();
+    const dateTimeEnd = exitDate.toISOString();
+
+    /* console.log('Dados a serem enviados na solicitação DELETE:');
+    console.log({
+        clientPhone: phone,
+        calendarId: 'f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com',
+        barberColorId: barberColorId,
+        dateTimeStart: dateTimeStart,
+        dateTimeEnd: dateTimeEnd,
+    }); */
+    
+
+    try {
+        const response = await fetch('http://127.0.0.1:3000/deleteAppointment', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                clientPhone: phone,
+                calendarId: 'f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com',
+                barberColorId: barberColorId,
+                dateTimeStart: dateTimeStart, // Já está em UTC+0
+                dateTimeEnd: dateTimeEnd, // Já está em UTC+0
+            })
+        });
+
+        if (response.ok) {
+            const styleLabel = selectedStyle === 'normal' ? 'Corte Normal (30min)' : selectedStyle === 'barba' ? 'Corte + Barba (1h)' : selectedStyle === 'pintura' ? 'pintura (2h)' : '';
+            const formattedDate = formatDateUserFriendly(new Date(exitDate.getTime()));
+            const successMessage = `Compromisso apagado com sucesso!\n\nTelefone: ${phone}\nBarbeiro: ${selectedBarber}\nEstilo: ${styleLabel}\nData: ${formattedDate}\nHorário: ${selectedTimeValue}`;
+            deleteModal(successMessage);
+        } else {
+            /* const errorText = await response.text();
+            alert('Error: ' + errorText); */
+            deleteDisplayAlert('danger', 'Erro ao enviar a solicitação.');
+        }
+    } catch (error) {
+        /* console.error('Error deleting appointment:', error); */
+        deleteDisplayAlert('danger', 'Erro ao enviar a solicitação.');
+    } finally {
+        const loader = document.getElementById('delete-loading');
+    loader.style.display = 'none'; // Exibe o loader
+    event.preventDefault();
+    }
 });
 
-        function preventNonAlphabetic(event) {
+function deleteModal(message) {
+    const modalMessage = document.getElementById('delete-modalMessage');
+    const lines = message.split('\n');
+    modalMessage.innerHTML = `<h2>${lines[0]}</h2>`;
+    for (let i = 1; i < lines.length; i++) {
+        const indexOfColon = lines[i].indexOf(':');
+        if (indexOfColon !== -1) {
+            const label = lines[i].substring(0, indexOfColon + 1);
+            let value = lines[i].substring(indexOfColon + 1).trim();
+
+            // Adiciona espaçamento antes de "Nome:", "Telefone:", etc.
+            if (label === "Nome:" || label === "Telefone:" || label === "E-mail:") {
+                value = `<span style="margin-right: 5px;">${value}</span>`;
+            }
+
+            modalMessage.innerHTML += `<p><strong>${label}</strong> ${value}</p>`;
+        } else {
+            modalMessage.innerHTML += `<p>${lines[i]}</p>`;
+        }
+    }
+    document.getElementById('delete-successModal').style.display = 'block';
+}
+
+function deleteCloseModal() {
+    document.getElementById('delete-successModal').style.display = 'none';
+}
+
+function deleteDisplayAlert(type, message) {
+    const alertDiv = document.getElementById('delete-alert-message');
+    alertDiv.textContent = message;
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.style.display = 'block';
+    setTimeout(() => {
+        alertDiv.style.display = 'none';
+    }, 5000);
+}
+
+            /* --- */
+
+function preventNonAlphabetic(event) {
     const keyCode = event.keyCode ? event.keyCode : event.which;
     // Aceita letras de A a Z (maiúsculas e minúsculas) e espaço (código 32)
     if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 122) && keyCode !== 32) {
@@ -201,13 +457,15 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
     try {
         const selectedBarber = document.getElementById('barber').value;
         const barberColorId = mapBarberToColor(selectedBarber);
+        const phone = document.getElementById('phone').value;
 
-        const response = await fetch('https://google-agenda.onrender.com/check-availability', {
+        const response = await fetch('http://127.0.0.1:3000/check-availability', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                clientPhone: phone,
                 calendarId: 'f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com',
                 barberColorId: barberColorId,
                 start: startTime, // Já está em UTC+0
@@ -222,7 +480,7 @@ async function checkAvailabilityAndUpdateInterface(startTime, endTime, timeType)
             console.log(occupiedTimes);
         } else {
             const error = await response.json();
-            console.error(error);
+            displayAlert('danger', error.error);
         }
     } catch (error) {
         console.error(error);
@@ -269,7 +527,7 @@ const selectedDate = new Date(document.querySelector('#date button.selected').ge
     const dateTimeEnd = exitDate.toISOString();
 
     try {
-        const response = await fetch('https://google-agenda.onrender.com/createAppointment', {
+        const response = await fetch('http://127.0.0.1:3000/createAppointment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -290,6 +548,7 @@ const selectedDate = new Date(document.querySelector('#date button.selected').ge
             const formattedDate = formatDateUserFriendly(new Date(exitDate.getTime()));
             const successMessage = `Compromisso criado com sucesso!\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nBarbeiro: ${selectedBarber}\nEstilo: ${styleLabel}\nData: ${formattedDate}\nHorário: ${selectedTimeValue}`;
             openModal(successMessage);
+           
         } else {
             displayAlert('danger', 'O barbeiro não está disponível neste horário.');
         }
@@ -337,13 +596,13 @@ document.getElementById('date').onclick = function(event) {
             displayAlert('danger', 'Por favor, preencha todos os campos obrigatórios.');
             return;
         }
-        
+
         const selectedDate = new Date(event.target.getAttribute('data-date'));
         const startTime = selectedDate.toISOString();
         const endTime = new Date(selectedDate.getTime() + 24 * 60 * 60 * 1000).toISOString(); // Adiciona um dia
         const selectedStyle = document.getElementById('style').value;
         let timeType;
-
+        
         if(selectedStyle === 'barba') {
             timeType = 'oneTimes';
         } else if(selectedStyle === 'normal') {
@@ -352,10 +611,16 @@ document.getElementById('date').onclick = function(event) {
             timeType = 'twoTimes';
         }
 
+        // Verifica se o formulário de exclusão está sendo usado
+        const isDeleteForm = document.querySelector('.delete-appointment').contains(event.target);
 
-        checkAvailabilityAndUpdateInterface(startTime, endTime, timeType);
+        // Se não for o formulário de exclusão, chama a função checkAvailabilityAndUpdateInterface
+        if (!isDeleteForm) {
+            checkAvailabilityAndUpdateInterface(startTime, endTime, timeType);
+        }
     }
 };
+
 
 function updateOccupiedTimes(occupiedTimes) {
     const timeButtons = document.querySelectorAll('#time button');

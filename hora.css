@@ -173,13 +173,6 @@ label[for=time]{
     transform: scale(1.04);
 }
 
-@media screen and (max-width: 700px) {
-    .opcoes button:hover{
-        background-color: #333;
-        transform: none;
-    }
-}
-
 #submit-button{
     background-color: #4caf50;
     transform: none;
@@ -310,7 +303,7 @@ button.occupied {
     }
    }
 /*  */
-.loading{
+.loading, .delete-loading{
     z-index: 9;
     position: fixed;
     width: 100%;
@@ -376,4 +369,72 @@ button.occupied {
         transform: rotate(360deg);
     }
 }
-/*  */
+
+/* ---- */
+
+.abas{
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.abas > button{
+    width: 100px;
+    background-color: #333;
+    color: white;
+
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#showAppointmentFormBtn{
+    background-color: #45a049;
+}
+
+#showDeleteFormBtn{
+    background-color: tomato;
+}
+
+.button-clicked {
+    opacity: 0.5;
+    transform: scale(0.94);
+}
+
+/* ---- */
+
+.delete-form{
+    width: 80%;
+    /* margin: auto; */
+    padding: 35px;
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    max-width: 800px; /* Define a largura máxima */
+    margin: 0 auto;
+
+    gap: 5px;
+
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.356);
+}
+
+
+.delete-form div:nth-child(n+3) {
+    grid-column: span 2; /* Ocupar duas colunas */
+}
+
+.delete-appointment{
+    flex-direction: column;
+}
+
+.delete-btn{
+    background-color: tomato;
+    padding: 30px 0;
+}
+
+.opcoes .delete-btn:hover{
+    background-color: black;
+}
