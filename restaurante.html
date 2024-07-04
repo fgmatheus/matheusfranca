@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+    <link rel="stylesheet" href="restaurante.css">
+</head>
+<body>
+    <header>
+        <img src="img-restaurante/logo-solo.png" alt="logo-solo" class="top">
+        
+        <nav>
+            <a href="#cardapio" data-txt="txt-01"></a>
+            <a href="#historia" data-txt="txt-02"></a>
+            <a href="#pedidos" data-txt="txt-03"></a>
+            <a href="#reservas" data-txt="txt-04"></a>
+        </nav>
+
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
+        
+        <div class="hb">
+            <a href="#cardapio" data-txt="txt-01"></a>
+            <a href="#historia" data-txt="txt-02"></a>
+            <a href="#pedidos" data-txt="txt-03"></a>
+            <a href="#reservas" data-txt="txt-04"></a>
+        </div>
+    </header>
+    
+    <main>
+
+        <section class="inicio">
+            <div class="inicioUm">
+                <h1 data-txt="txt-05"></h1>
+                <p data-txt="txt-06"></p>
+                
+                <div class="pais">
+                    <img src="img-restaurante/br.png" alt="" onclick="mudarIdioma('pt')">
+                    <img src="img-restaurante/esp.png" alt="" onclick="mudarIdioma('es')">
+                    <img src="img-restaurante/uk.png" alt="" onclick="mudarIdioma('en')">
+                </div>
+
+                <img src="img-restaurante/pizzaria.png" alt="">
+
+                <div class="inicioUmLink">
+                    <a href="#cardapio" data-txt="txt-01"></a>
+                    <a href="#pedidos" data-txt="txt-03"></a>
+                </div>
+            </div>
+
+            <div class="inicioDois">
+                <h2>
+                    <span data-txt="txt-07"></span>
+                    <a href="" data-txt="txt-08" class="link-01"></a>
+                </h2>
+                <h1 data-txt="txt-09"></h1>
+                <a href="" data-txt="txt-10" class="link-02"><!-- 'icon' Grupo do Telegram --></a>
+                <p data-txt="txt-11"></p>
+            </div>
+        </section>
+
+        <section class="historia" id="historia">
+            <div class="texto">
+                <div>
+                    <h1>
+                        <span data-txt="txt-12"></span> <strong data-txt="txt-13"></strong>
+                    </h1>
+    
+                    <p data-txt="txt-14"></p>
+                </div>
+                
+                <img src="https://placehold.co/300x200" alt="">
+
+            </div>
+        
+            <input type="checkbox" id="modalCheckbox" class="modal-checkbox">
+            <label for="modalCheckbox" class="modal-trigger" data-txt="txt-15"></label>
+        
+            <div class="modal">
+                <label for="modalCheckbox" class="fechar">&times;</label>
+                <div class="modal-conteudo">
+                    <div class="conteudo">
+
+                        <div>
+                            <p data-txt="txt-16"></p>
+                            <p data-txt="txt-17"></p>
+                        </div>
+
+                        <img src="https://placehold.co/300x200" alt="">
+
+                        <img src="https://placehold.co/300x200" alt="">
+
+                        <div>
+                            <p data-txt="txt-18"></p>
+                            <p data-txt="txt-19"></p>
+                        </div>
+
+                        <p data-txt="txt-20"></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="reservas" id="reservas">
+            <h1 data-txt="txt-04"></h1>
+
+            <section class="agendamento">
+                
+                <div class="formulario">
+        
+                    <div class="opcoes">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" maxlength="20" onkeypress="preventNonAlphabetic(event)" required>
+                    </div>
+        
+                    <div class="opcoes">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" maxlength="35" required>
+                    </div>
+        
+                    <div class="opcoes">
+                        <label for="phone">Telefone:</label>
+                        <input type="text" id="phone" maxlength="9" oninput="validatePhone()" required>
+                    </div>
+        
+                    <div class="opcoes">
+                        <label for="barber">Restautante:</label>
+                        <select id="barber" required>
+                            <option value="">Escolha o Restaurante</option>
+                            <option value="barbeiro1">Restaurante 1</option>
+                            <option value="barbeiro2">Restaurante 2</option>
+                            <option value="barbeiro3">Restaurante 3</option>
+                        </select>
+                    </div>
+        
+                    <div class="opcoes">
+                        <label for="style">O CERTO É 1H POR RESERVA:</label>
+                        <select id="style" required>
+                            <option value="">Tempo médio por reserva</option>
+                            <option value="normal">(30min)</option>
+                            <option value="barba">(1h)</option>
+                            <option value="pintura">(2h)</option>
+                        </select>
+                    </div>
+        
+                    <div class="opcoes">
+                        <label for="date">Dia:</label>
+                        <div id="date" class="date-container"></div>
+                    </div>
+        
+                    <div class="opcoes">
+                        <label for="time">Horário:</label>
+                        <div id="time" class="time-container"></div>
+                    </div>
+                      
+                    <div class="opcoes">
+                        <button id="submit-button" class="btn"><span>Agendar</span></button>
+                        <div class="loading" id="loading">
+                            <div class="loader" id="loader"></div>
+                        </div>
+                    </div>
+                        
+        
+                    <div id="alert-message" class="alert" style="display: none;"></div>
+            
+                    
+                    <div id="successModal" class="modal">
+                        <div class="modal-content">
+                            <div id="modalMessage" class="modal-message"></div>
+                            <button onclick="closeModal()">OK</button>
+                        </div>
+                    </div>
+                </div>
+        
+        
+            </section>
+
+        </section>
+
+        <section class="cardapio" id="cardapio">
+            <h1 data-txt="txt-01"></h1>
+
+            <div class="menu-container">
+                <div class="menu-tabs">
+                    <button class="tab category-button" data-category="entradas" data-txt="txt-21">Entradas</button>
+                    <button class="tab category-button active" data-category="pratoPrincipal" data-txt="txt-22"></button>
+                    <button class="tab category-button" data-category="bebidas" data-txt="txt-23"></button>
+                    <button class="tab category-button" data-category="sobremesa" data-txt="txt-24"></button>
+                    <!-- Adicione mais categorias conforme necessário -->
+                </div>
+        
+                <div id="pratoPrincipal" class="menu-category pratoPrincipal category-content">
+                    <!-- Inclua itens do prato principal aqui -->
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://placehold.co/300x200" alt="">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-25"></h2>
+                            <p data-txt="txt-26"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://placehold.co/300x200" alt="">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-27"></h2>
+                            <p data-txt="txt-28"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://placehold.co/300x200" alt="">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-29"></h2>
+                            <p data-txt="txt-30"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://placehold.co/300x200" alt="">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-31"></h2>
+                            <p data-txt="txt-32"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="bebidas" class="menu-category bebidas category-content">
+                    <!-- Inclua itens de bebidas aqui -->
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://www.apolonia.com/fotos/produtos/10/1074458_01_14.05.18_g.jpg" alt="Nome do Prato">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-33"></h2>
+                            <p data-txt="txt-34"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="sobremesa" class="menu-category sobremesa category-content">
+                    <!-- Inclua itens de sobremesa aqui -->
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://www.hojetemfrango.com.br/wp-content/uploads/2019/02/shutterstock_399135895.jpg" alt="Nome do Prato">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-35"></h2>
+                            <p data-txt="txt-36"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="entradas" class="menu-category entradas category-content">
+                    <!-- Inclua itens de sobremesa aqui -->
+                    <div class="menu-item">
+                        <div class="imagem-cardapio">
+                            <img src="https://www.hojetemfrango.com.br/wp-content/uploads/2019/02/shutterstock_399135895.jpg" alt="Nome do Prato">
+                        </div>
+                        <div class="item-details">
+                            <h2 data-txt="txt-37"></h2>
+                            <p data-txt="txt-38"></p>
+                            <p class="price">R$ 20,00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais categorias conforme necessário -->
+            </div>
+
+        </section>
+
+        <section class="pedidos" id="pedidos">
+            <h1 data-txt="txt-39">Reservas & Delivery</h1>
+            <div class="meios">
+                <div class="formas">
+                    <h2 data-txt="txt-40">Pedidos e horários</h2>
+                    <p>
+                        <span data-txt="txt-41">
+                            Peça agora mesmo pelo nossos telefones, Whatsapp ou
+                        </span>
+                         <strong data-txt="txt-42"></strong>
+                    </p>
+                    <p>'icon' whatsapp</p>
+                    <p>'icon' +351 999 999 999 | +351 999 999 999</p>
+
+                    <img src="" alt="">
+                    <img src="" alt="">
+
+                    <p data-txt="txt-43">'icon' Almoço</p>
+                    <p data-txt="txt-44">'icon' TERÇA A SEXTA: 12:00h - 15:00h</p>
+                    <p data-txt="txt-45">'icon'SÁBADO: 12:00h - 16:00h</p>
+                    <p data-txt="txt-46">'icon' DOMINGO: 12:00h - 17:00h</p>
+                    
+                    <p data-txt="txt-47">'icon' Jantar</p>
+                    <p data-txt="txt-48">'icon' TERÇA A QUINTA: 19:00h - 23:00h</p>
+                    <p data-txt="txt-49">'icon' SEXTA E SÁBADO: 19:00h - 00:00h</p>
+                    <p data-txt="txt-50">'icon' DOMINGO: 19:00h - 22:30h</p>
+                </div>
+
+                <div class="Localiza">
+                    <h2 data-txt="txt-51">Localização e áreas de entrega:</h2>
+                    <p data-txt="txt-52">'icon' exemplo nº 99</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198232.131738173!2d-9.03377882441008!3d39.07510831261342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18ddd75511bfd7%3A0xd221fe2e07aec0fb!2sAzambuja!5e0!3m2!1spt-PT!2spt!4v1714762807313!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <footer>
+        <p data-txt="txt-53">Direitos Reservados</p>
+    </footer>
+
+    <script src="restaurante.js"></script>
+    <script src="lang.js"></script>
+
+</body>
+</html>
