@@ -1,0 +1,957 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  scroll-behavior: smooth;
+  font-family: "Oswald", sans-serif;
+}
+
+:root {
+  --cor1: #fff;
+  --cor2: black;
+  --cor3: darkmagenta;
+}
+
+/* ------ */
+header {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  padding: 10px 0;
+  /* box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.219); */
+  z-index: 3;
+  font-family: "Oswald", sans-serif;
+
+  animation: appear 3s ease-in-out forwards;
+    animation-timeline: view(); /* esse view faz com que ao chegar em um determinado height da tela a animação ocorra */
+    animation-range: cover 140% cover 180%;
+}
+
+.top {
+  cursor: pointer;
+}
+
+header img {
+  width: 200px;
+  height: 50px;
+  object-fit: cover;
+}
+
+header > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.big-menu a {
+  text-decoration: none;
+  color: var(--cor1);
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  border: 2px solid transparent;
+  padding: 20px;
+}
+
+.big-menu a:hover {
+  color: var(--cor3);
+  border-bottom: 2px solid var(--cor3);
+}
+
+#checkbox,
+.toggle,
+.bars,
+.small-menu {
+  display: none;
+}
+
+@keyframes appear {
+    from{
+        position: fixed;
+        opacity: 0;
+        translate: 0 -100vh;
+    }to{
+        background-color: rgba(0, 0, 0, 0.384);
+        position: fixed;
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* ------ */
+
+.slider {
+  width: auto;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider .list {
+  position: absolute;
+  width: max-content;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: 1s;
+}
+
+.slider .list img {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.slider .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  width: 80%;
+
+  color: var(--cor1);
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.item.active .text-overlay {
+  opacity: 1;
+}
+
+.text-overlay h3{
+  font-size: 45px;
+  font-weight: 400;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.text-overlay p {
+  margin: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.slider .item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  z-index: 1;
+}
+
+.slider .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2; /* Menor que o small-menu */
+}
+
+.slider .dots li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: var(--cor1);
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.slider .dots li.active {
+  width: 30px;
+}
+
+/* ------------- */
+
+.company-info {
+  padding: 20px 0;
+  /* height: 650px; */
+  height: fit-content;
+  /* min-height: fit-content; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.226);
+}
+
+.company-info h2 {
+  font-size: 20px;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--cor2); /* #8B8B8B */
+  
+}
+
+.company-info p {
+  width: 90%;
+  max-width: 1100px;
+  
+}
+
+.info-cp {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 80px;
+  margin-top: 10px;
+  padding: 80px 20px;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+}
+
+.info-card > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.info-card > div > p {
+  font-size: 40px;
+}
+
+.info-card > div > i {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  color: var(--cor3); /* #8B8B8B */
+}
+
+.info-card > p:last-child {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ------------- */
+
+.produtos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.027);
+  /* background-image: url(image/background.png);
+  background-attachment: fixed; */
+}
+
+.produtos-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Três colunas iguais */
+  /* grid-template-rows: auto; */ /* Altura ajustada automaticamente */
+  gap: 20px; /* Espaçamento entre os itens */
+  padding: 60px 0;
+  max-width: 900px;
+  width: 93%;
+}
+
+/* Produto específico: primeira fileira (3/3) */
+.produto:nth-child(1) {
+  grid-column: span 3; /* Ocupa 1 coluna */
+  grid-row: span 1; /* Ocupa 1 linha */
+}
+.produto:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.produto:nth-child(3) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* Segunda fileira (1/3) com o primeiro item maior */
+.produto:nth-child(4) {
+  grid-column: span 1; /* Ocupa 1 coluna */
+  grid-row: span 1; /* Ocupa 2 linhas */
+}
+
+/* Terceira fileira (1/3 e 2/3) */
+.produto:nth-child(5) {
+  grid-column: span 1; /* Ocupa 1 coluna */
+  grid-row: span 2; /* Ocupa 1 linha */
+}
+.produto:nth-child(6) {
+  grid-column: span 2; /* Ocupa 2 colunas */
+  grid-row: span 1; /* Ocupa 1 linha */
+}
+
+/* Estilização base para os produtos */
+.produto {
+  position: relative;
+  border: 1px solid var(--cor2);
+  background-color: var(--cor1);
+  height: 200px; /* Altura padrão */
+}
+
+/* Ajuste para o produto maior */
+.produto:nth-child(2), .produto:nth-child(5) {
+  height: 422px;
+}
+
+/* .produto .img {
+    background-color: rgba(0, 0, 0, 0.158);
+    border-radius: 20px;
+    margin: auto;
+  } */
+
+.open-modal img {
+  /* padding: 5px; */
+  width: 100%;
+  height: 100%;
+  /* border-radius: 20px; */
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.produto .open-modal {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.open-modal > h2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* transform: translate(-50%, -50%); */
+  /* padding: 20px 10px;
+      border-radius: 0 0 20px 20px; */
+  /* height: 25px; */
+  color: var(--cor1);
+  text-shadow: 2px 1px 10px var(--cor2);
+  font-size: 18px;
+}
+
+.saiba {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translate(-50%, -50%); */
+  background-color: rgba(0, 0, 0, 0.493);
+  width: 100%;
+  height: 100%;
+  /* border-radius: 20px; */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saiba p {
+  color: var(--cor3);
+  background-color: var(--cor2);
+  border: 1px solid var(--cor3);
+  padding: 10px 20px;
+}
+
+.open-modal:hover .saiba {
+  opacity: 1;
+}
+
+/* Oculta o checkbox */
+.modal-toggle {
+  display: none;
+}
+
+/* Modal geral */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.432);
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+}
+
+.modal-image {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 colunas iguais */
+  grid-template-rows: repeat(1, 1fr); /* 2 linhas iguais */
+  gap: 10px; /* Espaçamento entre as imagens */
+  width: 95%; /* Ocupa toda a largura do modal */
+  /* max-width: 600px; */
+  height: fit-content;
+}
+
+.modal-image img {
+  width: 100%; /* Garante que cada imagem preencha a célula */
+  height: 100%; /* Garante que cada imagem preencha a célula */
+  max-height: 250px;
+  object-fit: cover; /* Ajusta a imagem sem distorção */
+  border: 1px solid rgba(0, 0, 0, 0.315); /* Borda opcional */
+  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.205); /* Sombras para destaque */
+}
+
+.modal-content h2 {
+  color: var(--cor2);
+  margin: 0;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  color: var(--cor2);
+  max-width: 800px;
+}
+
+.close-modal {
+  position: absolute;
+  right: 10%;
+  /* display: inline-block;
+      margin-top: 10px; */
+  padding: 10px 18px;
+  background-color: var(--cor3);
+  color: var(--cor1);
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-contacts a {
+  display: flex; /* Necessário para que a escala funcione corretamente */
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--cor3);
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.158);
+  padding: 15px 0;
+  width: 120px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+.modal-contacts > a > p {
+  color: var(--cor2);
+  margin: 0;
+  font-size: 20px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+}
+
+/* Exibe o modal ao marcar o checkbox */
+.modal-toggle:checked ~ .modal {
+  display: flex;
+}
+
+/* ------------- */
+.jobs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    background-color: var(--cor1);
+    padding: 100px 0;
+    gap: 120px;
+  }
+  
+  .preview-jobs {
+    width: min(1200px, 90vw);
+    margin: auto;
+    overflow: hidden;
+  }
+  .slider-job {
+    max-width: 90vw;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  }
+  .slider-job .list {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+  }
+  .slider-job .list .item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc(
+      (10s / var(--quantity)) * (var(--position) - 1)
+    - 9s) !important ;
+  }
+  .slider-job .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @keyframes autoRun {
+    from {
+      left: 100%;
+    }
+    to {
+      left: calc(var(--width) * -1);
+    }
+  }
+  .slider-job:hover .item {
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+  }
+  .slider-job .item:hover {
+    filter: grayscale(0);
+  }
+  .slider-job[reverse="true"] .item {
+    animation: reversePlay 10s linear infinite;
+  }
+  @keyframes reversePlay {
+    from {
+      left: calc(var(--width) * -1);
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+/* ------------- */
+.reviews {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.testimonials__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: gold;
+}
+
+.card p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card hr {
+  width: 40px;
+  margin: auto;
+  color: #767268;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 100%;
+  border: 1px solid var(--cor3);
+}
+
+.card .name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #767268;
+  transition: 0.3s;
+}
+  
+/* ----------------- */
+
+  .contact {
+    background-color: var(--cor1);
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.226);
+  }
+  
+  .contact-itens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 60px 0;
+    max-width: 1200px;
+    width: 90%;
+  }
+  
+  .contact-itens h2 {
+    margin-left: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .text p{
+    text-indent: 20px;
+  }
+  
+  .text p:last-child{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 19px;
+    color: var(--cor3);
+  }
+  
+  .contact-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contact-header img {
+    width: 150px;
+    height: 40px;
+  }
+  
+  .contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 60px;
+  }
+  
+  .contacts > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--cor3);
+    max-width: 220px;
+    max-height: 80px;
+  }
+
+  /* ----------- */
+  
+  footer {
+    background-color: var(--cor3);
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+/* ------------- */
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+  header nav {
+    display: none;
+  }
+
+  header img {
+    width: 150px;
+  }
+
+  #checkbox {
+    display: none;
+  }
+
+  .toggle,
+  .bars {
+    display: block;
+    z-index: 5;
+  }
+
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
+    margin-right: 30px;
+  }
+
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor1);
+    border-radius: 4px;
+  }
+
+  #bar2 {
+    transition-duration: 0.8s;
+  }
+
+  #bar1,
+  #bar3 {
+    width: 70%;
+  }
+
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
+
+  .small-menu {
+    display: none;
+    background-color: #333333f1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+    top: 0;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 80px;
+  }
+
+  .small-menu a {
+    text-decoration: none;
+    color: var(--cor1);
+    text-shadow: 8px 4px 9px var(--cor2);
+    font-size: 50px;
+  }
+
+  .small-menu a:first-child {
+    margin-top: 100px;
+  }
+
+  #checkbox:checked + .toggle + .small-menu {
+    display: flex;
+    z-index: 4;
+  }
+
+  /* ----------- */
+  .text-overlay h3{
+    font-size: 35px;
+  }
+  
+  .text-overlay p {
+    font-size: 17px;
+  }
+
+  /* ----------- */
+  .testimonials__grid {
+    width: 90%;
+  }
+
+  .card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .card i {
+    font-size: 30px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .card hr {
+    width: 40px;
+  }
+
+  .card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card .name {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #767268;
+    transition: 0.3s;
+  }
+
+  /* ---------- */
+
+  .modal-content {
+    height: 90%;
+  }
+
+  .modal-content h2 {
+    font-size: 16px;
+  }
+
+  .close-modal {
+    padding: 5px 14px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+  }
+
+  .modal-contacts a {
+    padding: 10px 0;
+    width: 90px;
+  }
+
+  .modal-contact h3 {
+    font-size: 16px;
+  }
+
+  .modal-contacts > a > p {
+    font-size: 14px;
+  }
+
+  .modal-image {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 60%;
+  }
+  /* ----------- */
+
+  .contact-itens h2 {
+    margin-left: 40px;
+    padding-bottom: 40px;
+    font-size: 26px;
+  }
+
+  .text p {
+    font-size: 15px;
+  }
+  
+  .text p:last-child{
+    font-size: 17px;
+  }
+
+  .contact-header img {
+    width: 150px;
+    height: 40px;
+  }
+
+  .contacts {
+    gap: 10px;
+    margin-top: 60px;
+  }
+
+  .contacts > div {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+    
+  }
+
+  .contacts > div > h3 {
+    font-size: 16px;
+  }
+
+  .contacts > div > p {
+    font-size: 12px;
+  }
+
+
+  /* ----------- */
+}
