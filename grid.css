@@ -432,6 +432,7 @@ header > nav {
   width: 95%; /* Ocupa toda a largura do modal */
   /* max-width: 600px; */
   height: fit-content;
+  margin-bottom: 20px;
 }
 
 .modal-image img {
@@ -446,6 +447,7 @@ header > nav {
 .modal-content h2 {
   color: var(--cor2);
   margin: 0;
+  margin-bottom: 30px;
 }
 
 .modal-content p {
@@ -473,6 +475,7 @@ header > nav {
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .modal-contacts {
