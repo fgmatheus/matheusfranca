@@ -912,6 +912,10 @@ footer {
   .modal-image {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 60%;
+    /* height: 60%; */
+  }
+
+  .modal-image img{
+    max-height: 180px;
   }
 }
