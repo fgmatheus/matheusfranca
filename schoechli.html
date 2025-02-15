@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="schoechli.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="vidros-img/schochli.png" alt="site-logo" class="top" />
+      <nav>
+        <div class="big-menu">
+          <a href="#servicos">Dienstleistungen</a>
+          <a href="#sobre">Über uns</a>
+          <a href="#contact">Kostenvoranschläge</a>
+        </div>
+      </nav>
+
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </label>
+      <div class="small-menu">
+        <a href="#servicos">Dienstleistungen</a>
+        <a href="#sobre">Über uns</a>
+        <a href="#contact">Kostenvoranschläge</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="carrousel">
+        <div class="slider">
+          <div class="list">
+            <div class="item">
+              <img
+                src="https://www.hydronorth.com.br/hydroresolve/wp-content/uploads/2020/02/comopintarparedes.jpeg"
+                alt=""
+              />
+              <div class="text-overlay">
+                <h3>Erfahrene Fachleute</h3>
+                <p>
+                  Unser Team besteht aus erfahrenen und qualifizierten Malern,
+                  die jede Arbeit mit Sorgfalt und Liebe zum Detail ausführen
+                  und Ihre Zufriedenheit garantieren.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://pinturasjlb.com/wp-content/uploads/2023/03/Pintura-de-Fachadas-de-Casas.jpeg"
+                alt=""
+              />
+              <div class="text-overlay">
+                <h3>Hochwertige Farben</h3>
+                <p>
+                  Wir verwenden ausschließlich hochwertige Farben von den besten
+                  Marken auf dem Markt, um ein makelloses und dauerhaftes
+                  Ergebnis für Ihre Wände zu gewährleisten.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://cdn.amigoconstrutor.com.br/wp-content/uploads/2018/04/pexels-blue-bird-7217986.jpg"
+                alt=""
+              />
+              <div class="text-overlay">
+                <h3>Industrielle Lackierung</h3>
+                <p>
+                  Wir führen Industrielackierungen in Hallen, Fabriken und
+                  anderen Anlagen durch. Wir verwenden spezielle Farben und
+                  Beschichtungen, um die Strukturen vor Korrosion und anderen
+                  Schäden zu schützen.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://www.obrasdarte.com/wp-content/uploads/2020/09/Guia_de_Investimento_Dicas_para_fazer_a_pintura_da_sua_casa_1593.jpg"
+                alt=""
+              />
+              <div class="text-overlay">
+                <h3>Gewerbliche Lackierung</h3>
+                <p>
+                  Wir lackieren Unternehmen, Büros, Geschäfte und andere
+                  Gewerbebetriebe. Unser Team arbeitet schnell und effizient, um
+                  die Auswirkungen auf Ihren Betrieb zu minimieren.
+                </p>
+              </div>
+            </div>
+            <!-- Adicione mais imagens se necessário -->
+          </div>
+          <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="company-info" id="sobre">
+        <h2>Über uns</h2>
+        <p>
+          Wir verfügen an den Standorten Frauenfeld und Diessenhofen über eine
+          moderne Infrastruktur. Unsere 15 Fachleute werden laufend
+          weitergebildet. Der Einsatz neuer Techniken, fördert unsere
+          Kreativität und zeichnet unsere Firma aus. Der Fuhrpark wurde die
+          letzten Jahre laufend modernisiert. Es ist uns ein Anliegen, nur noch
+          umweltfreundliche Fahrzeuge einzusetzen.
+        </p>
+
+        <p>
+          Die Schonung unserer Umwelt ist uns ein grosses Anliegen. Deshalb
+          arbeiten wir mit ökologischen und biologischen Farben und setzen
+          lösungsmittelhaltige Produkte nur dort ein, wo sie unumgänglich sind.
+          Durch externe und interne Schulungen sind unsere Mitarbeiter stets auf
+          dem neuesten Stand. Wir setzen klare Akzente durch transparente
+          Informations- und Kostenpolitik. Hohe Qualität zu Marktpreisen ist
+          eine Selbstverständlichkeit. Unsere über 500 Bauprojekte erfüllen wir
+          stets termingerecht und mit grösstmöglicher Effizienz.
+        </p>
+        <p>
+          Zudem haben wir in den zwei Jahrzehnten unseres Bestehens zwei
+          Niederlassungen aufgebaut.
+        </p>
+
+        <div class="info-cp">
+          <div class="info-card">
+            <div>
+              <p>15</p>
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <p>Fachleute</p>
+          </div>
+
+          <div class="info-card">
+            <div>
+              <p>+500</p>
+              <i class="ri-home-4-fill"></i>
+            </div>
+            <p>Bauprojekte</p>
+          </div>
+
+          <div class="info-card">
+            <div>
+              <p>2</p>
+              <i class="fa-solid fa-hourglass-end"></i>
+            </div>
+            <p>Jahrzehnte</p>
+          </div>
+
+          <div class="info-card">
+            <div>
+              <p>2</p>
+              <i class="ri-building-2-fill"></i>
+            </div>
+            <p>Niederlassungen</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="produtos" id="servicos">
+        <h2>Lernen Sie unsere Dienstleistungen kennen</h2>
+        <div class="produtos-section">
+          <!-- Produto 1 -->
+          <div class="produto four-pd">
+            <!-- Checkbox para o modal -->
+            <input type="checkbox" id="modal-produto-1" class="modal-toggle" />
+            <label for="modal-produto-1" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://www.casaribeiro.pt/wp/wp-content/uploads/2015/02/telhado4.jpg"
+                alt="produto-01"
+              />
+              <!-- https://placehold.co/150x150 -->
+              <!-- </div> -->
+
+              <h2>Malerarbeiten</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Malerarbeiten</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  mit eigenem Gerüst. Ihrer Haustür und Ihren Fensterläden geben
+                  wir den alten Glanz zurück. Im Haus drinnen streichen oder
+                  tapezieren wir Ihre Wände neu. Auch Spritzarbeiten gehören in
+                  unser Metier. Wir sorgen drinnen und draussen dafür, dass
+                  Ihnen das Wohnen wieder Freude macht.
+                  <br /><br />
+                  Zu unserem Angebot gehört unteranderem:
+                  <strong>Stucco Veneziano</strong>, <strong>Tadelack</strong>,
+                  <strong>Spezielle Lackiertechniken</strong>,
+                  <strong>Holzimitationen Ergänzungen</strong>,
+                  <strong>Restaurationen</strong>,
+                  <strong>Öl Hinterglas Vergolden Versilbern</strong>,
+                  <strong>Schablonieren Patinieren Maserieren</strong>,
+                  <strong>Tapezierarbeiten (Gras, Decco, Stil)</strong>,
+                  <strong>Schriften (Türen, Glas, Putz usw.)</strong>.
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+                <label for="modal-produto-1" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Produto 2 -->
+          <div class="produto four-pd">
+            <input type="checkbox" id="modal-produto-2" class="modal-toggle" />
+            <label for="modal-produto-2" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://www.metelhasmetalicas.com.br/wp-content/uploads/2023/09/home-cumeeiras.jpg"
+                alt="produto-02"
+              />
+              <!-- </div> -->
+
+              <h2>Gips / Putz</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Gips / Putz</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  sind immer wieder notwendig, um bei Renovationen vorhandene
+                  Schäden auszugleichen oder Änderungen an Bestehendem
+                  vorzunehmen. Wir finden die passende Lösung für Sie!
+                  <br /><br />
+                  Wir bieten: <strong>Behandlung von ganzen Wänden</strong>,
+                  <strong
+                    >Verputze; Ob Sie sich nun für feine Kalkputze oder Putze
+                    mit Struktur entscheiden: Wir helfen Ihnen gern bei der
+                    Entscheidung</strong
+                  >, <strong>Ausbesserung von Schäden</strong>,
+                  <strong>Montage von Bauplatten an Decken und Wänden</strong>,
+                  <strong>individuelle Beratung</strong>,
+                  <strong>sorgfältige und saubere Ausführung</strong>,
+                  <strong>ökologische und umweltfreundliche Lösungen</strong>
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-2" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Produto 3 -->
+          <div class="produto four-pd">
+            <input type="checkbox" id="modal-produto-3" class="modal-toggle" />
+            <label for="modal-produto-3" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://s2.glbimg.com/mFkAKhKacKrNH1X87mYsSaly3Pg=/e.glbimg.com/og/ed/f/original/2021/10/20/telha-fotovoltaica-de-concreto-tegula-solar-1.jpeg"
+                alt="produto-03"
+              />
+              <!-- </div> -->
+
+              <h2>Fassaden</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Fassaden</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  ist erst optimal, wenn die richtige Materialwahl, die Qualität
+                  der Arbeitsausführung und eine harmonische Farbgebung erfüllt
+                  werden. Zudem soll eine spätere umweltfreundliche Renovation
+                  möglich sein.
+                  <br /><br />
+                  Unser Angebot:
+                  <strong>Behandlung von ganzen Wänden</strong>,
+                  <strong
+                    >Verputze; Ob Sie sich nun für feine Kalkputze oder Putze
+                    mit Struktur entscheiden: Wir helfen Ihnen gern bei der
+                    Entscheidung</strong
+                  >, <strong>Ausbesserung von Schäden</strong>,
+                  <strong>Montage von Bauplatten an Decken und Wänden</strong>,
+                  <strong>individuelle Beratung</strong>,
+                  <strong>sorgfältige und saubere Ausführung</strong>,
+                  <strong>ökologische und umweltfreundliche Lösungen</strong>
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-3" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Produto 4 -->
+          <div class="produto four-pd">
+            <input type="checkbox" id="modal-produto-4" class="modal-toggle" />
+            <label for="modal-produto-4" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://sucessoacos.com.br/wp-content/uploads/2022/05/perfil-h.jpg"
+                alt="produto-04"
+              />
+              <!-- </div> -->
+
+              <h2>Farbberatung</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Farbberatung</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  sondern beeinflussen auch unser Handeln. Weshalb dann nicht
+                  die Wirkung der Farben nutzen und mit Farbharmonie die
+                  Umgebung zu Ihren Gunsten gestalten?
+                  <br /><br />
+                  Entspannung und Gleichgewicht lassen sich durch die richtige
+                  Farbwahl erhöhen. Wir helfen Ihnen bei der Wahl Ihrer
+                  Wunschfarben – bei Ihnen zu Hause.
+                  <br />
+                  Unsere Beratung beschränkt sich nicht nur auf Malerarbeiten
+                  sondern auch auf andere wichtige Details wie Bodenbeläge,
+                  Vorhänge, Möbel etc. Diese Dienstleistung bieten wir in
+                  Zusammenarbeit mit Zulieferanten an.
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-4" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Lernen Sie unsere Spezialgebiete kennen</h2>
+
+        <div class="produtos-section">
+          <!-- Produto 1 -->
+          <div class="produto">
+            <!-- Checkbox para o modal -->
+            <input type="checkbox" id="modal-produto-7" class="modal-toggle" />
+            <label for="modal-produto-7" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://www.casaribeiro.pt/wp/wp-content/uploads/2015/02/telhado4.jpg"
+                alt="produto-01"
+              />
+              <!-- https://placehold.co/150x150 -->
+              <!-- </div> -->
+
+              <h2>Naturofloor</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Naturofloor</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  Naturofloor kann mit entsprechender Vorbehandlung direkt auf
+                  keramische Bodenbeläge aufgetragen werden. Seine
+                  Vielfältigkeit in Farbe und Struktur ist fast unerschöpflich.
+                  Zudem ist Naturofloor leicht zu pflegen.
+                  <br /><br />
+                  Eigenschaften: <strong>fugenlos</strong>,
+                  <strong>dekorative Fugengestaltung</strong>,
+                  <strong>freie Farbenwahl</strong>,
+                  <strong>versiegelt und wasserbeständig</strong>,
+                  <strong>lichtecht und pflegeleicht</strong>,
+                  <strong>Rutschsicher</strong>,
+                  <strong
+                    >Oberflächenstruktur in einer einzigartigen Form</strong
+                  >, <strong>Riss frei</strong>.
+                  <br />
+                  geeignet für Wände und Böden in: <strong>Badezimmern</strong>,
+                  <strong>Duschen</strong>, <strong>Wohnbereichen</strong>,
+                  <strong>Treppenhäusern</strong>, <strong>Korridore</strong>,
+                  <strong>Wintergärten</strong>,
+                  <strong>Fitnessbereiche</strong>,
+                  <strong>Sauna-Landschaften</strong>
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+                <label for="modal-produto-7" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Produto 2 -->
+          <div class="produto">
+            <input type="checkbox" id="modal-produto-8" class="modal-toggle" />
+            <label for="modal-produto-8" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://www.metelhasmetalicas.com.br/wp-content/uploads/2023/09/home-cumeeiras.jpg"
+                alt="produto-02"
+              />
+              <!-- </div> -->
+
+              <h2>Stucco Veneziano</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Stucco Veneziano</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  Stucco Veneziano ist ein selbstglättender Spachtel und wird
+                  mit einer Glättkelle in mehreren feinen Schichten auf den
+                  Untergrund aufgebracht. Empfohlen werden vier Schichten,
+                  welche zusammen kaum stärker als 1 mm sind.
+                  <br /><br />
+                  Oberflächen, gestaltet mit Stucco Veneziano, haben ein
+                  besonderes Flair und sind erst noch pflegefreundlich. Geeignet
+                  sind sie vor allem in <strong>Nassräumen</strong>,
+                  <strong>als Blickfang im Wohnbereich</strong>,
+                  <strong>bei Cheminées</strong>,
+                  <strong>einzelnen Wänden</strong>, <strong>Nischen</strong>
+                  <br />
+                  Durch das marmorähnliche glatte Aussehen wird den Räumen ein
+                  besonderes Ambiente verleiht. Die zur Verfügung stehenden
+                  Farbnuancen sind gross. Stucco Veneziano ist eine der edelsten
+                  Beschichtungen überhaupt.
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-8" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Produto 3 -->
+          <div class="produto">
+            <input type="checkbox" id="modal-produto-9" class="modal-toggle" />
+            <label for="modal-produto-9" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://s2.glbimg.com/mFkAKhKacKrNH1X87mYsSaly3Pg=/e.glbimg.com/og/ed/f/original/2021/10/20/telha-fotovoltaica-de-concreto-tegula-solar-1.jpeg"
+                alt="produto-03"
+              />
+              <!-- </div> -->
+
+              <h2>Farblasuren</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Farblasuren</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  Den künstlerischen Gestaltungsmöglichkeiten sind keine Grenzen
+                  gesetzt. Es kann Ton in Ton oder mehrfarbig lasiert werden
+                  oder aber in Kombination mit einer der zahlreichen
+                  Lasurtechniken gearbeitet werden. Durch das Auftragen einer
+                  leicht transparenten Farbschicht entfaltet die Lasurtechnik
+                  eine individuelle Tiefenwirkung. Mehrere Lasurschichten
+                  übereinander gelegt steigern die Farbtiefe und Wirkung
+                  nochmals.
+                  <br /><br />
+                  Bürste, Schwamm oder Lappen ergeben jeweils ein anderes Bild.
+                  Über die farbige Wirkung einer Lasur entscheiden mehrere
+                  Faktoren:
+                  <strong>der Untergrund in seiner Farbe und Struktur</strong>,
+                  <strong>die Transparenz</strong>,
+                  <strong>die Leuchtkraft der Lasur</strong>.
+                  <br />
+                  Die Lasurtechnik, eine der edelsten Methoden der
+                  Wandgestaltung vermittelt den Eindruck von zeitloser Eleganz
+                  und Lebensqualität.
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-9" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Produto 4 -->
+          <div class="produto">
+            <input type="checkbox" id="modal-produto-10" class="modal-toggle" />
+            <label for="modal-produto-10" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://sucessoacos.com.br/wp-content/uploads/2022/05/perfil-h.jpg"
+                alt="produto-04"
+              />
+              <!-- </div> -->
+
+              <h2>Tadelakt</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Tadelakt</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  Ist eine marokkanische Putztechnik und heisst frei übersetzt
+                  "einreiben". Tadelakt ist dank seiner Stossfestigkeit und
+                  seiner Unempfindlichkeit gegen Wasserspritzer ideal für die
+                  Behandlung von Wänden im Nassbereich. Auch gewölbte und runde
+                  Flächen können damit beschichtet werden.
+                  <br />
+                  Die Untergründe zum Aufbringen von Tadelakt müssen rauh,
+                  absorbierend und trocken sein. Besonders empfehlenswert als
+                  Untergrund sind
+                  <strong
+                    >mineralische Mörtel (Kalkputze, Kalk-Zement-Putze
+                    usw.)</strong
+                  >, <strong>Beton-Mörtel</strong>.
+                  <br />
+                  Verwenden kann man Tadelakt in besonderen Fällen mit
+                  speziellen Haftgründen auch auf vorhandenen Untergründen wie:
+                  <strong>Gipskarton</strong>,
+                  <strong>Gipsfaserplatten</strong>, <strong>Altputzen</strong>,
+                  <strong>Gipsputzen</strong>, <strong>gebranntem Ton</strong>,
+                  <strong>Fliesen u.a.</strong>
+                  <br />
+                  Tadelakt lässt sich auf fast jeden Untergrund aufbringen, es
+                  müssen nur bestimmte Voraussetzungen erfüllt werden.
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-10" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Produto 5 -->
+          <div class="produto">
+            <input type="checkbox" id="modal-produto-11" class="modal-toggle" />
+            <label for="modal-produto-11" class="open-modal">
+              <!-- <div class="img"> -->
+              <img
+                src="https://conferropara.com.br/wp-content/uploads/2024/07/Perfil-U-Simples-1.jpg"
+                alt="produto-05"
+              />
+              <!-- </div> -->
+
+              <h2>Lehmputz</h2>
+              <div class="saiba">
+                <p>Mehr erfahren</p>
+              </div>
+            </label>
+
+            <div class="modal">
+              <div class="modal-content">
+                <h2>Lehmputz</h2>
+
+                <div class="modal-image">
+                  <img
+                    src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                    alt=""
+                  />
+                  <img
+                    src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p>
+                  Innenlehmputze bestehen aus reiner Erde, veredelt mit
+                  Pflanzenfasern. Sie eignen sich für alle Bereiche des Wohnbaus
+                  - vom Esszimmer bis zum Bad, von der Küche bis zum
+                  Kinderzimmer. Sie schaffen in jedem Raum eine einzigartige
+                  Atmosphäre. Warm, hygienisch und einfach natürlich. Was macht
+                  Lehmputze so einzigartig?
+                  <br />
+                  Die lebendig strukturierten, offenporigen Oberflächen. Ihre
+                  Tonmineralien nehmen die Luftfeuchtigkeit in grossem Masse auf
+                  und geben sie zeitversetzt wieder ab. Dadurch wird das
+                  Raumklima auf natürliche Weise reguliert, Gerüche werden
+                  abgebaut, die Luft im Wohnraum bleibt frisch und angenehm.
+                </p>
+
+                <div class="modal-contact">
+                  <h3>Fordern Sie jetzt ein Angebot an von:</h3>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+
+                <label for="modal-produto-11" class="close-modal"
+                  >Schließen</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <h2>Some of Our Clients</h2>
+        <div class="review">
+          <figure class="review-card">
+            <figcaption>
+              <blockquote>
+                <p>
+                  The team delivered an incredible project, exceeding our
+                  expectations. The construction was completed on time, and the
+                  quality is outstanding!
+                </p>
+              </blockquote>
+              <h3>Wisteria Ravenclaw</h3>
+              <h4>Residential Client</h4>
+            </figcaption>
+          </figure>
+          <figure class="review-card">
+            <figcaption>
+              <blockquote>
+                <p>
+                  Professionalism and attention to detail at every stage of the
+                  project. Our commercial building was delivered with precision
+                  and excellence.
+                </p>
+              </blockquote>
+              <h3>Ursula Gurnmeister</h3>
+              <h4>Business Owner</h4>
+            </figcaption>
+          </figure>
+          <figure class="review-card">
+            <figcaption>
+              <blockquote>
+                <p>
+                  From planning to execution, everything was handled with
+                  efficiency. The final result is exactly what we
+                  envisioned—high-quality and durable.
+                </p>
+              </blockquote>
+              <h3>Ingredia Nutrisha</h3>
+              <h4>Real Estate Investor</h4>
+            </figcaption>
+          </figure>
+        </div>
+
+        <h2>Help Us Improve by Giving Your Feedback.</h2>
+
+        <div class="review-rating">
+          <div class="rating">
+            <input value="5" name="rating" id="star5" type="radio" />
+            <label for="star5"></label>
+            <input value="4" name="rating" id="star4" type="radio" />
+            <label for="star4"></label>
+            <input value="3" name="rating" id="star3" type="radio" />
+            <label for="star3"></label>
+            <input value="2" name="rating" id="star2" type="radio" />
+            <label for="star2"></label>
+            <input value="1" name="rating" id="star1" type="radio" />
+            <label for="star1"></label>
+          </div>
+
+          <div class="feedback">
+            <div id="feedbackForm">
+              <h2>Give Us a Chance to Improve</h2>
+              <p>Please provide more details about your experience:</p>
+              <form class="feedback-bad">
+                <input type="text" id="name" name="name" placeholder="NAME" />
+
+                <textarea
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="WHAT SHOULD WE IMPROVE?"
+                  maxlength="250"
+                ></textarea>
+
+                <input type="submit" value="Submit" />
+              </form>
+              <a href="">Leave a Negative Review on Google</a>
+            </div>
+
+            <div id="googleReview">
+              <h2>Thank You for Your Feedback!</h2>
+              <p>
+                We would love to invite you to share your positive experience on
+                Google Reviews.
+              </p>
+              <button>Review Us on Google</button>
+            </div>
+
+            <div id="myModal" class="modal-review">
+              <div class="modal-content-review">
+                <p>We Appreciate Your Honest Feedback!</p>
+                <!-- <p>Thank You for Your Review!</p> -->
+                <p>&#128512;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-itens">
+          <div class="contact-header">
+            <h2>Contacts</h2>
+            <img src="vidros-img/schochli.png" alt="reforma facil" />
+          </div>
+
+          <div class="contacts">
+            <div>
+              <h3>Email:</h3>
+              <p>info@schoechli.ch</p>
+            </div>
+
+            <div>
+              <h3>WhatsApp:</h3>
+              <p>+351 999 999 999</p>
+            </div>
+
+            <div>
+              <h3>Phone:</h3>
+              <p>052 721 78 23</p>
+            </div>
+          </div>
+
+          <div class="text">
+            <p>
+              <strong>Adress:</strong> Schöchli AG Frauenfeld, Langfeldstrasse
+              54, 8500 Frauenfeld
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3239.0037254042695!2d8.906361019059688!3d47.56469589042261!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a921ac145b581%3A0x4af64b6056e3a0bd!2sLangfeldstrasse%2054%2C%208500%20Frauenfeld%2C%20Schweiz!5e1!3m2!1sde!2sus!4v1739645647291!5m2!1sde!2sus"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <br /><br />
+            <p>
+              <strong>Adress:</strong> Schöchli AG Diessenhofen,
+              Schlattingerstrasse 2, 8253 Diessenhofen/TG
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25850.851245376743!2d8.753701!3d47.688251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a86c73ee11439%3A0x6dfed6c15f24cd17!2sSchlattingerstrasse%202%2C%208253%20Diessenhofen%2C%20Schweiz!5e1!3m2!1sde!2sus!4v1739645812919!5m2!1sde!2sus"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>All Rights Reserved</p>
+    </footer>
+
+    <script>
+      let slider = document.querySelector(".slider .list");
+      let items = document.querySelectorAll(".slider .list .item");
+      let dots = document.querySelectorAll(".slider .dots li");
+
+      let lengthItems = items.length - 1;
+      let active = 0;
+
+      // Garante que o primeiro slide e texto estejam visíveis ao carregar
+      document.addEventListener("DOMContentLoaded", () => {
+        items[active].classList.add("active");
+        dots[active].classList.add("active");
+      });
+
+      // Intervalo para troca automática de slides
+      let refreshInterval = setInterval(() => {
+        active = active + 1 <= lengthItems ? active + 1 : 0;
+        reloadSlider();
+      }, 8000);
+
+      function reloadSlider() {
+        // Move o slider para o slide ativo
+        slider.style.left = -items[active].offsetLeft + "px";
+
+        // Atualiza a classe "active" no item anterior
+        document
+          .querySelector(".slider .item.active")
+          ?.classList.remove("active");
+        items[active].classList.add("active");
+
+        // Atualiza a classe "active" no ponto (dot) anterior
+        document
+          .querySelector(".slider .dots li.active")
+          ?.classList.remove("active");
+        dots[active].classList.add("active");
+
+        // Reinicia o intervalo de troca automática
+        clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => {
+          active = active + 1 <= lengthItems ? active + 1 : 0;
+          reloadSlider();
+        }, 8000);
+      }
+
+      // Adiciona evento de clique nos pontos (dots)
+      dots.forEach((li, key) => {
+        li.addEventListener("click", () => {
+          active = key;
+          reloadSlider();
+        });
+      });
+
+      // Atualiza o slider no redimensionamento da janela
+      window.onresize = function (event) {
+        reloadSlider();
+      };
+
+      /* ---------------- */
+
+      let starInputs = document
+        .getElementsByClassName("rating")[0]
+        .getElementsByTagName("input");
+      let feedbackForm = document.getElementById("feedbackForm");
+      let googleReview = document.getElementById("googleReview");
+
+      for (let i = 0; i < starInputs.length; i++) {
+        starInputs[i].addEventListener("change", function () {
+          let rating = parseInt(this.value);
+          if (rating <= 3) {
+            feedbackForm.style.display = "flex";
+            googleReview.style.display = "none";
+          } else {
+            googleReview.style.display = "flex";
+            feedbackForm.style.display = "none";
+          }
+        });
+      }
+
+      let modal = document.getElementById("myModal");
+
+      function showModal() {
+        modal.style.display = "block";
+        setTimeout(function () {
+          modal.style.display = "none";
+        }, 3000);
+      }
+
+      let submitButton = document.querySelector(
+        '.feedback-bad input[type="submit"]'
+      );
+      submitButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        showModal();
+        // Adicione aqui o código para enviar os dados do formulário
+      });
+
+      let googleReviewButton = document
+        .getElementById("googleReview")
+        .getElementsByTagName("button")[0];
+      googleReviewButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        showModal();
+        // Redireciona o usuário para o Google Reviews após 5 segundos
+        setTimeout(function () {
+          window.location.href =
+            "https://www.pineca.pt/casa-de-madeira-pre-fabricada-kaya-3-44mm-revestimento-70m2.html";
+        }, 3000);
+      });
+
+      let negativeReviewLink = document.querySelector("#feedbackForm a");
+      negativeReviewLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        showModal();
+        // Adicione aqui o código para enviar a avaliação negativa
+
+        setTimeout(function () {
+          window.location.href =
+            "https://www.pineca.pt/casa-de-madeira-pre-fabricada-kaya-3-44mm-revestimento-70m2.html";
+        }, 3000); // Redireciona após 3 segundos
+      });
+
+      /* ----------- */
+
+      let back_to_top = document.querySelector(".top");
+
+      back_to_top.addEventListener("click", function (e) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+        });
+      });
+
+      /* ---------- */
+    </script>
+  </body>
+</html>
