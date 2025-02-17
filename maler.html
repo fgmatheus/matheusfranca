@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="maler.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+</head>
+<body>
+    <header>
+        <img src="https://placehold.co/200x50" alt="site-logo" class="top" />
+        <nav>
+          <div class="big-menu">
+            <a href="#servicos">Services</a>
+            <a href="#sobre">About us</a>
+            <a href="#contact">Estimates</a>
+          </div>
+        </nav>
+  
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox" class="toggle">
+          <div class="bars" id="bar1"></div>
+          <div class="bars" id="bar2"></div>
+          <div class="bars" id="bar3"></div>
+        </label>
+        <div class="small-menu">
+          <a href="#servicos">Services</a>
+          <a href="#sobre">About us</a>
+          <a href="#contact">Estimates</a>
+        </div>
+      </header>
+  
+      <main>
+        <section class="carousel">
+          <!-- list item -->
+          <div class="list">
+            <div class="item">
+              <img
+                src="https://www.yesicamp.com/wp-content/uploads/2023/05/Guide-du-Mobil-Home-YesICamp.jpg"
+              />
+              <div class="content">
+                <div class="title">We Build with Quality,</div>
+                <div class="topic">Transforming Spaces</div>
+                <div class="des">
+                  It’s not just construction; it’s achievement. With years of
+                  experience in the construction industry, we deliver solid,
+                  innovative, and functional projects. Our commitment to
+                  excellence ensures results that exceed expectations.
+                </div>
+                <div class="buttons" onclick="scrollToSection()">
+                  <button>Learn</button>
+                  <button>More</button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://multimedia.valamar.com/mediagallery-dxp-production/Objekti_Porec_CampingLanterna_V4_gallery_lanterna-camping-marine-home-for-6.jpg"
+              />
+              <div class="content">
+                <div class="title">Smart Construction,</div>
+                <div class="topic">Efficiency in Every Detail</div>
+                <div class="des">
+                  Our pillars are innovation, strategic planning, resource
+                  optimization, and positive impact. Every project is developed
+                  with maximum efficiency, ensuring quality, safety, and long-term
+                  value.
+                </div>
+                <div class="buttons" onclick="scrollToSection()">
+                  <button>Learn</button>
+                  <button>More</button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://adria-home.com/storage/adria-home-mobile-tents-hero.jpg"
+              />
+              <div class="content">
+                <div class="title">Tailor-Made Projects for</div>
+                <div class="topic">Every Construction</div>
+                <div class="des">
+                  Every project has its own identity and specific needs. We
+                  develop customized solutions to meet construction demands,
+                  ensuring functionality, durability, and harmony with the
+                  surrounding environment.
+                </div>
+                <div class="buttons" onclick="scrollToSection()">
+                  <button>Learn</button>
+                  <button>More</button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://www.camp-slatina.com/EasyEdit/UserFiles/PageImages/mobile-home-camping-in-slatina/mobile-home-camping-in-slatina-637952058257175013_1168_832.jpeg"
+              />
+              <div class="content">
+                <div class="title">Experience and Structure for</div>
+                <div class="topic">High-Quality Construction</div>
+                <div class="des">
+                  With a highly qualified team and an efficient operational
+                  structure, we ensure excellence in every stage of construction.
+                  From foundation to finishing, we take care of every detail to
+                  deliver high-standard and top-quality buildings.
+                </div>
+                <div class="buttons" onclick="scrollToSection()">
+                  <button>Learn</button>
+                  <button>More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- list thumnail -->
+          <div class="thumbnail">
+            <div class="item">
+              <img
+                src="https://www.yesicamp.com/wp-content/uploads/2023/05/Guide-du-Mobil-Home-YesICamp.jpg"
+              />
+              <div class="content">
+                <div class="title">Name Slider teste</div>
+                <div class="description">Description teste</div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://multimedia.valamar.com/mediagallery-dxp-production/Objekti_Porec_CampingLanterna_V4_gallery_lanterna-camping-marine-home-for-6.jpg"
+              />
+              <div class="content">
+                <div class="title">Name Slider</div>
+                <div class="description">Description</div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://adria-home.com/storage/adria-home-mobile-tents-hero.jpg"
+              />
+              <div class="content">
+                <div class="title">Name Slider</div>
+                <div class="description">Description</div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="https://www.camp-slatina.com/EasyEdit/UserFiles/PageImages/mobile-home-camping-in-slatina/mobile-home-camping-in-slatina-637952058257175013_1168_832.jpeg"
+              />
+              <div class="content">
+                <div class="title">Name Slider</div>
+                <div class="description">Description</div>
+              </div>
+            </div>
+          </div>
+          <!-- next prev -->
+  
+          <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+          </div>
+          <!-- time running -->
+          <!-- <div class="time"></div> -->
+        </section>
+  
+        <section class="description-projects" id="sobre">
+          <div class="description-top">
+            <h2>Building the Future with Quality and Efficiency</h2>
+            <p>
+              Rely on our expertise to turn projects into reality with innovative
+              and customized solutions. We operate in various areas of the
+              construction industry, ensuring excellence and safety in every
+              project, including
+              <strong>architectural and structural design</strong>,
+              <strong>construction and renovation</strong>,
+              <strong>infrastructure and urban development</strong>,
+              <strong>project management and supervision</strong>,
+              <strong>finishing and interior design</strong>,
+              <strong>sustainable engineering</strong>, and
+              <strong>property regularization.</strong>
+            </p>
+          </div>
+          <div class="description-middle">
+            <p><i class="fa-solid fa-hard-hat"></i> Quality</p>
+            <p><i class="fa-solid fa-calendar-check"></i> Commitment</p>
+            <p><i class="fa-solid fa-building"></i> Excellence</p>
+          </div>
+  
+          <div class="description-bottom">
+            <div class="bottom-img">
+              <img src="https://placehold.co/200x50" alt="" />
+            </div>
+  
+            <div class="bottom-text">
+              <h2>Building with Quality and Commitment</h2>
+              <p>
+                Our <strong>commitment</strong> is to deliver complete and
+                customized solutions for each project, ensuring the highest
+                technical quality and attention to detail. We work with
+                <strong>dedication</strong> at every stage of construction to
+                provide safety, functionality, and excellence in every build.
+              </p>
+              <p>
+                We have a genuine <strong>interest</strong> in building
+                relationships of <strong>trust</strong> with our clients. We
+                believe that transparent service and clear communication are
+                essential to ensuring your <strong>satisfaction</strong> and
+                exceeding expectations.
+              </p>
+              <p>
+                Rely on our <strong>experience</strong> and expertise to bring
+                projects to life. Our team is ready to provide all the necessary
+                support with efficiency and <strong>professionalism</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+  
+        <section class="produtos" id="servicos">
+          <h2>Discover Our Services</h2>
+          <div class="produtos-section">
+            <!-- Produto 1 -->
+            <div class="produto">
+              <!-- Checkbox para o modal -->
+              <input type="checkbox" id="modal-produto-1" class="modal-toggle" />
+              <label for="modal-produto-1" class="open-modal">
+                <!-- <div class="img"> -->
+                <img
+                  src="https://www.casaribeiro.pt/wp/wp-content/uploads/2015/02/telhado4.jpg"
+                  alt="produto-01"
+                />
+                <!-- https://placehold.co/150x150 -->
+                <!-- </div> -->
+  
+                <h2>Telha Sandwich</h2>
+                <div class="saiba">
+                  <p>Learn More</p>
+                </div>
+              </label>
+  
+              <div class="modal">
+                <div class="modal-content">
+                  <h2>Telha Sandwich</h2>
+  
+                  <div class="modal-image">
+                    <img
+                      src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                      alt=""
+                    />
+                  </div>
+  
+                  <p>
+                    A telha sandwich é composta por duas chapas metálicas externas
+                    e um núcleo interno de isolante térmico (geralmente
+                    poliuretano ou poliestireno). Essa combinação proporciona
+                    excelente isolamento térmico e acústico, reduzindo o consumo
+                    de energia e aumentando o conforto térmico do ambiente.
+                    <br />
+                    Benefícios: Ideal para coberturas de galpões industriais,
+                    comerciais e residenciais. Oferece alta resistência mecânica,
+                    durabilidade, leveza e fácil instalação. Disponível em
+                    diversas cores e perfis para atender a diferentes projetos.
+                  </p>
+  
+                  <div class="modal-contact">
+                    <h3>Peça agora um Orçamento por:</h3>
+                    <div class="modal-contacts">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                          />
+                        </svg>
+                        <p>Email</p></a
+                      >
+  
+                      <a href=""
+                        ><img
+                          src="image/wadafwesfc-Photoroom.png"
+                          alt=""
+                          width="20"
+                          height="20"
+                        />
+                        <p>WhatsApp</p></a
+                      >
+  
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                          />
+                        </svg>
+                        <p>Phone</p></a
+                      >
+                    </div>
+                  </div>
+                  <label for="modal-produto-1" class="close-modal">Close</label>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Produto 2 -->
+            <div class="produto">
+              <input type="checkbox" id="modal-produto-2" class="modal-toggle" />
+              <label for="modal-produto-2" class="open-modal">
+                <!-- <div class="img"> -->
+                <img
+                  src="https://www.metelhasmetalicas.com.br/wp-content/uploads/2023/09/home-cumeeiras.jpg"
+                  alt="produto-02"
+                />
+                <!-- </div> -->
+  
+                <h2>Product 02</h2>
+                <div class="saiba">
+                  <p>Learn More</p>
+                </div>
+              </label>
+  
+              <div class="modal">
+                <div class="modal-content">
+                  <h2>Product 02</h2>
+  
+                  <div class="modal-image">
+                    <img
+                      src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                      alt=""
+                    />
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Sapiente totam maiores, suscipit asperiores dolore sed rerum
+                    similique, fuga dolor fugiat facilis quidem dicta. Sed
+                    laudantium omnis exercitationem iste! Inventore, architecto.
+                    <br /><br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Libero veniam quam ullam dolorum explicabo, ipsum a amet
+                    reiciendis quis eius consequatur placeat harum aspernatur
+                    repellat molestiae cum distinctio aperiam ratione.
+                  </p>
+  
+                  <div class="modal-contact">
+                    <h3>Request a Quote Now by:</h3>
+                    <div class="modal-contacts">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                          />
+                        </svg>
+                        <p>Email</p></a
+                      >
+  
+                      <a href=""
+                        ><img
+                          src="vidros-img/wadafwesfc-Photoroom.png"
+                          alt=""
+                          width="20"
+                          height="20"
+                        />
+                        <p>WhatsApp</p></a
+                      >
+  
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                          />
+                        </svg>
+                        <p>Phone</p></a
+                      >
+                    </div>
+                  </div>
+  
+                  <label for="modal-produto-2" class="close-modal">Close</label>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Produto 3 -->
+            <div class="produto">
+              <input type="checkbox" id="modal-produto-3" class="modal-toggle" />
+              <label for="modal-produto-3" class="open-modal">
+                <!-- <div class="img"> -->
+                <img
+                  src="https://s2.glbimg.com/mFkAKhKacKrNH1X87mYsSaly3Pg=/e.glbimg.com/og/ed/f/original/2021/10/20/telha-fotovoltaica-de-concreto-tegula-solar-1.jpeg"
+                  alt="produto-03"
+                />
+                <!-- </div> -->
+  
+                <h2>Product 03</h2>
+                <div class="saiba">
+                  <p>Learn More</p>
+                </div>
+              </label>
+  
+              <div class="modal">
+                <div class="modal-content">
+                  <h2>Product 03</h2>
+  
+                  <div class="modal-image">
+                    <img
+                      src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                      alt=""
+                    />
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                    eveniet, ad dolorem temporibus nam aliquid neque tempora, enim
+                    sapiente accusantium veritatis consequuntur magni soluta porro
+                    iste saepe aliquam ea natus?
+                    <br /><br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+                    minus laborum qui ipsam accusamus, eum, amet itaque facere
+                    magni dolorum nobis voluptates laudantium? Libero,
+                    exercitationem. Consequatur debitis incidunt maiores dolorem!
+                  </p>
+  
+                  <div class="modal-contact">
+                    <h3>Request a Quote Now by:</h3>
+                    <div class="modal-contacts">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                          />
+                        </svg>
+                        <p>Email</p></a
+                      >
+  
+                      <a href=""
+                        ><img
+                          src="vidros-img/wadafwesfc-Photoroom.png"
+                          alt=""
+                          width="20"
+                          height="20"
+                        />
+                        <p>WhatsApp</p></a
+                      >
+  
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                          />
+                        </svg>
+                        <p>Phone</p></a
+                      >
+                    </div>
+                  </div>
+  
+                  <label for="modal-produto-3" class="close-modal">Close</label>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Produto 4 -->
+            <div class="produto">
+              <input type="checkbox" id="modal-produto-4" class="modal-toggle" />
+              <label for="modal-produto-4" class="open-modal">
+                <!-- <div class="img"> -->
+                <img
+                  src="https://sucessoacos.com.br/wp-content/uploads/2022/05/perfil-h.jpg"
+                  alt="produto-04"
+                />
+                <!-- </div> -->
+  
+                <h2>Product 04</h2>
+                <div class="saiba">
+                  <p>Learn More</p>
+                </div>
+              </label>
+  
+              <div class="modal">
+                <div class="modal-content">
+                  <h2>Product 04</h2>
+  
+                  <div class="modal-image">
+                    <img
+                      src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                      alt=""
+                    />
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officia aspernatur, voluptatum molestias fuga, tenetur minima
+                    mollitia officiis ratione quaerat corrupti eos assumenda
+                    provident, ab itaque quam perferendis porro veritatis nobis.
+                    <br /><br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                    possimus odit soluta quod beatae necessitatibus nesciunt, ut,
+                    nemo quisquam reprehenderit deleniti magnam officiis officia
+                    nisi est, ducimus quam perspiciatis laborum.
+                  </p>
+  
+                  <div class="modal-contact">
+                    <h3>Request a Quote Now by:</h3>
+                    <div class="modal-contacts">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                          />
+                        </svg>
+                        <p>Email</p></a
+                      >
+  
+                      <a href=""
+                        ><img
+                          src="vidros-img/wadafwesfc-Photoroom.png"
+                          alt=""
+                          width="20"
+                          height="20"
+                        />
+                        <p>WhatsApp</p></a
+                      >
+  
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                          />
+                        </svg>
+                        <p>Phone</p></a
+                      >
+                    </div>
+                  </div>
+  
+                  <label for="modal-produto-4" class="close-modal">Close</label>
+                </div>
+              </div>
+            </div>
+            <!-- Produto 5 -->
+            <div class="produto">
+              <input type="checkbox" id="modal-produto-5" class="modal-toggle" />
+              <label for="modal-produto-5" class="open-modal">
+                <!-- <div class="img"> -->
+                <img
+                  src="https://conferropara.com.br/wp-content/uploads/2024/07/Perfil-U-Simples-1.jpg"
+                  alt="produto-05"
+                />
+                <!-- </div> -->
+  
+                <h2>Product 05</h2>
+                <div class="saiba">
+                  <p>Learn More</p>
+                </div>
+              </label>
+  
+              <div class="modal">
+                <div class="modal-content">
+                  <h2>Product 05</h2>
+  
+                  <div class="modal-image">
+                    <img
+                      src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                      alt=""
+                    />
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
+                    rem quidem neque enim quo minus, laudantium debitis in, qui
+                    numquam reiciendis incidunt. Reprehenderit eligendi delectus
+                    rerum officia non omnis consectetur.
+                    <br /><br />
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
+                    dicta dolore sed nam saepe? Iusto obcaecati possimus
+                    reprehenderit numquam distinctio provident? Ducimus ex eveniet
+                    ullam obcaecati distinctio iusto delectus tempore.
+                  </p>
+  
+                  <div class="modal-contact">
+                    <h3>Request a Quote Now by:</h3>
+                    <div class="modal-contacts">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                          />
+                        </svg>
+                        <p>Email</p></a
+                      >
+  
+                      <a href=""
+                        ><img
+                          src="vidros-img/wadafwesfc-Photoroom.png"
+                          alt=""
+                          width="20"
+                          height="20"
+                        />
+                        <p>WhatsApp</p></a
+                      >
+  
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                          />
+                        </svg>
+                        <p>Phone</p></a
+                      >
+                    </div>
+                  </div>
+  
+                  <label for="modal-produto-5" class="close-modal">Close</label>
+                </div>
+              </div>
+            </div>
+            <!-- Produto 6 -->
+            <div class="produto">
+              <input type="checkbox" id="modal-produto-6" class="modal-toggle" />
+              <label for="modal-produto-6" class="open-modal">
+                <!-- <div class="img"> -->
+                <img
+                  src="https://www.dnoconstrucaocivil.com/uploads/1/4/2/7/142734819/crane-two-buildings-construction_orig.jpg"
+                  alt="produto-06"
+                />
+                <!-- </div> -->
+  
+                <h2>Product 06</h2>
+                <div class="saiba">
+                  <p>Learn More</p>
+                </div>
+              </label>
+  
+              <div class="modal">
+                <div class="modal-content">
+                  <h2>Product 06</h2>
+  
+                  <div class="modal-image">
+                    <img
+                      src="https://lousalu.pt/wp-content/uploads/2024/07/janelas-aluminio-de-correr-janela-aberta.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.novoprojecto.pt/wp-content/uploads/2021/05/marquises-07.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://precoimbativel.net/302016-large_default/porta-janela-de-correr-em-aluminio-2-folhas-com-ponto-de-rutura-termica-a-medida.jpg"
+                      alt=""
+                    />
+                    <img
+                      src="https://www.goldwindow.pt/wp-content/uploads/2021/10/goldwindow-caixilhos.jpg"
+                      alt=""
+                    />
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+                    modi quo minus, aliquid rerum vero ipsum eveniet cumque
+                    perferendis illo necessitatibus nam reiciendis? Commodi saepe
+                    modi maxime illum incidunt quo?
+                    <br /><br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam magni, voluptatum sapiente id optio dolorum
+                    reprehenderit numquam cum, iste praesentium, quos voluptatem
+                    distinctio. Ea nihil iusto alias laborum, quasi dolorem!
+                  </p>
+  
+                  <div class="modal-contact">
+                    <h3>Request a Quote Now by:</h3>
+                    <div class="modal-contacts">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                          />
+                        </svg>
+                        <p>Email</p></a
+                      >
+  
+                      <a href=""
+                        ><img
+                          src="vidros-img/wadafwesfc-Photoroom.png"
+                          alt=""
+                          width="20"
+                          height="20"
+                        />
+                        <p>WhatsApp</p></a
+                      >
+  
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="20px"
+                          viewBox="0 -960 960 960"
+                          width="20px"
+                          fill="black"
+                        >
+                          <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                          />
+                        </svg>
+                        <p>Phone</p></a
+                      >
+                    </div>
+                  </div>
+  
+                  <label for="modal-produto-6" class="close-modal">Close</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="reviews">
+          <h2>Some of Our Clients</h2>
+          <div class="review">
+            <figure class="review-card">
+              <figcaption>
+                <blockquote>
+                  <p>
+                    The team delivered an incredible project, exceeding our
+                    expectations. The construction was completed on time, and the
+                    quality is outstanding!
+                  </p>
+                </blockquote>
+                <h3>Wisteria Ravenclaw</h3>
+                <h4>Residential Client</h4>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <figcaption>
+                <blockquote>
+                  <p>
+                    Professionalism and attention to detail at every stage of the
+                    project. Our commercial building was delivered with precision
+                    and excellence.
+                  </p>
+                </blockquote>
+                <h3>Ursula Gurnmeister</h3>
+                <h4>Business Owner</h4>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <figcaption>
+                <blockquote>
+                  <p>
+                    From planning to execution, everything was handled with
+                    efficiency. The final result is exactly what we
+                    envisioned—high-quality and durable.
+                  </p>
+                </blockquote>
+                <h3>Ingredia Nutrisha</h3>
+                <h4>Real Estate Investor</h4>
+              </figcaption>
+            </figure>
+          </div>
+  
+          <h2>Help Us Improve by Giving Your Feedback.</h2>
+  
+          <div class="review-rating">
+            <div class="rating">
+              <input value="5" name="rating" id="star5" type="radio" />
+              <label for="star5"></label>
+              <input value="4" name="rating" id="star4" type="radio" />
+              <label for="star4"></label>
+              <input value="3" name="rating" id="star3" type="radio" />
+              <label for="star3"></label>
+              <input value="2" name="rating" id="star2" type="radio" />
+              <label for="star2"></label>
+              <input value="1" name="rating" id="star1" type="radio" />
+              <label for="star1"></label>
+            </div>
+  
+            <div class="feedback">
+              <div id="feedbackForm">
+                <h2>Give Us a Chance to Improve</h2>
+                <p>Please provide more details about your experience:</p>
+                <form class="feedback-bad">
+                  <input type="text" id="name" name="name" placeholder="NAME" />
+  
+                  <textarea
+                    type="text"
+                    name="description"
+                    id="description"
+                    placeholder="WHAT SHOULD WE IMPROVE?"
+                    maxlength="250"
+                  ></textarea>
+  
+                  <input type="submit" value="Submit" />
+                </form>
+                <a href="">Leave a Negative Review on Google</a>
+              </div>
+  
+              <div id="googleReview">
+                <h2>Thank You for Your Feedback!</h2>
+                <p>
+                  We would love to invite you to share your positive experience on
+                  Google Reviews.
+                </p>
+                <button>Review Us on Google</button>
+              </div>
+  
+              <div id="myModal" class="modal-review">
+                <div class="modal-content-review">
+                  <p>We Appreciate Your Honest Feedback!</p>
+                  <!-- <p>Thank You for Your Review!</p> -->
+                  <p>&#128512;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="contact" id="contact">
+          <div class="contact-itens">
+            <div class="contact-header">
+              <h2>Contacts</h2>
+              <img src="https://placehold.co/200x50" alt="reforma facil" />
+            </div>
+  
+            <div class="contacts">
+              <div>
+                <h3>Email:</h3>
+                <p>exemplo@exemplo.com</p>
+              </div>
+  
+              <div>
+                <h3>WhatsApp:</h3>
+                <p>+351 999 999 999</p>
+              </div>
+  
+              <div>
+                <h3>Phone:</h3>
+                <p>+351 999 999 999</p>
+              </div>
+            </div>
+  
+            <div class="text">
+              <p>
+                <strong>Adress:</strong> Rua bla bla bla, nº 90 ( 2070-207 CARTAXO
+                )
+              </p>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210344.2739123607!2d-117.38351565311767!3d34.53761925184759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3613ed3a24297%3A0x2905e50eba6b7d7a!2sApple%20Valley%2C%20CA%2C%20EUA!5e0!3m2!1spt-PT!2spt!4v1738263697913!5m2!1spt-PT!2spt"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <!-- <p>
+                    Se você está pensando em reformar ou precisa de manutenção,
+                    escolha a Reforma Fácil. Transformamos espaços com excelência e
+                    realizamos sonhos com dedicação. Entre em contato e descubra como
+                    podemos ajudar a transformar o seu espaço.
+                  </p>
+                  <p>
+                    Nos contacte e em até <strong>24 horas</strong> tenha seu
+                    <strong>orçamento</strong>.
+                  </p> -->
+            </div>
+          </div>
+        </section>
+      </main>
+  
+      <footer>
+        <p>All Rights Reserved</p>
+      </footer>
+  
+      <script>
+        //step 1: get DOM
+        let nextDom = document.getElementById("next");
+        let prevDom = document.getElementById("prev");
+  
+        let carouselDom = document.querySelector(".carousel");
+        let SliderDom = carouselDom.querySelector(".carousel .list");
+        let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+        let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+        let timeDom = document.querySelector(".carousel .time");
+  
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        let timeRunning = 3000;
+        let timeAutoNext = 7000;
+  
+        nextDom.onclick = function () {
+          showSlider("next");
+        };
+  
+        prevDom.onclick = function () {
+          showSlider("prev");
+        };
+        let runTimeOut;
+        let runNextAuto = setTimeout(() => {
+          next.click();
+        }, timeAutoNext);
+        function showSlider(type) {
+          let SliderItemsDom = SliderDom.querySelectorAll(
+            ".carousel .list .item"
+          );
+          let thumbnailItemsDom = document.querySelectorAll(
+            ".carousel .thumbnail .item"
+          );
+  
+          if (type === "next") {
+            SliderDom.appendChild(SliderItemsDom[0]);
+            thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+            carouselDom.classList.add("next");
+          } else {
+            SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+            thumbnailBorderDom.prepend(
+              thumbnailItemsDom[thumbnailItemsDom.length - 1]
+            );
+            carouselDom.classList.add("prev");
+          }
+          clearTimeout(runTimeOut);
+          runTimeOut = setTimeout(() => {
+            carouselDom.classList.remove("next");
+            carouselDom.classList.remove("prev");
+          }, timeRunning);
+  
+          clearTimeout(runNextAuto);
+          runNextAuto = setTimeout(() => {
+            next.click();
+          }, timeAutoNext);
+        }
+  
+        /* ----------- */
+  
+        let back_to_top = document.querySelector(".top");
+  
+        back_to_top.addEventListener("click", function (e) {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+          });
+        });
+  
+        /* ---------- */
+  
+        let starInputs = document
+          .getElementsByClassName("rating")[0]
+          .getElementsByTagName("input");
+        let feedbackForm = document.getElementById("feedbackForm");
+        let googleReview = document.getElementById("googleReview");
+  
+        for (let i = 0; i < starInputs.length; i++) {
+          starInputs[i].addEventListener("change", function () {
+            let rating = parseInt(this.value);
+            if (rating <= 3) {
+              feedbackForm.style.display = "flex";
+              googleReview.style.display = "none";
+            } else {
+              googleReview.style.display = "flex";
+              feedbackForm.style.display = "none";
+            }
+          });
+        }
+  
+        let modal = document.getElementById("myModal");
+  
+        function showModal() {
+          modal.style.display = "block";
+          setTimeout(function () {
+            modal.style.display = "none";
+          }, 3000);
+        }
+  
+        let submitButton = document.querySelector(
+          '.feedback-bad input[type="submit"]'
+        );
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          showModal();
+          // Adicione aqui o código para enviar os dados do formulário
+        });
+  
+        let googleReviewButton = document
+          .getElementById("googleReview")
+          .getElementsByTagName("button")[0];
+        googleReviewButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          showModal();
+          // Redireciona o usuário para o Google Reviews após 5 segundos
+          setTimeout(function () {
+            window.location.href =
+              "www.google.com";
+          }, 3000);
+        });
+  
+        let negativeReviewLink = document.querySelector("#feedbackForm a");
+        negativeReviewLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          showModal();
+          // Adicione aqui o código para enviar a avaliação negativa
+  
+          setTimeout(function () {
+            window.location.href =
+              "www.google.com";
+          }, 3000); // Redireciona após 3 segundos
+        });
+  
+        /* ------------ */
+  
+        function scrollToSection() {
+          document
+            .getElementById("servicos")
+            .scrollIntoView({ behavior: "smooth" });
+        }
+      </script>
+</body>
+</html>
