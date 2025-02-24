@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duura</title>
+    <link rel="stylesheet" href="duura.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://placehold.co/200x50?text=icon"
+        alt="site-logo"
+        class="top"
+      />
+      <nav>
+        <div class="big-menu">
+          <a href="#sobre">Sobre nós</a>
+          <a href="#galery">Produtos</a>
+          <a href="#contact">Contatos</a>
+        </div>
+      </nav>
+
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </label>
+      <div class="small-menu">
+        <a href="#sobre">Sobre nós</a>
+        <a href="#galery">Produtos</a>
+        <a href="#contact">Contatos</a>
+      </div>
+    </header>
+    <main>
+      <section class="carousel">
+        <!-- list item -->
+        <div class="list">
+          <div class="item">
+            <img
+              src="https://www.homa.pt/on/demandware.static/-/Sites-homa-catalog/default/dwa86bf5ca/images/large/452858_tabua_giratoria_preta_em_ardosia_32cm_homa_2.jpg"
+            />
+            <div class="content">
+              <div class="title">Criamos com Qualidade,</div>
+              <div class="topic">Transformando Espaços</div>
+              <div class="des">
+                Não se trata apenas de criar peças; é sobre fazer a diferença.
+                Com anos de experiência em design de superfícies em ardosia e
+                granito, entregamos produtos sólidos, inovadores e funcionais.
+                Nosso compromisso com a excelência garante resultados que
+                superam as expectativas, criando ambientes que impressionam e
+                transformam o seu espaço.
+              </div>
+
+              <div class="buttons" onclick="scrollToSection()">
+                <button>Saiba</button>
+                <button>Mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="https://placehold.co/200x50?text=slider" />
+            <div class="content">
+              <div class="title">Estilo e Sofisticação,</div>
+              <div class="topic">A Elegância que Transforma</div>
+              <div class="des">
+                As tábuas de ardosia e granito não só são funcionais, mas também
+                elevam o design do seu espaço. Com um acabamento refinado, essas
+                superfícies adicionam um toque de luxo a qualquer ambiente,
+                proporcionando uma apresentação sofisticada que impressiona
+                desde o primeiro olhar.
+              </div>
+
+              <div class="buttons" onclick="scrollToSection()">
+                <button>Saiba</button>
+                <button>Mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://sogima.pt/prod-pics/Tbuaemardsia-9506799333912-2022-07-0175473.png"
+            />
+            <div class="content">
+              <div class="title">Compromisso com o Meio Ambiente,</div>
+              <div class="topic">Beleza Sustentável</div>
+              <div class="des">
+                Nossos produtos são eco-friendly, feitos com materiais naturais
+                e duráveis, reduzindo o impacto ambiental. Além de serem 100%
+                recicláveis, as pedras de ardosia e granito oferecem uma
+                alternativa sustentável para quem busca beleza sem abrir mão da
+                responsabilidade ecológica.
+              </div>
+
+              <div class="buttons" onclick="scrollToSection()">
+                <button>Saiba</button>
+                <button>Mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="https://placehold.co/200x50?text=slider" />
+            <div class="content">
+              <div class="title">Resistência e Durabilidade,</div>
+              <div class="topic">Para uma Vida Longa</div>
+              <div class="des">
+                Nossas tábuas de ardosia e granito são projetadas para durar.
+                Com uma resistência impressionante a riscos e desgaste, oferecem
+                uma solução de longo prazo para sua cozinha ou ambiente. A
+                qualidade da matéria-prima e o processo de fabricação garantem
+                um produto que se mantém perfeito por anos.
+              </div>
+
+              <div class="buttons" onclick="scrollToSection()">
+                <button>Saiba</button>
+                <button>Mais</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+          <div class="item">
+            <img
+              src="https://www.homa.pt/on/demandware.static/-/Sites-homa-catalog/default/dwa86bf5ca/images/large/452858_tabua_giratoria_preta_em_ardosia_32cm_homa_2.jpg"
+            />
+            <div class="content">
+              <div class="title">Name Slider teste</div>
+              <div class="description">Description teste</div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="https://placehold.co/200x50?text=slider" />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://sogima.pt/prod-pics/Tbuaemardsia-9506799333912-2022-07-0175473.png"
+            />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="https://placehold.co/200x50?text=slider" />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrows">
+          <button id="prev"><</button>
+          <button id="next">></button>
+        </div>
+      </section>
+
+      <section class="description-projects" id="sobre">
+        <div class="description-top">
+          <h2>Elegância e Durabilidade para a Gastronomia</h2>
+          <p>
+            A <strong>ardósia</strong> é a escolha perfeita para hotelaria e
+            restaurantes, agregando sofisticação e um toque rústico à
+            apresentação dos pratos. Segura para alimentos, sua superfície
+            <strong>resistente a riscos, gorduras e água</strong> garante
+            durabilidade e fácil manutenção, bastando um pano úmido para a
+            limpeza. Além disso, pode ser <strong>personalizada</strong> com o
+            nome ou logotipo do chef, elevando ainda mais a exclusividade da
+            experiência gastronômica.
+          </p>
+
+          <p>
+            Com propriedades que ajudam a
+            <strong>manter a temperatura dos alimentos</strong>, a ardósia é
+            ideal tanto para pratos quentes quanto frios. Seu longo ciclo de
+            vida reduz desperdícios, tornando-se uma opção
+            <strong>ecológica e sustentável</strong>, muito superior às bases de
+            plástico. Totalmente <strong>biodegradável</strong>, ela retorna à
+            natureza sem impacto ambiental. Para manter seu brilho original,
+            basta a aplicação de óleo natural, e sua versatilidade permite até o
+            armazenamento em geladeira sem perder qualidade.
+          </p>
+        </div>
+
+        <div class="description-middle">
+          <p>
+            <i class="fa-solid fas fa-plane-departure"></i>
+            <strong>Importado</strong>
+          </p>
+          <p><i class="fa-solid fa-seedling"></i> <strong>Moderno</strong></p>
+          <p>
+            <i class="fa-solid fa-palette"></i> <strong>Personalizável</strong>
+          </p>
+          <p><i class="fa-solid fa-leaf"></i> <strong>Ecológico</strong></p>
+        </div>
+
+        <div class="description-bottom">
+          <div class="bottom-img">
+            <img src="https://placehold.co/200x550?text=stone" alt="" />
+          </div>
+
+          <div class="bottom-text">
+            <h2>Excelência Artesanal de Portugal</h2>
+
+            <p>
+              Produzidas artesanalmente em Portugal, nossas peças são feitas à
+              mão com técnicas tradicionais, garantindo exclusividade e alta
+              qualidade. Utilizamos <strong>matéria-prima importada</strong>,
+              cuidadosamente selecionada para oferecer um produto sofisticado e
+              durável.
+            </p>
+
+            <p>
+              Somos uma <strong>empresa em ascensão</strong>, unindo tradição e
+              inovação para criar peças únicas. Nosso compromisso com a
+              excelência nos torna referência no setor de produtos artesanais.
+            </p>
+
+            <p>
+              Além da presença online, nossos produtos podem ser encontrados em
+              <strong>pontos de venda físicos selecionados</strong>. Valorizamos
+              a experiência do cliente, levando sofisticação e autenticidade a
+              cada detalhe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="galery" id="galery">
+        <h2>Produtos</h2>
+        <div class="galery-images">
+          <div class="galery-image">
+            <label for="image-1" class="toBig">
+              <img
+                src="https://static.lclhome.com.br/public/lcl/imagens/produtos/tabua-para-servir-ardosia-oxford-preta-30-9-cm-17759.jpg"
+                alt=""
+              />
+              <figcaption>
+                <h4>Ardósia <span>Negra</span></h4>
+                <p class="right">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Nostrum nisi rerum est molestias pariatur tempore laboriosam.
+                  Id vitae, nam temporibus natus architecto in ad sit atque,
+                  dolore quis asperiores. Nostrum.
+                </p>
+                <h5>Saiba mais</h5>
+              </figcaption>
+            </label>
+
+            <input type="checkbox" id="image-1" class="modal-checkbox" />
+
+            <div class="modal-galery-image">
+              <label for="image-1" class="fechar">&times;</label>
+              <div class="galery-big">
+                <div class="galery-img">
+                  <div class="big-image">
+                    <img
+                      src="https://static.lclhome.com.br/public/lcl/imagens/produtos/tabua-para-servir-ardosia-oxford-preta-30-9-cm-17759.jpg"
+                      alt=""
+                      id="main-img-galery"
+                      data-img="01"
+                    />
+                  </div>
+                  <div class="big-galery">
+                    <img
+                      src="https://static.lclhome.com.br/public/lcl/imagens/produtos/tabua-para-servir-ardosia-oxford-preta-30-9-cm-17759.jpg"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="01"
+                    />
+                    <img
+                      src="https://cdn.awsli.com.br/2500x2500/562/562926/produto/314141531/_mg_7306quad-9by1l6gqom.jpg"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="01"
+                    />
+                    <img
+                      src="https://www.homa.pt/on/demandware.static/-/Sites-homa-catalog/default/dwa86bf5ca/images/large/452858_tabua_giratoria_preta_em_ardosia_32cm_homa_2.jpg"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="01"
+                    />
+                    <img
+                      src="https://sogima.pt/prod-pics/Tbuaemardsia-9506799333912-2022-07-0175473.png"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="01"
+                    />
+                  </div>
+                </div>
+
+                <div class="big-description">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Optio, praesentium sunt porro beatae temporibus voluptate.
+                    Accusantium, fuga atque eaque similique ad repellendus
+                    aliquam? Facilis deserunt veritatis magnam perspiciatis,
+                    ipsam blanditiis.
+                  </p>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="galery-image">
+            <label for="image-2" class="toBig">
+              <figcaption>
+                <h4 class="right">Mármore <span>Estremoz</span></h4>
+                <p class="left">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolorum beatae exercitationem saepe tenetur in, delectus iste
+                  cum dignissimos. Dignissimos nostrum dolore incidunt, minus
+                  sapiente ex eum laborum porro quos voluptate?
+                </p>
+                <h5>Saiba mais</h5>
+              </figcaption>
+              <img src="https://placehold.co/200x50" alt="" />
+            </label>
+
+            <input type="checkbox" id="image-2" class="modal-checkbox" />
+
+            <div class="modal-galery-image">
+              <label for="image-2" class="fechar">&times;</label>
+              <div class="galery-big">
+                <div class="galery-img">
+                  <div class="big-image">
+                    <img
+                      src="https://placehold.co/200x50"
+                      alt=""
+                      id="main-img-galery"
+                      data-img="02"
+                    />
+                  </div>
+                  <div class="big-galery">
+                    <img
+                      src="https://placehold.co/200x50"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="02"
+                    />
+                    <img
+                      src="https://placehold.co/200x40"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="02"
+                    />
+                    <img
+                      src="https://placehold.co/200x50"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="02"
+                    />
+                    <img
+                      src="https://placehold.co/200x60"
+                      alt=""
+                      class="thumb-galery"
+                      data-img="02"
+                    />
+                  </div>
+                </div>
+
+                <div class="big-description">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Optio, praesentium sunt porro beatae temporibus voluptate.
+                    Accusantium, fuga atque eaque similique ad repellendus
+                    aliquam? Facilis deserunt veritatis magnam perspiciatis,
+                    ipsam blanditiis.
+                  </p>
+                  <div class="modal-contacts">
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                        />
+                      </svg>
+                      <p>Email</p></a
+                    >
+
+                    <a href=""
+                      ><img
+                        src="vidros-img/wadafwesfc-Photoroom.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                      />
+                      <p>WhatsApp</p></a
+                    >
+
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="20px"
+                        viewBox="0 -960 960 960"
+                        width="20px"
+                        fill="black"
+                      >
+                        <path
+                          d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+                        />
+                      </svg>
+                      <p>Phone</p></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <h2>Some of Our Clients</h2>
+
+        <div class="review-container">
+          <div class="review-m">
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  01 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Voluptatem placeat nemo inventore cumque assumenda itaque
+                  perferendis labore neque, impedit atque voluptatum quam quidem
+                  facilis recusandae explicabo ipsam nisi unde? Reprehenderit?
+                </p>
+              </div>
+
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>02/11/2016</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  02 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Et cumque obcaecati perspiciatis dicta, dolorum facilis.
+                  Impedit similique amet nostrum at recusandae non porro?
+                  Adipisci amet quaerat, fuga facere dolor labore.
+                </p>
+              </div>
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>16/10/2023</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  03 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Et cumque obcaecati perspiciatis dicta, dolorum facilis.
+                  Impedit similique amet nostrum at recusandae non porro?
+                  Adipisci amet quaerat, fuga facere dolor labore.
+                </p>
+              </div>
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>16/10/2023</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  04 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Et cumque obcaecati perspiciatis dicta, dolorum facilis.
+                  Impedit similique amet nostrum at recusandae non porro?
+                  Adipisci amet quaerat, fuga facere dolor labore.
+                </p>
+              </div>
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>16/10/2023</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  05 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Et cumque obcaecati perspiciatis dicta, dolorum facilis.
+                  Impedit similique amet nostrum at recusandae non porro?
+                  Adipisci amet quaerat, fuga facere dolor labore.
+                </p>
+              </div>
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>16/10/2023</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  06 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Et cumque obcaecati perspiciatis dicta, dolorum facilis.
+                  Impedit similique amet nostrum at recusandae non porro?
+                  Adipisci amet quaerat, fuga facere dolor labore.
+                </p>
+              </div>
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>16/10/2023</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+
+            <div class="box01">
+              <div class="cont">
+                <div class="stars">
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star text-yellow"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <p>
+                  07 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Et cumque obcaecati perspiciatis dicta, dolorum facilis.
+                  Impedit similique amet nostrum at recusandae non porro?
+                  Adipisci amet quaerat, fuga facere dolor labore.
+                </p>
+              </div>
+              <div class="end">
+                <div class="name-end">
+                  <p>João Batista</p>
+                  <p>16/10/2023</p>
+                </div>
+                <img src="vidros-img/google.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Seu feedback é importante para nós!</h2>
+        <p>⬇ Nos avalie no google review. ⬇</p>
+
+        <a
+          href="http://www.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img src="vidros-img/googlestar.png" alt=""
+        /></a>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-itens">
+          <div class="contact-header">
+            <h2>Contatos</h2>
+            <img src="https://placehold.co/200x50" alt="reforma facil" />
+          </div>
+
+          <div class="text">
+            <p>
+              Se você está em busca de qualidade e sofisticação para a sua
+              cozinha ou restaurante, escolha nossas tábuas de ardosia e
+              granito. Transforme a apresentação dos seus pratos com elegância e
+              durabilidade. Entre em contato e descubra como nossos produtos
+              podem realçar o seu espaço.
+            </p>
+            <p>
+              Fale conosco e tenha sua <strong>peça personalizada</strong> em
+              até <strong>48 horas</strong>.
+            </p>
+          </div>
+
+          <div class="contacts">
+            <div>
+              <h3>Email:</h3>
+              <p>exemplo@exemplo.com</p>
+            </div>
+
+            <div>
+              <h3>WhatsApp:</h3>
+              <p>+351 999 999 999</p>
+            </div>
+
+            <div>
+              <h3>Telefone:</h3>
+              <p>+351 999 999 999</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>All Rights Reserved</p>
+    </footer>
+
+    <script>
+      //step 1: get DOM
+      let nextDom = document.getElementById("next");
+      let prevDom = document.getElementById("prev");
+
+      let carouselDom = document.querySelector(".carousel");
+      let SliderDom = carouselDom.querySelector(".carousel .list");
+      let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+      let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+      let timeDom = document.querySelector(".carousel .time");
+
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+      let timeRunning = 3000;
+      let timeAutoNext = 7000;
+
+      nextDom.onclick = function () {
+        showSlider("next");
+      };
+
+      prevDom.onclick = function () {
+        showSlider("prev");
+      };
+      let runTimeOut;
+      let runNextAuto = setTimeout(() => {
+        next.click();
+      }, timeAutoNext);
+      function showSlider(type) {
+        let SliderItemsDom = SliderDom.querySelectorAll(
+          ".carousel .list .item"
+        );
+        let thumbnailItemsDom = document.querySelectorAll(
+          ".carousel .thumbnail .item"
+        );
+
+        if (type === "next") {
+          SliderDom.appendChild(SliderItemsDom[0]);
+          thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+          carouselDom.classList.add("next");
+        } else {
+          SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+          thumbnailBorderDom.prepend(
+            thumbnailItemsDom[thumbnailItemsDom.length - 1]
+          );
+          carouselDom.classList.add("prev");
+        }
+        clearTimeout(runTimeOut);
+        runTimeOut = setTimeout(() => {
+          carouselDom.classList.remove("next");
+          carouselDom.classList.remove("prev");
+        }, timeRunning);
+
+        clearTimeout(runNextAuto);
+        runNextAuto = setTimeout(() => {
+          next.click();
+        }, timeAutoNext);
+      }
+
+      /* ----------- */
+
+      let back_to_top = document.querySelector(".top");
+
+      back_to_top.addEventListener("click", function (e) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+        });
+      });
+
+      /* ------------ */
+
+      function scrollToSection() {
+        document
+          .getElementById("galery")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      /* ------------- */
+
+      document.querySelectorAll(".galery-img").forEach((gallery) => {
+        const thumbnails = gallery.querySelectorAll(
+          ".big-galery .thumb-galery"
+        );
+
+        // Adiciona a classe 'thumb-clicked' à primeira miniatura da galeria
+        if (thumbnails.length > 0) {
+          thumbnails[0].classList.add("thumb-clicked");
+        }
+
+        thumbnails.forEach((thumb) => {
+          thumb.addEventListener("click", function () {
+            const mainImage = gallery.querySelector("#main-img-galery");
+
+            if (this.dataset.img === mainImage.dataset.img) {
+              mainImage.src = this.src;
+
+              // Remove a classe 'thumb-clicked' de todas as miniaturas
+              thumbnails.forEach((t) => t.classList.remove("thumb-clicked"));
+
+              // Adiciona a classe 'thumb-clicked' à miniatura clicada
+              this.classList.add("thumb-clicked");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
