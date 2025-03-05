@@ -97,7 +97,7 @@ main {
 
 
 .main-logo img{
-  margin-top: 80px;
+  margin-top: 200px;
   width: 400px;
   /* box-shadow: 2px 2px 15px 4px rgba(255, 255, 255, 0.151); */
 }
@@ -739,7 +739,7 @@ footer {
   }
 
   .main-logo img{
-    margin-top: 45px;
+    margin-top: 200px;
     width: 300px;
   }
 
