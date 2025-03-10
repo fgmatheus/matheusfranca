@@ -77,12 +77,10 @@
 
         <div class="opcoes">
           <button id="submit-button" class="btn"><span>Agendar</span></button>
-          <div class="loading" id="loading">
-            <div class="loader" id="loader"></div>
-          </div>
+          
         </div>
 
-        <div id="alert-message" class="alert" style="display: none"></div>
+        
 
         <div id="successModal" class="modal">
           <div class="modal-content">
@@ -91,7 +89,95 @@
           </div>
         </div>
       </div>
-
+      <div class="loading" id="loading">
+        <div class="loader" id="loader"></div>
+      </div>
+      <ul class="notification-container" id="notification-container">
+        <li class="notification-item success">
+          <div class="notification-content">
+            <div class="notification-icon">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-text">Everything went perfectly!</div>
+          </div>
+          <div class="notification-icon notification-close">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18 17.94 6M18 18 6.06 6"
+              ></path>
+            </svg>
+          </div>
+          <div class="notification-progress-bar"></div>
+        </li>
+        <li class="notification-item warning">
+          <div class="notification-content">
+            <div class="notification-icon">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-text">Proceed with caution.</div>
+          </div>
+          <div class="notification-icon notification-close">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18 17.94 6M18 18 6.06 6"
+              ></path>
+            </svg>
+          </div>
+          <div class="notification-progress-bar"></div>
+        </li>
+        <li class="notification-item error">
+          <div class="notification-content">
+            <div class="notification-icon">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-text">An issue occurred.</div>
+          </div>
+          <div class="notification-icon notification-close">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18 17.94 6M18 18 6.06 6"
+              ></path>
+            </svg>
+          </div>
+          <div class="notification-progress-bar"></div>
+        </li>
+      </ul>
       <form id="deleteAppointmentForm" class="delete-form">
         <div class="opcoes">
           <label for="phone">Telefone:</label>
@@ -135,16 +221,97 @@
         </div>
         <div class="opcoes">
           <button type="submit" class="delete-btn">Deletar Agendamento</button>
-          <div class="delete-loading" id="delete-loading">
+         <!--  <div class="delete-loading" id="delete-loading">
             <div class="loader" id="loader"></div>
-          </div>
+          </div> -->
         </div>
 
-        <div
-          id="delete-alert-message"
-          class="alert"
-          style="display: none"
-        ></div>
+        <!-- <ul class="notification-container" id="notification-container-delete">
+          <li class="notification-item success">
+            <div class="notification-content">
+              <div class="notification-icon">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="notification-text">Everything went perfectly!</div>
+            </div>
+            <div class="notification-icon notification-close">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-progress-bar"></div>
+          </li>
+          <li class="notification-item warning">
+            <div class="notification-content">
+              <div class="notification-icon">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="notification-text">Proceed with caution.</div>
+            </div>
+            <div class="notification-icon notification-close">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-progress-bar"></div>
+          </li>
+          <li class="notification-item error">
+            <div class="notification-content">
+              <div class="notification-icon">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="notification-text">An issue occurred.</div>
+            </div>
+            <div class="notification-icon notification-close">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-progress-bar"></div>
+          </li>
+        </ul> -->
 
         <div id="delete-successModal" class="modal">
           <div class="modal-content">
@@ -155,43 +322,41 @@
       </form>
     </section>
 
-    <section class="delete-appointment agendamento"></section>
+    <!-- <section class="delete-appointment agendamento"></section> -->
 
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const barberSelect = document.getElementById("barber");
+        const styleSelect = document.getElementById("style");
+        const dateContainer = document.getElementById("date");
+        const timeContainer = document.getElementById("time");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const barberSelect = document.getElementById("barber");
-    const styleSelect = document.getElementById("style");
-    const dateContainer = document.getElementById("date");
-    const timeContainer = document.getElementById("time");
-
-    function clearSelection(container) {
-        container.innerHTML = "";
-    }
-
-    function resetTimeSelection() {
-        timeContainer.innerHTML = ""; // Remove os botões de horário
-    }
-
-    function resetDaySelection() {
-        const selectedDay = dateContainer.querySelector(".selected");
-        if (selectedDay) {
-            selectedDay.classList.remove("selected");
+        function clearSelection(container) {
+          container.innerHTML = "";
         }
-    }
 
-    barberSelect.addEventListener("change", function () {
-        styleSelect.value = ""; // Volta para a opção inicial
-        resetDaySelection();
-        resetTimeSelection();
-    });
+        function resetTimeSelection() {
+          timeContainer.innerHTML = ""; // Remove os botões de horário
+        }
 
-    styleSelect.addEventListener("change", function () {
-        resetDaySelection();
-        resetTimeSelection();
-    });
-});
+        function resetDaySelection() {
+          const selectedDay = dateContainer.querySelector(".selected");
+          if (selectedDay) {
+            selectedDay.classList.remove("selected");
+          }
+        }
 
+        barberSelect.addEventListener("change", function () {
+          styleSelect.value = ""; // Volta para a opção inicial
+          resetDaySelection();
+          resetTimeSelection();
+        });
+
+        styleSelect.addEventListener("change", function () {
+          resetDaySelection();
+          resetTimeSelection();
+        });
+      });
 
       const showAppointmentFormBtn = document.getElementById(
         "showAppointmentFormBtn"
@@ -343,8 +508,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document
         .querySelector(".delete-btn")
         .addEventListener("click", async function (event) {
-          const loader = document.getElementById("delete-loading");
-          loader.style.display = "block"; // Exibe o loader
+          showLoading();
           event.preventDefault();
 
           const calendarId =
@@ -352,11 +516,10 @@ document.addEventListener("DOMContentLoaded", function () {
           const phone = document.getElementById("delete-phone").value;
           const selectedBarber = document.getElementById("delete-barber").value;
 
-          const selectedDate = new Date(
-            document
-              .querySelector("#delete-date button.selected")
-              .getAttribute("data-date")
+          const selectedDateButton = document.querySelector(
+            "#delete-date button.selected"
           );
+
           const selectedStyle = document.getElementById("delete-style").value;
           const selectedTime = document.querySelector(
             "#delete-time button.selected"
@@ -364,15 +527,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const barberColorId = mapBarberToColor(selectedBarber);
 
-          if (!phone || !selectedBarber || !selectedStyle || !selectedTime) {
-            deleteDisplayAlert(
-              "danger",
+          if (
+            !phone &&
+          !selectedBarber &&
+          !selectedStyle &&
+          !selectedDateButton &&
+          !selectedTime
+          ) {
+            displayAlert(
+              "warning",
               "Por favor, preencha todos os campos obrigatórios."
             );
-            const loader = document.getElementById("delete-loading");
-            loader.style.display = "none";
+            hideLoading();
             return;
           }
+
+          if (!phone) {
+            displayAlert(
+              "warning",
+              "Por favor, digite um número de telefone."
+            );
+            hideLoading();
+            return;
+          }
+
+          if (!selectedBarber) {
+            displayAlert("warning", "Por favor, escolha um barbeiro.");
+            hideLoading();
+            return;
+          }
+
+          if (!selectedStyle){
+            displayAlert("warning", "Por favor, escolha um estilo de corte.");
+            hideLoading();
+            return;
+          }
+
+          if (!selectedStyle){
+            displayAlert("warning", "Por favor, escolha um estilo de corte.");
+            hideLoading();
+            return;
+          }
+
+          if (!selectedDateButton) {
+            displayAlert("warning", "Por favor, selecione um dia.");
+            hideLoading();
+            return;
+          }
+
+          if (!selectedTime) {
+            displayAlert("warning", "Por favor, selecione um horário.");
+            hideLoading();
+            return;
+          }
+
+          const selectedDate = new Date(
+            selectedDateButton.getAttribute("data-date")
+          );
+
           const selectedTimeValue = selectedTime.getAttribute("data-time");
           const [entry, exit] = selectedTimeValue.split("-");
           const entryDate = new Date(selectedDate);
@@ -427,17 +639,17 @@ document.addEventListener("DOMContentLoaded", function () {
               );
               const successMessage = `Compromisso apagado com sucesso!\n\nTelefone: ${phone}\nBarbeiro: ${selectedBarber}\nEstilo: ${styleLabel}\nData: ${formattedDate}\nHorário: ${selectedTimeValue}`;
               deleteModal(successMessage);
+              displayAlert("success", "Compromisso apagado com sucesso.");
             } else {
               /* const errorText = await response.text();
             alert('Error: ' + errorText); */
-              deleteDisplayAlert("danger", "Erro ao enviar a solicitação.");
+              displayAlert("error", "Erro ao enviar a solicitação.");
             }
           } catch (error) {
             /* console.error('Error deleting appointment:', error); */
-            deleteDisplayAlert("danger", "Erro ao enviar a solicitação.");
+            displayAlert("error", "Erro ao enviar a solicitação.");
           } finally {
-            const loader = document.getElementById("delete-loading");
-            loader.style.display = "none"; // Exibe o loader
+            hideLoading();// Exibe o loader
             event.preventDefault();
           }
         });
@@ -474,13 +686,45 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function deleteDisplayAlert(type, message) {
-        const alertDiv = document.getElementById("delete-alert-message");
-        alertDiv.textContent = message;
-        alertDiv.className = `alert alert-${type}`;
-        alertDiv.style.display = "block";
+        const notificationContainer = document.getElementById(
+          "notification-container-delete"
+        ); // Certifique-se de ter um elemento com esse ID no HTML
+
+        if (!notificationContainer) {
+          console.error("Elemento #notification-container não encontrado.");
+          return;
+        }
+
+        // Criar o elemento da notificação
+        const notification = document.createElement("li");
+        notification.className = `notification-item ${type}`;
+
+        notification.innerHTML = `
+        <div class="notification-content">
+            <div class="notification-icon">
+                ${getNotificationIcon(type)}
+            </div>
+            <div class="notification-text">${message}</div>
+        </div>
+        <div class="notification-icon notification-close">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"></path>
+            </svg>
+        </div>
+        <div class="notification-progress-bar"></div>
+    `;
+
+        // Adiciona a notificação ao container
+        notificationContainer.appendChild(notification);
+
+        // Remove a notificação após um tempo
         setTimeout(() => {
-          alertDiv.style.display = "none";
+          notification.remove();
         }, 5000);
+
+        // Permite fechar manualmente
+        notification.querySelector(".notification-close").onclick = () =>
+          notification.remove();
       }
 
       /* --- */
@@ -683,12 +927,22 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(occupiedTimes);
           } else {
             const error = await response.json();
-            displayAlert("danger", error.error);
+            clearAvailableTimes();
+            displayAlert("error", error.error);
           }
         } catch (error) {
           console.error(error);
+          clearAvailableTimes(); // Limpa os horários disponíveis em caso de erro de conexão
+          displayAlert("error", "Erro ao verificar disponibilidade.");
         } finally {
           loader.style.display = "none"; // Oculta o loader
+        }
+      }
+
+      function clearAvailableTimes() {
+        const timeContainer = document.getElementById("time"); // Substitua pelo ID correto do container de horários
+        if (timeContainer) {
+          timeContainer.innerHTML = ""; // Remove todos os horários exibidos
         }
       }
 
@@ -710,29 +964,71 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value;
         const phone = document.getElementById("phone").value;
         const selectedBarber = document.getElementById("barber").value;
-        /*     const selectedDate = new Date(formatDateToUTC(document.querySelector('#date button.selected').getAttribute('data-date'))); */
-        const selectedDate = new Date(
-          document
-            .querySelector("#date button.selected")
-            .getAttribute("data-date")
+        const selectedDateButton = document.querySelector(
+          "#date button.selected"
         );
-        const selectedStyle = document.getElementById("style").value;
         const selectedTime = document.querySelector("#time button.selected");
+        const selectedStyle = document.getElementById("style").value;
+
         if (
-          !name ||
-          !email ||
-          !phone ||
-          !selectedBarber ||
-          !selectedStyle ||
+          !name &&
+          !email &&
+          !phone &&
+          !selectedBarber &&
+          !selectedStyle &&
+          !selectedDateButton &&
           !selectedTime
         ) {
           displayAlert(
-            "danger",
+            "warning",
             "Por favor, preencha todos os campos obrigatórios."
           );
           hideLoading(); // Oculta o loader em caso de campos não preenchidos
           return;
         }
+
+        if (!name) {
+          displayAlert("warning", "Por favor, digite um nome.");
+          hideLoading();
+          return;
+        }
+
+        if (!email) {
+          displayAlert("warning", "Por favor, digite um email.");
+          hideLoading();
+          return;
+        }
+
+        if (!phone) {
+          displayAlert("warning", "Por favor, digite um numero de telefone.");
+          hideLoading();
+          return;
+        }
+
+        if (!selectedBarber) {
+          displayAlert("warning", "Por favor, escolha um barbeiro.");
+          hideLoading();
+          return;
+        }
+
+        if (!selectedDateButton) {
+          displayAlert("warning", "Por favor, selecione um dia.");
+          hideLoading();
+          return;
+        }
+
+        if (!selectedTime) {
+          displayAlert("warning", "Por favor, selecione um horário.");
+          hideLoading();
+          return;
+        }
+
+        const selectedDate = new Date(
+          selectedDateButton.getAttribute("data-date")
+        );
+
+        /* const selectedTime = document.querySelector("#time button.selected"); */
+
         const selectedTimeValue = selectedTime.getAttribute("data-time");
         const [entry, exit] = selectedTimeValue.split("-");
         const entryDate = new Date(selectedDate);
@@ -790,13 +1086,13 @@ document.addEventListener("DOMContentLoaded", function () {
             openModal(successMessage);
           } else {
             displayAlert(
-              "danger",
+              "error",
               "O barbeiro não está disponível neste horário."
             );
           }
         } catch (error) {
           console.error("Erro ao enviar a solicitação:", error);
-          displayAlert("danger", "Erro ao enviar a solicitação.");
+          displayAlert("error", "Erro ao enviar a solicitação.");
         } finally {
           hideLoading(); // Oculta o loader após a resposta do servidor
         }
@@ -835,7 +1131,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Verifica se todos os campos obrigatórios estão preenchidos
           if (!areFieldsFilled()) {
             displayAlert(
-              "danger",
+              "warning",
               "Por favor, preencha todos os campos obrigatórios."
             );
             return;
@@ -921,13 +1217,73 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function displayAlert(type, message) {
-        const alertDiv = document.getElementById("alert-message");
-        alertDiv.textContent = message;
-        alertDiv.className = `alert alert-${type}`;
-        alertDiv.style.display = "block";
+        const notificationContainer = document.getElementById(
+          "notification-container"
+        );
+
+        if (!notificationContainer) {
+          console.error("Elemento #notification-container não encontrado.");
+          return;
+        }
+
+        // Criar o elemento da notificação
+        const notification = document.createElement("li");
+        notification.className = `notification-item ${type}`;
+
+        // Definir o HTML da notificação
+        notification.innerHTML = `
+    <div class="notification-content">
+        <div class="notification-icon">
+            ${getNotificationIcon(type)}
+        </div>
+        <div class="notification-text">${message}</div>
+    </div>
+    <div class="notification-icon notification-close">
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"></path>
+        </svg>
+    </div>
+    <div class="notification-progress-bar"></div>
+  `;
+
+        // Adiciona a notificação ao container
+        notificationContainer.appendChild(notification);
+
+        // Apenas o último aviso adicionado deve ser visível com display: flex
         setTimeout(() => {
-          alertDiv.style.display = "none";
+          notification.style.display = "flex";
+        }, 0); // Adicionar com delay para aplicar a mudança do display
+
+        // Remove a notificação após um tempo
+        setTimeout(() => {
+          notification.remove();
         }, 5000);
+
+        // Permite fechar manualmente
+        notification.querySelector(".notification-close").onclick = () =>
+          notification.remove();
+      }
+
+      // Função para retornar o SVG correto baseado no tipo de notificação
+      function getNotificationIcon(type) {
+        const icons = {
+          success: `
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+        `,
+          warning: `
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+        `,
+          error: `
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+        `,
+        };
+        return icons[type] || "";
       }
     </script>
   </body>
