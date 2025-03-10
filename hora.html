@@ -1011,6 +1011,12 @@
           return;
         }
 
+        if (!selectedStyle){
+            displayAlert("warning", "Por favor, escolha um estilo de corte.");
+            hideLoading();
+            return;
+          }
+
         if (!selectedDateButton) {
           displayAlert("warning", "Por favor, selecione um dia.");
           hideLoading();
