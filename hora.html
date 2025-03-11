@@ -77,10 +77,7 @@
 
         <div class="opcoes">
           <button id="submit-button" class="btn"><span>Agendar</span></button>
-          
         </div>
-
-        
 
         <div id="successModal" class="modal">
           <div class="modal-content">
@@ -221,7 +218,7 @@
         </div>
         <div class="opcoes">
           <button type="submit" class="delete-btn">Deletar Agendamento</button>
-         <!--  <div class="delete-loading" id="delete-loading">
+          <!--  <div class="delete-loading" id="delete-loading">
             <div class="loader" id="loader"></div>
           </div> -->
         </div>
@@ -511,6 +508,7 @@
           showLoading();
           event.preventDefault();
 
+          const clientId = '1';
           const calendarId =
             "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com";
           const phone = document.getElementById("delete-phone").value;
@@ -529,10 +527,10 @@
 
           if (
             !phone &&
-          !selectedBarber &&
-          !selectedStyle &&
-          !selectedDateButton &&
-          !selectedTime
+            !selectedBarber &&
+            !selectedStyle &&
+            !selectedDateButton &&
+            !selectedTime
           ) {
             displayAlert(
               "warning",
@@ -543,10 +541,7 @@
           }
 
           if (!phone) {
-            displayAlert(
-              "warning",
-              "Por favor, digite um número de telefone."
-            );
+            displayAlert("warning", "Por favor, digite um número de telefone.");
             hideLoading();
             return;
           }
@@ -557,13 +552,7 @@
             return;
           }
 
-          if (!selectedStyle){
-            displayAlert("warning", "Por favor, escolha um estilo de corte.");
-            hideLoading();
-            return;
-          }
-
-          if (!selectedStyle){
+          if (!selectedStyle) {
             displayAlert("warning", "Por favor, escolha um estilo de corte.");
             hideLoading();
             return;
@@ -615,6 +604,7 @@
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
+                    clientId,
                   clientPhone: phone,
                   calendarId:
                     "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com",
@@ -958,6 +948,8 @@
       document.getElementById("submit-button").onclick = async function () {
         showLoading(); // Exibe o loader ao clicar no botão
 
+        const clientId = '1';
+        const clientMailStore= 'patrickalvesgon@gmail.com';
         const calendarId =
           "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com";
         const name = document.getElementById("name").value;
@@ -1011,11 +1003,11 @@
           return;
         }
 
-        if (!selectedStyle){
-            displayAlert("warning", "Por favor, escolha um estilo de corte.");
-            hideLoading();
-            return;
-          }
+        if (!selectedStyle) {
+          displayAlert("warning", "Por favor, escolha um estilo de corte.");
+          hideLoading();
+          return;
+        }
 
         if (!selectedDateButton) {
           displayAlert("warning", "Por favor, selecione um dia.");
@@ -1032,8 +1024,6 @@
         const selectedDate = new Date(
           selectedDateButton.getAttribute("data-date")
         );
-
-        /* const selectedTime = document.querySelector("#time button.selected"); */
 
         const selectedTimeValue = selectedTime.getAttribute("data-time");
         const [entry, exit] = selectedTimeValue.split("-");
@@ -1065,6 +1055,9 @@
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
+                clientId,
+                clientMailStore,
+                selectedBarber,
                 clientName: name,
                 clientEmail: email,
                 clientPhone: phone,
@@ -1090,6 +1083,7 @@
             );
             const successMessage = `Compromisso criado com sucesso!\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nBarbeiro: ${selectedBarber}\nEstilo: ${styleLabel}\nData: ${formattedDate}\nHorário: ${selectedTimeValue}`;
             openModal(successMessage);
+
           } else {
             displayAlert(
               "error",
@@ -1220,6 +1214,7 @@
 
       function closeModal() {
         document.getElementById("successModal").style.display = "none";
+        location.reload();
       }
 
       function displayAlert(type, message) {
