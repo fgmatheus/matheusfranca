@@ -52,14 +52,13 @@ body {
 
 .formulario h2,
 .delete-form h2 {
-  margin: 0 auto 10px auto;
+  margin: 0 0 10px 0;
   grid-column: span 2;
   text-align: center;
   font-size: 30px;
   padding: 5px 0 15px 0;
   border-bottom: 1px solid #333;
   color: #333;
-  width: fit-content;
 
   font-family: "Big Shoulders", sans-serif;
   font-weight: 400;
