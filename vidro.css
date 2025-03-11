@@ -183,7 +183,7 @@ header > nav {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  z-index: 2; /* Menor que o small-menu */
+  z-index: 2;
 }
 
 .slider .dots li {
@@ -200,7 +200,6 @@ header > nav {
   width: 30px;
 }
 
-/* ------- */
 /* ----------- */
 
 .description-projects {
@@ -210,7 +209,6 @@ header > nav {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  /* background-color: #eee; */
   color: #000;
 
   background-image: url(img/back01.png);
@@ -267,7 +265,6 @@ header > nav {
 .bottom-img {
   z-index: 2;
   position: absolute;
-  /* left: 25%; */
   right: 2%;
   width: 40%;
 }
@@ -286,7 +283,6 @@ header > nav {
 }
 
 .bottom-text h2 {
-  /* padding-bottom: 20px; */
   color: var(--cor3);
   width: 50%;
 }
