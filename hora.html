@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="hora.css" />
     <title>Agendamento de Corte</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
   </head>
   <body>
     <section class="agendamento">
@@ -17,8 +21,21 @@
         </button>
         <button id="showDeleteFormBtn">Excluir</button>
       </div>
+
       <div class="formulario">
-        <div class="opcoes">
+        <h2>Faça sua Reserva</h2>
+        <div class="opcoes inputGroup">
+          <input
+            type="text"
+            id="name"
+            maxlength="20"
+            onkeypress="preventNonAlphabetic(event)"
+            required
+            autocomplete="off"
+          />
+          <label for="name"><i class="fa-solid fa-user"></i>Nome</label>
+        </div>
+        <!-- <div class="opcoes">
           <label for="name">Nome:</label>
           <input
             type="text"
@@ -27,14 +44,29 @@
             onkeypress="preventNonAlphabetic(event)"
             required
           />
-        </div>
+        </div> -->
 
-        <div class="opcoes">
+        <div class="opcoes inputGroup">
+          <input type="email" id="email" maxlength="35" required />
+          <label for="email"><i class="fa-solid fa-envelope"></i>E-mail</label>
+        </div>
+        <!-- <div class="opcoes">
           <label for="email">E-mail:</label>
           <input type="email" id="email" maxlength="35" required />
+        </div> -->
+
+        <div class="opcoes inputGroup">
+          <input
+            type="text"
+            id="phone"
+            maxlength="9"
+            oninput="validatePhone()"
+            required
+          />
+          <label for="phone"><i class="fa-solid fa-phone"></i>Telefone</label>
         </div>
 
-        <div class="opcoes">
+        <!-- <div class="opcoes">
           <label for="phone">Telefone:</label>
           <input
             type="text"
@@ -43,10 +75,10 @@
             oninput="validatePhone()"
             required
           />
-        </div>
+        </div> -->
 
         <div class="opcoes">
-          <label for="barber">Barbeiro:</label>
+          <!-- <label for="barber">Barbeiro:</label> -->
           <select id="barber" required>
             <option value="">Escolha o Barbeiro</option>
             <option value="barbeiro1">Barbeiro 1</option>
@@ -56,7 +88,7 @@
         </div>
 
         <div class="opcoes">
-          <label for="style">Estilo de Corte:</label>
+          <!-- <label for="style">Estilo de Corte:</label> -->
           <select id="style" required>
             <option value="">Escolha o Estilo de Corte</option>
             <option value="normal">Corte Normal (30min)</option>
@@ -86,6 +118,7 @@
           </div>
         </div>
       </div>
+
       <div class="loading" id="loading">
         <div class="loader" id="loader"></div>
       </div>
@@ -176,8 +209,8 @@
         </li>
       </ul>
       <form id="deleteAppointmentForm" class="delete-form">
-        <div class="opcoes">
-          <label for="phone">Telefone:</label>
+        <h2>Delete sua Reserva</h2>
+        <div class="opcoes inputGroup">
           <input
             type="text"
             id="delete-phone"
@@ -185,10 +218,10 @@
             oninput="validatePhone()"
             required
           />
+          <label for="phone"><i class="fa-solid fa-phone"></i>Telefone</label>
         </div>
 
         <div class="opcoes">
-          <label for="barber">Barbeiro:</label>
           <select id="delete-barber" required>
             <option value="">Escolha o Barbeiro</option>
             <option value="barbeiro1">Barbeiro 1</option>
@@ -198,7 +231,6 @@
         </div>
 
         <div class="opcoes">
-          <label for="style">Estilo de Corte:</label>
           <select id="delete-style" required>
             <option value="">Escolha o Estilo de Corte</option>
             <option value="normal">Corte Normal (30min)</option>
@@ -359,17 +391,22 @@
         "showAppointmentFormBtn"
       );
       const showDeleteFormBtn = document.getElementById("showDeleteFormBtn");
+      const formulario = document.querySelector(".formulario");
+      const deleteForm = document.querySelector(".delete-form");
+
+      // Garante que o formulário de reserva já esteja visível ao carregar a página
+      formulario.classList.add("active");
 
       showAppointmentFormBtn.addEventListener("click", function () {
-        document.querySelector(".delete-form").style.display = "none";
-        document.querySelector(".formulario").style.display = "grid";
+        deleteForm.classList.remove("active");
+        formulario.classList.add("active");
         this.classList.add("button-clicked");
         showDeleteFormBtn.classList.remove("button-clicked");
       });
 
       showDeleteFormBtn.addEventListener("click", function () {
-        document.querySelector(".formulario").style.display = "none";
-        document.querySelector(".delete-form").style.display = "grid";
+        formulario.classList.remove("active");
+        deleteForm.classList.add("active");
         this.classList.add("button-clicked");
         showAppointmentFormBtn.classList.remove("button-clicked");
       });
@@ -508,7 +545,7 @@
           showLoading();
           event.preventDefault();
 
-          const clientId = '1';
+          const clientId = "1";
           const calendarId =
             "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com";
           const phone = document.getElementById("delete-phone").value;
@@ -604,7 +641,7 @@
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    clientId,
+                  clientId,
                   clientPhone: phone,
                   calendarId:
                     "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com",
@@ -639,7 +676,7 @@
             /* console.error('Error deleting appointment:', error); */
             displayAlert("error", "Erro ao enviar a solicitação.");
           } finally {
-            hideLoading();// Exibe o loader
+            hideLoading(); // Exibe o loader
             event.preventDefault();
           }
         });
@@ -948,8 +985,8 @@
       document.getElementById("submit-button").onclick = async function () {
         showLoading(); // Exibe o loader ao clicar no botão
 
-        const clientId = '1';
-        const clientMailStore= 'patrickalvesgon@gmail.com';
+        const clientId = "1";
+        const clientMailStore = "patrickalvesgon@gmail.com";
         const calendarId =
           "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com";
         const name = document.getElementById("name").value;
@@ -1083,7 +1120,6 @@
             );
             const successMessage = `Compromisso criado com sucesso!\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nBarbeiro: ${selectedBarber}\nEstilo: ${styleLabel}\nData: ${formattedDate}\nHorário: ${selectedTimeValue}`;
             openModal(successMessage);
-
           } else {
             displayAlert(
               "error",
