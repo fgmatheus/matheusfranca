@@ -29,7 +29,7 @@
             type="text"
             id="name"
             maxlength="20"
-            onkeypress="preventNonAlphabetic(event)"
+            oninput="preventNonAlphabetic(event)"
             required
             autocomplete="off"
           />
@@ -756,12 +756,9 @@
 
       /* --- */
       function preventNonAlphabetic(event) {
-        const key = event.key;
-
-        // Permite letras (maiúsculas e minúsculas) e espaço
-        if (!/^[a-zA-Z\s]$/.test(key)) {
-          event.preventDefault();
-        }
+        // Remove caracteres não permitidos após a digitação
+        const input = event.target;
+        input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
       }
 
       /* function preventNonAlphabetic(event) {
