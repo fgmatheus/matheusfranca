@@ -755,8 +755,16 @@
       }
 
       /* --- */
-
       function preventNonAlphabetic(event) {
+        const key = event.key;
+
+        // Permite letras (maiúsculas e minúsculas) e espaço
+        if (!/^[a-zA-Z\s]$/.test(key)) {
+          event.preventDefault();
+        }
+      }
+
+      /* function preventNonAlphabetic(event) {
         const keyCode = event.keyCode ? event.keyCode : event.which;
         // Aceita letras de A a Z (maiúsculas e minúsculas) e espaço (código 32)
         if (
@@ -766,7 +774,7 @@
         ) {
           event.preventDefault();
         }
-      }
+      } */
 
       function validatePhone() {
         var phoneInput = document.getElementById("phone");
