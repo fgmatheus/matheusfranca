@@ -47,7 +47,13 @@
         </div> -->
 
         <div class="opcoes inputGroup">
-          <input type="email" id="email" maxlength="35" required />
+          <input
+            type="email"
+            id="email"
+            maxlength="35"
+            required
+            onblur="validateEmailOnBlur(event)"
+          />
           <label for="email"><i class="fa-solid fa-envelope"></i>E-mail</label>
         </div>
         <!-- <div class="opcoes">
@@ -60,7 +66,8 @@
             type="text"
             id="phone"
             maxlength="9"
-            oninput="validatePhone()"
+            onblur="validatePhoneOnBlur(event)"
+            oninput="enforceNumericInput(event)"
             required
           />
           <label for="phone"><i class="fa-solid fa-phone"></i>Telefone</label>
@@ -215,7 +222,8 @@
             type="text"
             id="delete-phone"
             maxlength="9"
-            oninput="validatePhone()"
+            onblur="validatePhoneOnBlur(event)"
+            oninput="enforceNumericInput(event)"
             required
           />
           <label for="phone"><i class="fa-solid fa-phone"></i>Telefone</label>
@@ -562,6 +570,12 @@
 
           const barberColorId = mapBarberToColor(selectedBarber);
 
+          validatePhoneOnBlur({ target: document.getElementById("delete-phone") });
+
+          const phoneError = document
+            .getElementById("delete-phone")
+            .classList.contains("erro-input");
+
           if (
             !phone &&
             !selectedBarber &&
@@ -582,6 +596,15 @@
             hideLoading();
             return;
           }
+
+          if (phoneError) {
+          /* displayAlert(
+            "warning",
+            "Por favor, insira um número de telefone válido (pelo menos 9 dígitos)."
+          ); */
+          hideLoading();
+          return;
+        }
 
           if (!selectedBarber) {
             displayAlert("warning", "Por favor, escolha um barbeiro.");
@@ -761,21 +784,60 @@
         input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
       }
 
-      /* function preventNonAlphabetic(event) {
-        const keyCode = event.keyCode ? event.keyCode : event.which;
-        // Aceita letras de A a Z (maiúsculas e minúsculas) e espaço (código 32)
-        if (
-          (keyCode < 65 || keyCode > 90) &&
-          (keyCode < 97 || keyCode > 122) &&
-          keyCode !== 32
-        ) {
-          event.preventDefault();
-        }
-      } */
+      function validateEmailOnBlur(event) {
+        const input = event.target;
+        const email = input.value.trim(); // Remove espaços extras
 
-      function validatePhone() {
+        // Expressão regular para validar e-mail
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // Se o campo não estiver vazio e o e-mail for inválido
+        if (email && !emailPattern.test(email)) {
+          displayAlert(
+            "warning",
+            "Por favor, insira um e-mail válido."
+          );
+
+          // Adiciona a classe de erro
+          input.classList.add("erro-input");
+
+          setTimeout(() => {
+            input.classList.remove("erro-input");
+          }, 5000);
+        }
+      }
+
+      /* function validatePhone() {
         var phoneInput = document.getElementById("phone");
         phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+      } */
+
+      function validatePhoneOnBlur(event) {
+        var phoneInput = event.target;
+
+        // Remove caracteres não numéricos
+        phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+
+        // Verifica se há menos de 9 números
+        if (phoneInput.value.length > 0 && phoneInput.value.length < 9) {
+          displayAlert(
+            "warning",
+            "Por favor, insira um número de telefone válido (pelo menos 9 dígitos)."
+          );
+
+          // Adiciona a classe de erro
+          phoneInput.classList.add("erro-input");
+
+          // Remove a classe de erro após 4 segundos
+          setTimeout(() => {
+            phoneInput.classList.remove("erro-input");
+          }, 5000);
+        }
+      }
+
+      // Função para impedir a digitação de caracteres não numéricos enquanto o usuário digita
+      function enforceNumericInput(event) {
+        event.target.value = event.target.value.replace(/[^0-9]/g, "");
       }
 
       function formatDateUserFriendly(date) {
@@ -1004,6 +1066,18 @@
         const selectedTime = document.querySelector("#time button.selected");
         const selectedStyle = document.getElementById("style").value;
 
+        validateEmailOnBlur({ target: document.getElementById("email") });
+        // Valida o telefone
+        validatePhoneOnBlur({ target: document.getElementById("phone") });
+
+        // Verifica se houve erro nas validações
+        const emailError = document
+          .getElementById("email")
+          .classList.contains("erro-input");
+        const phoneError = document
+          .getElementById("phone")
+          .classList.contains("erro-input");
+
         if (
           !name &&
           !email &&
@@ -1027,8 +1101,24 @@
           return;
         }
 
+        if (emailError) {
+          /* displayAlert("warning", "Por favor, insira um e-mail válido."); */
+          hideLoading();
+          return;
+        }
+
         if (!email) {
           displayAlert("warning", "Por favor, digite um email.");
+          hideLoading();
+          return;
+        }
+
+        // Verifica se o telefone é válido (9 dígitos)
+        if (phoneError) {
+          /* displayAlert(
+            "warning",
+            "Por favor, insira um número de telefone válido (pelo menos 9 dígitos)."
+          ); */
           hideLoading();
           return;
         }

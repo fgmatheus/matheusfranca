@@ -64,6 +64,9 @@ body {
   font-weight: 400;
 }
 
+.erro-input {
+  border: 1px solid red !important;
+}
 
 
 .opcoes {
