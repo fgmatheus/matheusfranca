@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback - Autenticação</title>
+</head>
+<body>
+    <h1>Status da Autenticação</h1>
+    <p id="status"></p>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get("status");
+
+        if (status === "success") {
+            document.getElementById("status").innerText = "Autenticação bem-sucedida!";
+        } else {
+            document.getElementById("status").innerText = "Erro na autenticação.";
+        }
+    </script>
+</body>
+</html>

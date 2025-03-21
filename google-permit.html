@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autenticação Google Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 300px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Conectar ao Google Calendar</h1>
+    <input type="email" id="email" placeholder="Digite o seu e-mail do Google" />
+    <button id="loginBtn">Conectar</button>
+  </div>
+
+  <script>
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      if (email) {
+        window.location.href = `http://localhost:3000/auth?email=${email}`; // Redireciona para o backend de autenticação
+      } else {
+        alert("Por favor, insira o e-mail.");
+      }
+    });
+  </script>
+
+</body>
+</html>

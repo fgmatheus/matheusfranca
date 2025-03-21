@@ -50,7 +50,7 @@
           <input
             type="email"
             id="email"
-            maxlength="35"
+            maxlength="80"
             required
             onblur="validateEmailOnBlur(event)"
           />
@@ -221,7 +221,7 @@
           <input
             type="text"
             id="delete-phone"
-            maxlength="9"
+            maxlength="14"
             onblur="validatePhoneOnBlur(event)"
             oninput="enforceNumericInput(event)"
             required
@@ -464,7 +464,7 @@
           const clientId = "1";
           const calendarId =
             "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com";
-          const phone = document.getElementById("delete-phone").value;
+          const phone = document.getElementById("delete-phone").value.replace(' ', '');
           const selectedBarber = document.getElementById("delete-barber").value;
 
           const selectedDateButton = document.querySelector(
@@ -918,7 +918,8 @@
           "f4392d051f66e3988107791ea88f04fe83f4641849fe2ffe8773c08e32bebaa6@group.calendar.google.com";
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
+        const phone = document.getElementById("phone").value.replace(' ', '');
+        
         const selectedBarber = document.getElementById("barber").value;
         const selectedDateButton = document.querySelector(
           "#date button.selected"
