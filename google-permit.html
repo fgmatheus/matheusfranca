@@ -47,12 +47,9 @@
 
   <script>
     document.getElementById("loginBtn").addEventListener("click", () => {
-      const email = document.getElementById("email").value;
-      if (email) {
-        window.location.href = `https://email-loja.onrender.com/auth?email=${email}`; // Redireciona para o backend de autenticação
-      } else {
-        alert("Por favor, insira o e-mail.");
-      }
+      
+        window.location.href = `https://email-loja.onrender.com/auth`; // Redireciona para o backend de autenticação
+      
     });
   </script>
 
