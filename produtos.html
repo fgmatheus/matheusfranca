@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frigosto</title>
+    <link rel="stylesheet" href="frigosto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="prod-header">
+      <img src="vidros-img/frigosto.png" alt="site-logo" class="top" />
+      <nav>
+        <div class="big-menu">
+          <a href="frigosto.html">Inicio</a>
+          <a href="frigosto.html#sobre">Sobre Nós</a>
+          <a href="frigosto.html#contact">Contatos</a>
+        </div>
+      </nav>
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </label>
+      <div class="small-menu">
+        <a href="frigosto.html">Inicio</a>
+        <a href="frigosto.html#sobre">Sobre Nós</a>
+        <a href="frigosto.html#contact">Contatos</a>
+      </div>
+    </header>
+    <main>
+      <section class="produtos">
+        <button class="cart-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <input type="text" id="search" placeholder="Pesquisar produto..." />
+
+        <div class="loading" id="loading">
+          <div class="custom-loader"></div>
+        </div>
+
+        <ul class="notification-container" id="notification-container">
+          <li class="notification-item success">
+            <div class="notification-content">
+              <div class="notification-icon">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="notification-text">Everything went perfectly!</div>
+            </div>
+            <div class="notification-icon notification-close">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-progress-bar"></div>
+          </li>
+          <li class="notification-item warning">
+            <div class="notification-content">
+              <div class="notification-icon">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="notification-text">Proceed with caution.</div>
+            </div>
+            <div class="notification-icon notification-close">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-progress-bar"></div>
+          </li>
+          <li class="notification-item error">
+            <div class="notification-content">
+              <div class="notification-icon">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="notification-text">An issue occurred.</div>
+            </div>
+            <div class="notification-icon notification-close">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                ></path>
+              </svg>
+            </div>
+            <div class="notification-progress-bar"></div>
+          </li>
+        </ul>
+
+        <div class="filter-box">
+          <input type="checkbox" id="toggle-filter" class="toggle-checkbox" />
+          <label for="toggle-filter" class="toggle-label">+ Filtro</label>
+
+          <div class="filter-menu">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="petiscos">
+              Petiscos
+            </button>
+            <button class="filter-btn" data-category="tradicionais">Tradicionais</button>
+            <button class="filter-btn" data-category="recheados">Recheados</button>
+            <button class="filter-btn" data-category="classicos de festa">Classicos de Festa</button>
+          </div>
+        </div>
+        <div class="cards"></div>
+        <!-- Modal genérico -->
+        <div class="modal" id="product-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body"></div>
+          </div>
+        </div>
+
+        <div class="cart-modal">
+          <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <span class="close-cart">&times;</span>
+          </div>
+          <!-- <div class="modal-content"> -->
+          <div class="cart-content"></div>
+          <!-- <h3>Total: <span id="cart-total">€ 0.00</span></h3> -->
+          <!-- </div> -->
+          <div class="cart-footer">
+            <div class="button-enviar">
+              <button class="show-cart-form-btn">Adicionar Dados</button>
+            </div>
+
+            <div class="total-cart">
+              <h3>Total :</h3>
+              <p id="cart-total">€ 0.00</p>
+            </div>
+
+            <div class="cart-form" style="display: none">
+              <h3>Digite seus Dados</h3>
+              <div class="inputGroup">
+                <input
+                  type="text"
+                  id="name"
+                  maxlength="20"
+                  required
+                  autocomplete="off"
+                />
+                <label for="name"><i class="fa-solid fa-user"></i>Nome</label>
+              </div>
+              <div class="inputGroup">
+                <input type="text" id="phone" maxlength="9" required />
+                <label for="phone"
+                  ><i class="fa-solid fa-phone"></i>Telefone</label
+                >
+              </div>
+              <div class="inputGroup">
+                <input type="email" id="email" maxlength="80" required />
+                <label for="email"
+                  ><i class="fa-solid fa-envelope"></i>E-mail</label
+                >
+              </div>
+            </div>
+
+            <div class="button-enviar">
+              <button class="checkout-btn" id="submit-button">
+                Fazer Pedido
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="obs">
+        <a href="http://google.com" target="_blank" rel="noopener noreferrer">Livro de reclamação</a>
+        <a href="http://google.com" target="_blank" rel="noopener noreferrer">Canal de Denuncia</a>
+      </div>
+
+      <div class="direito">
+        <h2>FRIGOSTO</h2>
+        <h3>Indústria de Transformação e Preparação de Produtos Congelados, Lda.</h3>
+        <div class="redes">
+          <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src="vidros-img/logo-in.png" alt=""></a>
+          <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src="vidros-img/logo-fc.png" alt=""></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cardsContainer = document.querySelector(".cards");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const searchInput = document.getElementById("search");
+      const modal = document.getElementById("product-modal");
+      const modalBody = document.querySelector(".modal-body");
+      const closeModal = document.querySelector(".close-modal");
+
+      const cart = [];
+      const cartModal = document.querySelector(".cart-modal");
+      const cartContent = document.querySelector(".cart-content");
+      const cartTotal = document.getElementById("cart-total");
+      const cartBtn = document.querySelector(".cart-btn");
+      const closeCartBtn = document.querySelector(".close-cart");
+
+      const cartForm = document.querySelector(".cart-form");
+      const showCartFormBtn = document.querySelector(".show-cart-form-btn");
+      const checkoutBtn = document.querySelector(".checkout-btn");
+
+      const nomeClienteInput = document.getElementById("name");
+      const telefoneClienteInput = document.getElementById("phone");
+      const emailClienteInput = document.getElementById("email");
+
+      let productsData = [];
+      let isCartFormVisible = false;
+      let loading = false;
+
+      // Carregar produtos do JSON
+      fetch("produtos.json")
+        .then((response) => response.json())
+        .then((products) => {
+          productsData = products;
+          displayProducts(products);
+
+          // Mostrar o loading enquanto os dados estão sendo carregados
+          showLoading();
+
+          // Após 2 segundos, esconda o loading e exiba os produtos
+          setTimeout(() => {
+            displayProducts(products); // Exibe os produtos
+            hideLoading(); // Esconde o loading
+          }, 2000);
+
+          // Adicionar evento de clique nos botões de filtro
+          filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              document
+                .querySelector(".filter-btn.active")
+                .classList.remove("active");
+              button.classList.add("active");
+              filterProducts();
+            });
+          });
+
+          // Adicionar evento de digitação no input de pesquisa
+          searchInput.addEventListener("input", filterProducts);
+        })
+        .catch((error) =>
+          console.error("Erro ao carregar os produtos:", error)
+        );
+
+      // Função para filtrar os produtos
+      function filterProducts() {
+        const activeCategory =
+          document.querySelector(".filter-btn.active").dataset.category;
+        const searchTerm = searchInput.value.toLowerCase();
+
+        const filteredProducts = productsData.filter((product) => {
+          const matchesCategory =
+            activeCategory === "all" || product.categoria === activeCategory;
+          const matchesSearch = product.nome.toLowerCase().includes(searchTerm);
+          return matchesCategory && matchesSearch;
+        });
+
+        displayProducts(filteredProducts);
+      }
+
+      // Função para exibir os produtos
+      function displayProducts(products) {
+        cardsContainer.innerHTML = "";
+        products.forEach((product) => {
+          const productCard = document.createElement("div");
+          productCard.classList.add("card-main");
+          productCard.setAttribute("data-category", product.categoria);
+          productCard.innerHTML = `
+                <div class="image-main">
+                    <img src="${product.imagens[0]}" alt="${product.nome}">
+                </div>
+                <span class="title">${product.nome}</span>
+                <span class="price">${product.preco}</span>
+            `;
+
+          // Adiciona evento de clique para abrir o modal
+          productCard.addEventListener("click", () => openModal(product));
+
+          cardsContainer.appendChild(productCard);
+        });
+      }
+
+      function openModal(product) {
+  modalBody.innerHTML = `
+    <h2>${product.nome}</h2>
+    <p class="price-modal">€ ${Number(product.precoCart).toFixed(2)}</p>
+    <div class="image-gallery">
+      ${product.imagens
+        .map(
+          (img, index) =>
+            `<img src="${img}" alt="${product.nome}" class="modal-image" data-index="${index}">`
+        )
+        .join("")}
+    </div>
+    <div class="modal-info-prod">
+      <p><strong>Peso:</strong> ${product.infos.peso}</p>
+      <p><strong>Ingredientes:</strong> ${product.infos.ingredientes}</p>
+      <p><strong>Modo de Preparo:</strong> ${product.infos.modo_preparo}</p>
+      <p><strong>Valor energético:</strong> ${product.infos.valor_energetico}</p>
+      </div>
+    <div class="bottom-modal">
+      <div class="grid-change">
+      <span>Quantidade</span>
+      
+      <div class="change-buttons">
+        <button class="decrease-quantity"><i class="fa-solid fa-minus"></i></button>
+        <input class='input-change' type="number" value="1" min="1" max="100">
+        <button class="increase-quantity"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      </div>
+      <button class="btn-car">Carrinho</button>
+    </div>
+  `;
+
+  modal.style.display = "flex";
+
+  // Eventos de clique para expandir imagens
+  document.querySelectorAll(".modal-image").forEach((img) =>
+    img.addEventListener("click", () => {
+      img.classList.toggle("expanded");
+      modal.classList.toggle("expanded");
+    })
+  );
+
+  // Controle da quantidade usando funções existentes
+  const quantityInput = document.querySelector(".input-change");
+
+  document.querySelector(".decrease-quantity").addEventListener("click", () => {
+    quantityInput.value = changeItemQuantity(quantityInput.value, -1);
+  });
+
+  document.querySelector(".increase-quantity").addEventListener("click", () => {
+    quantityInput.value = changeItemQuantity(quantityInput.value, 1);
+  });
+
+  quantityInput.addEventListener("change", () => {
+    quantityInput.value = validateQuantity(quantityInput.value);
+  });
+
+  // Adicionar ao carrinho com quantidade selecionada
+  document.querySelector(".btn-car").addEventListener("click", () => {
+    addToCart({ ...product, quantity: parseInt(quantityInput.value) });
+  });
+}
+
+// Função genérica para alterar a quantidade (reutilizável para modal e carrinho)
+function changeItemQuantity(currentQuantity, amount) {
+  let newQuantity = parseInt(currentQuantity) + amount;
+  return Math.min(100, Math.max(1, newQuantity)); // Garante que está entre 1 e 100
+}
+
+// Função genérica para validar a quantidade (reutilizável)
+function validateQuantity(value) {
+  let newQuantity = parseInt(value, 10);
+  if (isNaN(newQuantity) || newQuantity < 1) return 1;
+  if (newQuantity > 100) return 100;
+  return newQuantity;
+}
+
+
+
+
+      // Fechar modal do produto
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // Fechar modal ao clicar fora da caixa de conteúdo
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      // Abrir modal do carrinho
+      cartBtn.addEventListener("click", () => {
+        cartModal.style.display = "flex";
+        updateCartDisplay();
+      });
+
+      // Fechar modal do carrinho
+      closeCartBtn.addEventListener("click", () => {
+        cartModal.style.display = "none";
+      });
+
+      let notifications = [];
+
+      /* VALIDAÇÃO */
+
+      document
+        .getElementById("name")
+        .addEventListener("input", preventNonAlphabetic);
+      document
+        .getElementById("phone")
+        .addEventListener("blur", validatePhoneOnBlur);
+      document
+        .getElementById("phone")
+        .addEventListener("input", enforceNumericInput);
+      document
+        .getElementById("email")
+        .addEventListener("blur", validateEmailOnBlur);
+
+      function preventNonAlphabetic(event) {
+        event.target.value = event.target.value.replace(/[^a-zA-Z\s]/g, "");
+      }
+
+      function enforceNumericInput(event) {
+        event.target.value = event.target.value.replace(/[^0-9]/g, "");
+      }
+
+      function validatePhoneOnBlur(event) {
+        let phoneInput = event.target;
+        let value = phoneInput.value.replace(/[^0-9]/g, ""); // Remover qualquer caractere não numérico
+
+        // Validação para garantir que o número tenha 9 dígitos
+        if (value.length !== 9) {
+          displayAlert(
+            "warning",
+            "Por favor, insira um telefone válido com 9 dígitos."
+          );
+          phoneInput.classList.add("erro-input");
+          setTimeout(() => phoneInput.classList.remove("erro-input"), 5000);
+        } else {
+          phoneInput.value = value; // Atualiza o input com o número validado sem o +351
+        }
+      }
+
+      function validateEmailOnBlur(event) {
+        const input = event.target;
+        const email = input.value.trim();
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailPattern.filter - box(email)) {
+          displayAlert("warning", "Por favor, insira um e-mail válido.");
+          input.classList.add("erro-input");
+          setTimeout(() => input.classList.remove("erro-input"), 5000);
+        }
+      }
+
+      /* ------- */
+
+      function displayAlert(type, message) {
+        const notificationContainer = document.getElementById(
+          "notification-container"
+        );
+
+        if (!notificationContainer) {
+          console.error("Elemento #notification-container não encontrado.");
+          return;
+        }
+
+        // Criar o elemento da notificação
+        const notification = document.createElement("li");
+        notification.className = `notification-item ${type}`;
+
+        // Definir o HTML da notificação
+        notification.innerHTML = `
+    <div class="notification-content">
+        <div class="notification-icon">
+            ${getNotificationIcon(type)}
+        </div>
+        <div class="notification-text">${message}</div>
+    </div>
+    <div class="notification-icon notification-close">
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"></path>
+        </svg>
+    </div>
+    <div class="notification-progress-bar"></div>
+  `;
+
+        // Adiciona a notificação ao container
+        notificationContainer.appendChild(notification);
+
+        // Apenas o último aviso adicionado deve ser visível com display: flex
+        setTimeout(() => {
+          notification.style.display = "flex";
+        }, 0); // Adicionar com delay para aplicar a mudança do display
+
+        // Remove a notificação após um tempo
+        setTimeout(() => {
+          notification.remove();
+        }, 5000);
+
+        // Permite fechar manualmente
+        notification.querySelector(".notification-close").onclick = () =>
+          notification.remove();
+      }
+
+      // Função para retornar o SVG correto baseado no tipo de notificação
+      function getNotificationIcon(type) {
+        const icons = {
+          success: `
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+        `,
+          warning: `
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+        `,
+          error: `
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+        `,
+        };
+        return icons[type] || "";
+      }
+
+      // Adicionar item ao carrinho (cada clique adiciona um novo item individual)
+      function addToCart(product) {
+        const quantity = parseInt(document.querySelector(".input-change").value, 10);
+        const newItem = {
+          id: Date.now(),
+          nome: product.nome,
+          precoCart: parseFloat(product.precoCart),
+          imagens: product.imagens,
+          quantity: quantity,
+        };
+        cart.push(newItem);
+        updateCartDisplay();
+
+        displayAlert("success", "Produto adicionado ao carrinho!");
+        modal.style.display = "none";
+      }
+
+      function updateCartDisplay() {
+        cartContent.innerHTML = "";
+        if (cart.length === 0) {
+          cartContent.innerHTML = "<p>O carrinho está vazio.</p>";
+        } else {
+          cart.forEach((item, index) => {
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = `
+                    <img src="${item.imagens[0]}" alt="${item.nome}">
+                    <div>
+                        <h4>${item.nome}</h4>
+                        <p>€ ${Number(item.precoCart).toFixed(2)}</p>
+                        <div class="change-buttons">
+                        <button class="decrease-quantity" onclick="changeQuantity(${index}, -1)"><i class="fa-solid fa-minus"></i></button>
+                        <input class='input-change' type="number" value="${
+                          item.quantity
+                        }" min="1" max="100" maxlength="3" onchange="updateQuantity(${index}, this)">
+                        <button class="increase-quantity" onclick="changeQuantity(${index}, 1)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <button class="remove-item" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            cartContent.appendChild(cartItem);
+          });
+        }
+        calcularTotal();
+      }
+
+      // Alterar quantidade por botões "+" e "-"
+      window.changeQuantity = (index, amount) => {
+        let newQuantity = cart[index].quantity + amount;
+        if (newQuantity >= 1 && newQuantity <= 100) {
+          cart[index].quantity = newQuantity;
+          updateCartDisplay();
+        }
+      };
+
+      // Alterar quantidade pelo input numérico
+      window.updateQuantity = (index, input) => {
+        let newQuantity = parseInt(input.value, 10);
+        if (isNaN(newQuantity) || newQuantity < 1) {
+          input.value = 1;
+          newQuantity = 1;
+        } else if (newQuantity > 100) {
+          input.value = 100;
+          newQuantity = 100;
+        }
+        cart[index].quantity = newQuantity;
+        updateCartDisplay();
+      };
+
+      // Remover item do carrinho
+      window.removeItem = (index) => {
+        cart.splice(index, 1);
+        updateCartDisplay();
+      };
+
+      // Calcular total do carrinho
+      function calcularTotal() {
+        const total = cart.reduce(
+          (sum, item) => sum + item.precoCart * item.quantity,
+          0
+        );
+        cartTotal.textContent = `€ ${total.toFixed(2)}`;
+      }
+
+      showCartFormBtn.addEventListener("click", () => {
+        isCartFormVisible = !isCartFormVisible;
+        cartForm.style.display = isCartFormVisible ? "grid" : "none";
+        showCartFormBtn.textContent = isCartFormVisible
+          ? "Ocultar Dados"
+          : "Adicionar Dados";
+      });
+
+      // Atualizar exibição do total no carrinho
+      function updateCartTotal() {
+        document.querySelector(
+          ".total-cart p"
+        ).textContent = `€ ${calcularTotal()}`;
+      }
+
+      function showLoading() {
+        document.getElementById("loading").style.display = "flex";
+      }
+
+      function hideLoading() {
+        document.getElementById("loading").style.display = "none";
+      }
+
+      // Enviar pedido
+      document.getElementById("submit-button").onclick = async function () {
+        console.log("click");
+        showLoading(); // Exibe o loader ao clicar no botão
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value.replace(" ", "");
+
+        if (cart.length === 0) {
+          displayAlert("warning", "O carrinho está vazio.");
+          hideLoading();
+          return;
+        }
+
+        if (!name) {
+          displayAlert("warning", "Por favor, digite um nome.");
+          hideLoading();
+          return;
+        }
+
+        if (!phone) {
+          displayAlert("warning", "Por favor, digite um numero de telefone");
+          hideLoading();
+          return;
+        }
+
+        if (!email) {
+          displayAlert("warning", "Por favor, digite um email.");
+          hideLoading();
+          return;
+        }
+
+        if (!name && !email && !phone) {
+          displayAlert(
+            "warning",
+            "Por favor, preencha todos os campos obrigatórios."
+          );
+          hideLoading(); // Oculta o loader em caso de campos não preenchidos
+          return;
+        }
+
+        hideLoading();
+
+        const pedido = {
+          name,
+          phone,
+          email,
+          itens: cart.map((item) => ({
+            nome: item.nome,
+            quantidade: item.quantity,
+            preco: item.precoCart,
+          })),
+        };
+
+        try {
+          /* const response = await fetch("http://google.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(pedido),
+          });
+
+          const data = await response.json();
+          alert(data.mensagem);
+
+          if (response.ok) {
+            cart.length = 0;
+            updateCartTotal();
+            cartForm.style.display = "none";
+            isCartFormVisible = false;
+            nomeClienteInput.value = "";
+            telefoneClienteInput.value = "";
+            emailClienteInput.value = "";
+          } */
+          console.log(pedido);
+        } catch (error) {
+          displayAlert("error", "Erro ao enviar o pedido.");
+        } finally {
+          hideLoading();
+        }
+      };
+
+      updateCartTotal();
+    });
+  </script>
+</html>

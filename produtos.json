@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "nome": "Coxinha com Catupiry",
+    "preco": "€ 5,00",
+    "precoCart": 5,
+    "categoria": "tradicionais",
+    "imagens": [
+      "https://placehold.co/500x500?text=Coxinha1",
+      "https://placehold.co/500x500?text=Coxinha2",
+      "https://placehold.co/500x500?text=Coxinha3"
+    ],
+    "infos": {
+      "peso": "100g",
+      "ingredientes": ["frango desfiado", "Catupiry", "massa crocante"],
+      "modo_preparo": "Aquecer em forno ou fritar",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Sirva em uma travessa com pequenos tomates cereja para colorir."
+  },
+  {
+    "id": 2,
+    "nome": "Esfirra de Carne",
+    "preco": "€ 4,50",
+    "precoCart": 4.5,
+    "categoria": "classicos de festa",
+    "imagens": [
+      "https://placehold.co/500x500?text=Esfirra1",
+      "https://placehold.co/500x500?text=Esfirra2",
+      "https://placehold.co/500x500?text=Esfirra3"
+    ],
+    "infos": {
+      "peso": "90g",
+      "ingredientes": ["carne temperada", "massa macia"],
+      "modo_preparo": "Aquecer em forno ou micro-ondas",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Disponha em um prato grande acompanhado de raminhos de salsa."
+  },
+  {
+    "id": 3,
+    "nome": "Quibe com Recheio de Queijo",
+    "preco": "€ 6,00",
+    "precoCart": 6,
+    "categoria": "recheados",
+    "imagens": [
+      "https://placehold.co/500x500?text=Quibe1",
+      "https://placehold.co/500x500?text=Quibe2",
+      "https://placehold.co/500x500?text=Quibe3"
+    ],
+    "infos": {
+      "peso": "90g",
+      "ingredientes": ["carne moída", "trigo", "recheio de queijo"],
+      "modo_preparo": "Aquecer em forno ou fritar",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Sirva com fatias de limão e uma tigela de coalhada ao lado."
+  },
+  {
+    "id": 4,
+    "nome": "Empada de Frango",
+    "preco": "€ 5,50",
+    "precoCart": 5.5,
+    "categoria": "tradicionais",
+    "imagens": [
+      "https://placehold.co/500x500?text=Empada1",
+      "https://placehold.co/500x500?text=Empada2",
+      "https://placehold.co/500x500?text=Empada3"
+    ],
+    "infos": {
+      "peso": "120g",
+      "ingredientes": ["massa amanteigada", "frango", "requeijão"],
+      "modo_preparo": "Aquecer em forno ou micro-ondas",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Coloque em uma tábua de madeira com pequenos guardanapos ao lado."
+  },
+  {
+    "id": 5,
+    "nome": "Bolinha de Queijo",
+    "preco": "€ 3,00",
+    "precoCart": 3,
+    "categoria": "petiscos",
+    "imagens": [
+      "https://placehold.co/500x500?text=Bolinha1",
+      "https://placehold.co/500x500?text=Bolinha2",
+      "https://placehold.co/500x500?text=Bolinha3"
+    ],
+    "infos": {
+      "peso": "70g",
+      "ingredientes": ["queijo mussarela", "massa dourada"],
+      "modo_preparo": "Fritar",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Sirva em uma tigela acompanhada de um molho de tomate suave."
+  },
+  {
+    "id": 6,
+    "nome": "Enroladinho de Salsicha",
+    "preco": "€ 4,00",
+    "precoCart": 4,
+    "categoria": "classicos de festa",
+    "imagens": [
+      "https://placehold.co/500x500?text=Enrolado1",
+      "https://placehold.co/500x500?text=Enrolado2",
+      "https://placehold.co/500x500?text=Enrolado3"
+    ],
+    "infos": {
+      "peso": "80g",
+      "ingredientes": ["massa fofinha", "salsicha"],
+      "modo_preparo": "Aquecer em forno",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Organize em uma travessa com uma tigela de mostarda ao centro."
+  },
+  {
+    "id": 7,
+    "nome": "Pastel de Carne",
+    "preco": "€ 2,50",
+    "precoCart": 2.5,
+    "categoria": "tradicionais",
+    "imagens": [
+      "https://placehold.co/500x500?text=Pastel1",
+      "https://placehold.co/500x500?text=Pastel2",
+      "https://placehold.co/500x500?text=Pastel3"
+    ],
+    "infos": {
+      "peso": "90g",
+      "ingredientes": ["carne moída", "massa fina e crocante"],
+      "modo_preparo": "Fritar",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Sirva com folhas de alface ao redor para um toque visual."
+  },
+  {
+    "id": 8,
+    "nome": "Croquete de Carne",
+    "preco": "€ 3,50",
+    "precoCart": 3.5,
+    "categoria": "petiscos",
+    "imagens": [
+      "https://placehold.co/500x500?text=Croquete1",
+      "https://placehold.co/500x500?text=Croquete2",
+      "https://placehold.co/500x500?text=Croquete3"
+    ],
+    "infos": {
+      "peso": "80g",
+      "ingredientes": ["carne temperada", "massa crocante"],
+      "modo_preparo": "Fritar",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Disponha em uma travessa com molho barbecue ao lado."
+  },
+  {
+    "id": 9,
+    "nome": "Risoles de Presunto e Queijo",
+    "preco": "€ 4,50",
+    "precoCart": 4.5,
+    "categoria": "recheados",
+    "imagens": [
+      "https://placehold.co/500x500?text=Risoles1",
+      "https://placehold.co/500x500?text=Risoles2",
+      "https://placehold.co/500x500?text=Risoles3"
+    ],
+    "infos": {
+      "peso": "100g",
+      "ingredientes": ["presunto", "queijo mussarela", "massa empanada"],
+      "modo_preparo": "Fritar",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Sirva com molho de alho e ervas para complementar o sabor."
+  },
+  {
+    "id": 10,
+    "nome": "Mini Pizza de Calabresa",
+    "preco": "€ 6,00",
+    "precoCart": 6,
+    "categoria": "classicos de festa",
+    "imagens": [
+      "https://placehold.co/500x500?text=MiniPizza1",
+      "https://placehold.co/500x500?text=MiniPizza2",
+      "https://placehold.co/500x500?text=MiniPizza3"
+    ],
+    "infos": {
+      "peso": "120g",
+      "ingredientes": ["massa fina, calabresa, queijo e molho de tomate"],
+      "modo_preparo": "aquecer em forno",
+      "valor_energetico": "Informação não especificada"
+    },
+    "apresentar": "Sirva em um prato redondo com folhas de manjericão fresco no centro."
+  }
+]
