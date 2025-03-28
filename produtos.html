@@ -139,9 +139,15 @@
             <button class="filter-btn" data-category="petiscos">
               Petiscos
             </button>
-            <button class="filter-btn" data-category="tradicionais">Tradicionais</button>
-            <button class="filter-btn" data-category="recheados">Recheados</button>
-            <button class="filter-btn" data-category="classicos de festa">Classicos de Festa</button>
+            <button class="filter-btn" data-category="tradicionais">
+              Tradicionais
+            </button>
+            <button class="filter-btn" data-category="recheados">
+              Recheados
+            </button>
+            <button class="filter-btn" data-category="classicos de festa">
+              Classicos de Festa
+            </button>
           </div>
         </div>
         <div class="cards"></div>
@@ -209,16 +215,32 @@
     </main>
     <footer>
       <div class="obs">
-        <a href="http://google.com" target="_blank" rel="noopener noreferrer">Livro de reclamação</a>
-        <a href="http://google.com" target="_blank" rel="noopener noreferrer">Canal de Denuncia</a>
+        <a href="http://google.com" target="_blank" rel="noopener noreferrer"
+          >Livro de reclamação</a
+        >
+        <a href="http://google.com" target="_blank" rel="noopener noreferrer"
+          >Canal de Denuncia</a
+        >
       </div>
 
       <div class="direito">
         <h2>FRIGOSTO</h2>
-        <h3>Indústria de Transformação e Preparação de Produtos Congelados, Lda.</h3>
+        <h3>
+          Indústria de Transformação e Preparação de Produtos Congelados, Lda.
+        </h3>
         <div class="redes">
-          <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src="vidros-img/logo-in.png" alt=""></a>
-          <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src="vidros-img/logo-fc.png" alt=""></a>
+          <a
+            href="http://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="vidros-img/logo-in.png" alt=""
+          /></a>
+          <a
+            href="http://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="vidros-img/logo-fc.png" alt=""
+          /></a>
         </div>
       </div>
     </footer>
@@ -324,7 +346,7 @@
       }
 
       function openModal(product) {
-  modalBody.innerHTML = `
+        modalBody.innerHTML = `
     <h2>${product.nome}</h2>
     <p class="price-modal">€ ${Number(product.precoCart).toFixed(2)}</p>
     <div class="image-gallery">
@@ -339,7 +361,9 @@
       <p><strong>Peso:</strong> ${product.infos.peso}</p>
       <p><strong>Ingredientes:</strong> ${product.infos.ingredientes}</p>
       <p><strong>Modo de Preparo:</strong> ${product.infos.modo_preparo}</p>
-      <p><strong>Valor energético:</strong> ${product.infos.valor_energetico}</p>
+      <p><strong>Valor energético:</strong> ${
+        product.infos.valor_energetico
+      }</p>
       </div>
     <div class="bottom-modal">
       <div class="grid-change">
@@ -355,53 +379,54 @@
     </div>
   `;
 
-  modal.style.display = "flex";
+        modal.style.display = "flex";
 
-  // Eventos de clique para expandir imagens
-  document.querySelectorAll(".modal-image").forEach((img) =>
-    img.addEventListener("click", () => {
-      img.classList.toggle("expanded");
-      modal.classList.toggle("expanded");
-    })
-  );
+        // Eventos de clique para expandir imagens
+        document.querySelectorAll(".modal-image").forEach((img) =>
+          img.addEventListener("click", () => {
+            img.classList.toggle("expanded");
+            modal.classList.toggle("expanded");
+          })
+        );
 
-  // Controle da quantidade usando funções existentes
-  const quantityInput = document.querySelector(".input-change");
+        // Controle da quantidade usando funções existentes
+        const quantityInput = document.querySelector(".input-change");
 
-  document.querySelector(".decrease-quantity").addEventListener("click", () => {
-    quantityInput.value = changeItemQuantity(quantityInput.value, -1);
-  });
+        document
+          .querySelector(".decrease-quantity")
+          .addEventListener("click", () => {
+            quantityInput.value = changeItemQuantity(quantityInput.value, -1);
+          });
 
-  document.querySelector(".increase-quantity").addEventListener("click", () => {
-    quantityInput.value = changeItemQuantity(quantityInput.value, 1);
-  });
+        document
+          .querySelector(".increase-quantity")
+          .addEventListener("click", () => {
+            quantityInput.value = changeItemQuantity(quantityInput.value, 1);
+          });
 
-  quantityInput.addEventListener("change", () => {
-    quantityInput.value = validateQuantity(quantityInput.value);
-  });
+        quantityInput.addEventListener("change", () => {
+          quantityInput.value = validateQuantity(quantityInput.value);
+        });
 
-  // Adicionar ao carrinho com quantidade selecionada
-  document.querySelector(".btn-car").addEventListener("click", () => {
-    addToCart({ ...product, quantity: parseInt(quantityInput.value) });
-  });
-}
+        // Adicionar ao carrinho com quantidade selecionada
+        document.querySelector(".btn-car").addEventListener("click", () => {
+          addToCart({ ...product, quantity: parseInt(quantityInput.value) });
+        });
+      }
 
-// Função genérica para alterar a quantidade (reutilizável para modal e carrinho)
-function changeItemQuantity(currentQuantity, amount) {
-  let newQuantity = parseInt(currentQuantity) + amount;
-  return Math.min(100, Math.max(1, newQuantity)); // Garante que está entre 1 e 100
-}
+      // Função genérica para alterar a quantidade (reutilizável para modal e carrinho)
+      function changeItemQuantity(currentQuantity, amount) {
+        let newQuantity = parseInt(currentQuantity) + amount;
+        return Math.min(100, Math.max(1, newQuantity)); // Garante que está entre 1 e 100
+      }
 
-// Função genérica para validar a quantidade (reutilizável)
-function validateQuantity(value) {
-  let newQuantity = parseInt(value, 10);
-  if (isNaN(newQuantity) || newQuantity < 1) return 1;
-  if (newQuantity > 100) return 100;
-  return newQuantity;
-}
-
-
-
+      // Função genérica para validar a quantidade (reutilizável)
+      function validateQuantity(value) {
+        let newQuantity = parseInt(value, 10);
+        if (isNaN(newQuantity) || newQuantity < 1) return 1;
+        if (newQuantity > 100) return 100;
+        return newQuantity;
+      }
 
       // Fechar modal do produto
       closeModal.addEventListener("click", () => {
@@ -554,7 +579,10 @@ function validateQuantity(value) {
 
       // Adicionar item ao carrinho (cada clique adiciona um novo item individual)
       function addToCart(product) {
-        const quantity = parseInt(document.querySelector(".input-change").value, 10);
+        const quantity = parseInt(
+          document.querySelector(".input-change").value,
+          10
+        );
         const newItem = {
           id: Date.now(),
           nome: product.nome,
@@ -661,12 +689,14 @@ function validateQuantity(value) {
 
       // Enviar pedido
       document.getElementById("submit-button").onclick = async function () {
-        console.log("click");
+        /* console.log("click"); */
         showLoading(); // Exibe o loader ao clicar no botão
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value.replace(" ", "");
+        const nomeCliente = document.getElementById("name").value;
+        const emailCliente = document.getElementById("email").value;
+        const telefoneCliente = document
+          .getElementById("phone")
+          .value.replace(" ", "");
 
         if (cart.length === 0) {
           displayAlert("warning", "O carrinho está vazio.");
@@ -674,25 +704,25 @@ function validateQuantity(value) {
           return;
         }
 
-        if (!name) {
+        if (!nomeCliente) {
           displayAlert("warning", "Por favor, digite um nome.");
           hideLoading();
           return;
         }
 
-        if (!phone) {
+        if (!telefoneCliente) {
           displayAlert("warning", "Por favor, digite um numero de telefone");
           hideLoading();
           return;
         }
 
-        if (!email) {
+        if (!emailCliente) {
           displayAlert("warning", "Por favor, digite um email.");
           hideLoading();
           return;
         }
 
-        if (!name && !email && !phone) {
+        if (!nomeCliente && !emailCliente && !telefoneCliente) {
           displayAlert(
             "warning",
             "Por favor, preencha todos os campos obrigatórios."
@@ -704,9 +734,10 @@ function validateQuantity(value) {
         hideLoading();
 
         const pedido = {
-          name,
-          phone,
-          email,
+          nomeCliente,
+          telefoneCliente,
+          emailCliente,
+          emailLojista: "fg.matheuz@gmail.com",
           itens: cart.map((item) => ({
             nome: item.nome,
             quantidade: item.quantity,
@@ -715,26 +746,37 @@ function validateQuantity(value) {
         };
 
         try {
-          /* const response = await fetch("http://google.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(pedido),
-          });
-
-          const data = await response.json();
-          alert(data.mensagem);
+          const response = await fetch(
+            "https://email-loja.onrender.com/encomendar",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(pedido),
+            }
+          );
 
           if (response.ok) {
-            cart.length = 0;
-            updateCartTotal();
-            cartForm.style.display = "none";
-            isCartFormVisible = false;
-            nomeClienteInput.value = "";
-            telefoneClienteInput.value = "";
-            emailClienteInput.value = "";
-          } */
-          console.log(pedido);
+    displayAlert("success", "Encomenda Enviada.");
+
+    // 🔹 Fechar os modais
+    if (cartForm) {
+        cartForm.style.display = "none";
+    }
+    isCartFormVisible = false;
+    cartModal.style.display = "none";
+
+    // 🔹 Limpar os inputs do formulário
+    document.getElementById("name").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("email").value = "";
+
+    // 🔹 Esvaziar o carrinho e atualizar a exibição
+    cart.length = 0; // Remove todos os itens do carrinho
+    cartContent.innerHTML = "<p>O carrinho está vazio.</p>"; // Atualiza o HTML do carrinho
+}
+
         } catch (error) {
+          console.error("Erro na requisição:", error); 
           displayAlert("error", "Erro ao enviar o pedido.");
         } finally {
           hideLoading();
