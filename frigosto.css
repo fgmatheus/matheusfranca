@@ -884,6 +884,11 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 40px;
+}
+
+.cart-item > div > h4 {
+  width: 50%;
 }
 
 .change-buttons {
@@ -1530,7 +1535,11 @@ footer {
   /* ----------- */
 
   .pratos {
-    gap: 20px;
+    gap: 60px;
+  }
+
+  .prato-content{
+    padding-bottom: 30px;
   }
 
   .prato-info h3 {
@@ -1542,8 +1551,8 @@ footer {
   }
 
   .prato-content img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   /* ----------- */
 
@@ -1636,19 +1645,53 @@ footer {
   }
 
   /* ----- */
+  .cart-modal-content{
+    height: 85%;
+  }
+
+  .cart-header {
+    padding-bottom: 0px;
+  }
+  
+  .cart-header h2 {
+    margin-left: 40px;
+    font-size: 20px;
+  }
+
+  .cart-content {
+    width: 100%;
+    max-height: 69%;
+    gap: 10px;
+  }
+
+
+.checkout-btn {
+  font-size: 16px;
+  margin: 20px 0 0 0;
+  padding: 10px 20px;
+}
+
+  /* ----- */
 
   .cart-item > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+
+    padding-right: 0px;
   }
 
   .cart-item > div > h4 {
-    font-size: 15px;
+    font-size: 14px;
     width: 55%;
   }
 
   .cart-item > div > p {
     font-size: 13px;
     width: 40%;
+    text-align: center;
   }
 
   /* ----- */

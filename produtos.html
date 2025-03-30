@@ -161,59 +161,57 @@
 
         <div class="cart-modal">
           <div class="cart-modal-content">
+            <div class="cart-header">
+              <h2>Seu Carrinho</h2>
+              <span class="close-cart">&times;</span>
+            </div>
+            <!-- <div class="modal-content"> -->
+            <div class="cart-content"></div>
+            <!-- <h3>Total: <span id="cart-total">€ 0.00</span></h3> -->
+            <!-- </div> -->
+            <div class="cart-footer">
+              <div class="button-enviar">
+                <button class="show-cart-form-btn">Adicionar Dados</button>
+              </div>
 
-          
-          <div class="cart-header">
-            <h2>Seu Carrinho</h2>
-            <span class="close-cart">&times;</span>
+              <div class="total-cart">
+                <h3>Total :</h3>
+                <p id="cart-total">€ 0.00</p>
+              </div>
+
+              <div class="cart-form" style="display: none">
+                <h3>Digite seus Dados</h3>
+                <div class="inputGroup">
+                  <input
+                    type="text"
+                    id="name"
+                    maxlength="20"
+                    required
+                    autocomplete="off"
+                  />
+                  <label for="name"><i class="fa-solid fa-user"></i>Nome</label>
+                </div>
+                <div class="inputGroup">
+                  <input type="text" id="phone" maxlength="9" required />
+                  <label for="phone"
+                    ><i class="fa-solid fa-phone"></i>Telefone</label
+                  >
+                </div>
+                <div class="inputGroup">
+                  <input type="email" id="email" maxlength="80" required />
+                  <label for="email"
+                    ><i class="fa-solid fa-envelope"></i>E-mail</label
+                  >
+                </div>
+              </div>
+
+              <div class="button-enviar">
+                <button class="checkout-btn" id="submit-button">
+                  Fazer Pedido
+                </button>
+              </div>
+            </div>
           </div>
-          <!-- <div class="modal-content"> -->
-          <div class="cart-content"></div>
-          <!-- <h3>Total: <span id="cart-total">€ 0.00</span></h3> -->
-          <!-- </div> -->
-          <div class="cart-footer">
-            <div class="button-enviar">
-              <button class="show-cart-form-btn">Adicionar Dados</button>
-            </div>
-
-            <div class="total-cart">
-              <h3>Total :</h3>
-              <p id="cart-total">€ 0.00</p>
-            </div>
-
-            <div class="cart-form" style="display: none">
-              <h3>Digite seus Dados</h3>
-              <div class="inputGroup">
-                <input
-                  type="text"
-                  id="name"
-                  maxlength="20"
-                  required
-                  autocomplete="off"
-                />
-                <label for="name"><i class="fa-solid fa-user"></i>Nome</label>
-              </div>
-              <div class="inputGroup">
-                <input type="text" id="phone" maxlength="9" required />
-                <label for="phone"
-                  ><i class="fa-solid fa-phone"></i>Telefone</label
-                >
-              </div>
-              <div class="inputGroup">
-                <input type="email" id="email" maxlength="80" required />
-                <label for="email"
-                  ><i class="fa-solid fa-envelope"></i>E-mail</label
-                >
-              </div>
-            </div>
-
-            <div class="button-enviar">
-              <button class="checkout-btn" id="submit-button">
-                Fazer Pedido
-              </button>
-            </div>
-          </div>
-        </div>
         </div>
       </section>
     </main>
@@ -615,14 +613,13 @@
                         <h4>${item.nome}</h4>
                         <p>€ ${Number(item.precoCart).toFixed(2)}</p>
                         <div class="change-buttons">
-                        <button class="decrease-quantity" onclick="changeQuantity(${index}, -1)"><i class="fa-solid fa-minus"></i></button>
-                        <input class='input-change' type="number" value="${
-                          item.quantity
-                        }" min="1" max="100" maxlength="3" onchange="updateQuantity(${index}, this)">
-                        <button class="increase-quantity" onclick="changeQuantity(${index}, 1)"><i class="fa-solid fa-plus"></i></button>
+                          <button class="decrease-quantity" onclick="changeQuantity(${index}, -1)"><i class="fa-solid fa-minus"></i></button>
+                          <input class='input-change' type="number" value="${
+                          item.quantity}" min="1" max="100" maxlength="3" onchange="updateQuantity(${index}, this)">
+                          <button class="increase-quantity" onclick="changeQuantity(${index}, 1)"><i class="fa-solid fa-plus"></i></button>
                         </div>
-                        <button class="remove-item" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button>
                     </div>
+                    <button class="remove-item" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button>
                 `;
             cartContent.appendChild(cartItem);
           });
@@ -760,27 +757,26 @@
           );
 
           if (response.ok) {
-    displayAlert("success", "Encomenda Enviada.");
+            displayAlert("success", "Encomenda Enviada.");
 
-    // 🔹 Fechar os modais
-    if (cartForm) {
-        cartForm.style.display = "none";
-    }
-    isCartFormVisible = false;
-    cartModal.style.display = "none";
+            // 🔹 Fechar os modais
+            if (cartForm) {
+              cartForm.style.display = "none";
+            }
+            isCartFormVisible = false;
+            cartModal.style.display = "none";
 
-    // 🔹 Limpar os inputs do formulário
-    document.getElementById("name").value = "";
-    document.getElementById("phone").value = "";
-    document.getElementById("email").value = "";
+            // 🔹 Limpar os inputs do formulário
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
 
-    // 🔹 Esvaziar o carrinho e atualizar a exibição
-    cart.length = 0; // Remove todos os itens do carrinho
-    cartContent.innerHTML = "<p>O carrinho está vazio.</p>"; // Atualiza o HTML do carrinho
-}
-
+            // 🔹 Esvaziar o carrinho e atualizar a exibição
+            cart.length = 0; // Remove todos os itens do carrinho
+            cartContent.innerHTML = "<p>O carrinho está vazio.</p>"; // Atualiza o HTML do carrinho
+          }
         } catch (error) {
-          console.error("Erro na requisição:", error); 
+          console.error("Erro na requisição:", error);
           displayAlert("error", "Erro ao enviar o pedido.");
         } finally {
           hideLoading();
