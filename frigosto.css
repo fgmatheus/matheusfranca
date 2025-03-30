@@ -1660,8 +1660,8 @@ footer {
 
   .cart-content {
     width: 100%;
-    max-height: 69%;
-    gap: 10px;
+    max-height: 65%; /* 69% */
+    padding-bottom: 50px; /* 0px */
   }
 
 
