@@ -614,8 +614,7 @@
                         <p>€ ${Number(item.precoCart).toFixed(2)}</p>
                         <div class="change-buttons">
                           <button class="decrease-quantity" onclick="changeQuantity(${index}, -1)"><i class="fa-solid fa-minus"></i></button>
-                          <input class='input-change' type="number" value="${
-                          item.quantity}" min="1" max="100" maxlength="3" onchange="updateQuantity(${index}, this)">
+                          <input class='input-change' type="number" value="${item.quantity}" min="1" max="100" maxlength="3" onchange="updateQuantity(${index}, this)">
                           <button class="increase-quantity" onclick="changeQuantity(${index}, 1)"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
@@ -738,7 +737,7 @@
           nomeCliente,
           telefoneCliente,
           emailCliente,
-          emailLojista: "fg.matheuz@gmail.com",
+          emailLojista: "geral@frigosto.com",
           itens: cart.map((item) => ({
             nome: item.nome,
             quantidade: item.quantity,
@@ -784,6 +783,15 @@
       };
 
       updateCartTotal();
+    });
+
+    let back_to_top = document.querySelector(".top");
+
+    back_to_top.addEventListener("click", function (e) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+      });
     });
   </script>
 </html>
