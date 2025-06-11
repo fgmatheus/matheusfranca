@@ -1068,8 +1068,8 @@ footer img {
   }
 
   header img {
-    width: 120px;
-    object-fit: cover;
+    width: 50%;
+    object-fit: contain;
   }
 
   #checkbox {
