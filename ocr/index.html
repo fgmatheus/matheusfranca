@@ -104,8 +104,8 @@
 
       fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: finalText }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ text: finalText }).toString(),
       })
         .then(res => res.json())
         .then(data => {
