@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCR com Câmera</title>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.3/dist/tesseract.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    video, canvas {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    button, select {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>OCR com Câmera (Tesseract.js)</h1>
+
+  <label for="ddd">Selecione o DDD:</label>
+  <select id="ddd">
+    <option value="351">Portugal (+351)</option>
+    <option value="39">Itália (+39)</option>
+    <option value="33">França (+33)</option>
+  </select>
+
+  <br />
+  <video id="video" autoplay playsinline width="300"></video>
+  <br />
+  <button onclick="captureAndOCR()">Tirar Foto</button>
+  <canvas id="canvas" style="display:none;"></canvas>
+
+  <div id="output"></div>
+
+  <script>
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    const output = document.getElementById("output");
+    const dddSelect = document.getElementById("ddd");
+
+    async function initCamera() {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+    }
+
+    async function captureAndOCR() {
+      const ctx = canvas.getContext("2d");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const dataURL = canvas.toDataURL("image/png");
+
+      output.innerText = "Lendo texto...";
+      const result = await Tesseract.recognize(dataURL, "eng", {
+        logger: m => console.log(m)
+      });
+
+      const rawText = result.data.text;
+      const numericLines = rawText
+        .split(/\r?\n/)
+        .map((line) => line.replace(/[^0-9]/g, ""))
+        .filter((line) => line.length > 0);
+
+      const nineDigit = numericLines.find((num) => num.length === 9);
+      const twentyDigit = numericLines.find((num) => num.length === 20);
+
+      if (!nineDigit || !twentyDigit) {
+        output.innerText = "Erro: esperado número com 9 e outro com 20 dígitos.";
+        return;
+      }
+
+      const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
+      output.innerText = `✅ ${finalText}`;
+
+      fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: finalText }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.result === "success") {
+            setTimeout(() => {
+              captureAndOCR();
+            }, 500);
+          } else {
+            output.innerText = "Erro ao enviar para Google Sheets.";
+          }
+        })
+        .catch(err => {
+          output.innerText = "Erro ao enviar para Google Sheets.";
+        });
+    }
+
+    initCamera();
+  </script>
+</body>
+</html>
