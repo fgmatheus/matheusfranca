@@ -84,42 +84,42 @@
       });
 
       const rawText = result.data.text;
-      output.innerText = rawText;
+      output.innerText = "Texto bruto OCR:\n" + rawText;
 
-      // const numericLines = rawText
-      //   .split(/\r?\n/)
-      //   .map((line) => line.replace(/[^0-9]/g, ""))
-      //   .filter((line) => line.length > 0);
+      const numericLines = rawText
+        .split(/\r?\n/)
+        .map((line) => line.replace(/[^0-9]/g, ""))
+        .filter((line) => line.length > 0);
 
-      // const nineDigit = numericLines.find((num) => num.length === 9);
-      // const twentyDigit = numericLines.find((num) => num.length === 20);
+      const nineDigit = numericLines.find((num) => num.length === 9);
+      const twentyDigit = numericLines.find((num) => num.length === 20);
 
-      // if (!nineDigit || !twentyDigit) {
-      //   output.innerText = "Erro: esperado número com 9 e outro com 20 dígitos.";
-      //   return;
-      // }
+      if (!nineDigit || !twentyDigit) {
+        output.innerText += "\n⚠️ Erro: esperado número com 9 e outro com 20 dígitos.";
+        return;
+      }
 
-      // const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
-      // output.innerText = `✅ ${finalText}`;
+      const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
+      output.innerText += `\n\n✅ Enviado: ${finalText}`;
 
-      // fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ text: finalText }),
-      // })
-      //   .then(res => res.json())
-      //   .then(data => {
-      //     if (data.result === "success") {
-      //       setTimeout(() => {
-      //         captureAndOCR();
-      //       }, 500);
-      //     } else {
-      //       output.innerText = "Erro ao enviar para Google Sheets.";
-      //     }
-      //   })
-      //   .catch(err => {
-      //     output.innerText = "Erro ao enviar para Google Sheets.";
-      //   });
+      fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: finalText }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.result === "success") {
+            setTimeout(() => {
+              captureAndOCR();
+            }, 500);
+          } else {
+            output.innerText += "\nErro ao enviar para Google Sheets.";
+          }
+        })
+        .catch(err => {
+          output.innerText += "\nErro ao enviar para Google Sheets.";
+        });
     }
 
     initCamera();
