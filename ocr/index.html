@@ -102,7 +102,7 @@
       const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
       output.innerText += `\n\n✅ Enviado: ${finalText}`;
 
-      fetch("https://script.google.com/macros/s/1yUuYP_UJ7GW4IhV0wg986WidsUPN-feq-oigEXVnpN7cZv1lKruz9ARr/exec", {
+      fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: finalText }),
