@@ -44,6 +44,7 @@
   <video id="video" autoplay playsinline width="300"></video>
   <br />
   <button onclick="captureAndOCR()">Tirar Foto</button>
+  <button onclick="toggleCamera()">Inverter Câmera</button>
   <canvas id="canvas" style="display:none;"></canvas>
 
   <div id="output"></div>
@@ -53,10 +54,21 @@
     const canvas = document.getElementById("canvas");
     const output = document.getElementById("output");
     const dddSelect = document.getElementById("ddd");
+    let currentFacingMode = "environment"; // ou "user"
 
     async function initCamera() {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: currentFacingMode }
+      });
       video.srcObject = stream;
+    }
+
+    function toggleCamera() {
+      currentFacingMode = currentFacingMode === "user" ? "environment" : "user";
+      if (video.srcObject) {
+        video.srcObject.getTracks().forEach(track => track.stop());
+      }
+      initCamera();
     }
 
     async function captureAndOCR() {
@@ -72,40 +84,42 @@
       });
 
       const rawText = result.data.text;
-      const numericLines = rawText
-        .split(/\r?\n/)
-        .map((line) => line.replace(/[^0-9]/g, ""))
-        .filter((line) => line.length > 0);
+      output.innerText = rawText;
 
-      const nineDigit = numericLines.find((num) => num.length === 9);
-      const twentyDigit = numericLines.find((num) => num.length === 20);
+      // const numericLines = rawText
+      //   .split(/\r?\n/)
+      //   .map((line) => line.replace(/[^0-9]/g, ""))
+      //   .filter((line) => line.length > 0);
 
-      if (!nineDigit || !twentyDigit) {
-        output.innerText = "Erro: esperado número com 9 e outro com 20 dígitos.";
-        return;
-      }
+      // const nineDigit = numericLines.find((num) => num.length === 9);
+      // const twentyDigit = numericLines.find((num) => num.length === 20);
 
-      const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
-      output.innerText = `✅ ${finalText}`;
+      // if (!nineDigit || !twentyDigit) {
+      //   output.innerText = "Erro: esperado número com 9 e outro com 20 dígitos.";
+      //   return;
+      // }
 
-      fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: finalText }),
-      })
-        .then(res => res.json())
-        .then(data => {
-          if (data.result === "success") {
-            setTimeout(() => {
-              captureAndOCR();
-            }, 500);
-          } else {
-            output.innerText = "Erro ao enviar para Google Sheets.";
-          }
-        })
-        .catch(err => {
-          output.innerText = "Erro ao enviar para Google Sheets.";
-        });
+      // const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
+      // output.innerText = `✅ ${finalText}`;
+
+      // fetch("https://script.google.com/macros/s/AKfycby5IF2xCJueAPoOEMxeosxy1VumHMEpGzOnA-xFBkMNtmvqO5t4AzCX8AQ45NuPqcm0eg/exec", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ text: finalText }),
+      // })
+      //   .then(res => res.json())
+      //   .then(data => {
+      //     if (data.result === "success") {
+      //       setTimeout(() => {
+      //         captureAndOCR();
+      //       }, 500);
+      //     } else {
+      //       output.innerText = "Erro ao enviar para Google Sheets.";
+      //     }
+      //   })
+      //   .catch(err => {
+      //     output.innerText = "Erro ao enviar para Google Sheets.";
+      //   });
     }
 
     initCamera();
