@@ -41,7 +41,7 @@
   </select>
 
   <br />
-  <video id="video" autoplay playsinline width="300"></video>
+  <video id="video" autoplay playsinline></video>
   <br />
   <button onclick="captureAndOCR()">Tirar Foto</button>
   <button onclick="toggleCamera()">Inverter Câmera</button>
@@ -102,7 +102,7 @@
       const finalText = `${dddSelect.value}${nineDigit}=${twentyDigit}`;
       output.innerText += `\n\n✅ Enviado: ${finalText}`;
 
-      fetch("https://script.google.com/macros/s/AKfycby00eUgPlftrALS_eRUf_6UCR33cL2W8zjmAomi1HNu2p8gMQFl3swqSukLbAkgXdoGVw/exec", {
+      fetch("https://script.google.com/macros/s/1yUuYP_UJ7GW4IhV0wg986WidsUPN-feq-oigEXVnpN7cZv1lKruz9ARr/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: finalText }),
